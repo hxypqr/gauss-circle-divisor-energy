@@ -25,6 +25,8 @@ The supplied [STATUS_ENERGY_V3.md](STATUS_ENERGY_V3.md), [build log](build_energ
 
 A source scan of the supplied Lean files found no `sorry`, `admit`, `native_decide`, or custom `axiom` declaration. This text-level check is supplementary to the Lean audits; it does not replace compilation or kernel checking.
 
+Publication preparation confirmed that the official mathlib `v4.32.1` tag resolves to the locked commit `520045ab14e26149ee970e2e617ca04b09bde5d6`, installed the matching Lean `v4.32.1` toolchain, and retrieved the locked dependencies and their available cache. A fresh full build and the two Lean audits were not completed during publication preparation. No new successful kernel-verification run is claimed here; the successful build and theorem-audit results cited above are the records supplied with the archive.
+
 To reproduce the verification, install the pinned toolchain, fetch the mathlib cache, build the project, and run both supplied audit entry points using the commands in the README. An installed toolchain or an in-progress build is not evidence of a successful verification run.
 
 The mathematical trust boundary remains the explicit external proposition parameters described in [the README](../README.md) and [the external-input audit](../ENERGY_V3_EXTERNAL_FINAL_AUDIT.md).
