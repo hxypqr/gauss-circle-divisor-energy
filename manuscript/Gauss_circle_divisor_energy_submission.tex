@@ -17,7 +17,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyhead[C]{\ifodd\value{page}{\small XIYU HU}\else{\small FIRST SPACING AND LATTICE-POINT DISCREPANCY}\fi}
+\fancyhead[C]{\ifodd\value{page}{\small XIYU HU}\else{\small FIRST SPACING IN THE CIRCLE AND DIVISOR PROBLEMS}\fi}
 \fancyfoot[C]{\thepage}
 \allowdisplaybreaks[2]
 \numberwithin{equation}{section}
@@ -59,8 +59,8 @@
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\blocklog}{b}
 \newcommand{\paircount}{\mathcal N(K,L;V,W)}
-\hypersetup{pdftitle={Amplitude-dependent first spacing and the circle and divisor problems},pdfauthor={Xiyu Hu},pdfsubject={Algebraic pair energies on a ruled cone and amplitude-dependent first spacing},pdfkeywords={circle problem, divisor problem, first spacing, additive energy, ruled cone}}
-\title[First spacing and lattice-point discrepancy]{Amplitude-dependent first spacing\texorpdfstring{\\}{ }and the circle and divisor problems}
+\hypersetup{pdftitle={A remark on first spacing in the circle and divisor problems},pdfauthor={Xiyu Hu},pdfsubject={Algebraic pair energies on a ruled cone and amplitude-dependent first spacing},pdfkeywords={circle problem, divisor problem, first spacing, additive energy, ruled cone}}
+\title[First spacing in the circle and divisor problems]{A remark on first spacing\texorpdfstring{\\}{ }in the circle and divisor problems}
 \author{Xiyu Hu}
 \address{School of Mathematical Sciences, University of Chinese Academy of Sciences}
 \email{hxypqr@gmail.com}
@@ -120,6 +120,10 @@ For every $\eps>0$,
  \Delta(X)\ll_\eps X^{\vth+\eps}.
 \end{equation}
 \end{theorem}
+
+For numerical comparison, the exponent $573/1828=0.3134573304\ldots$ is also
+smaller than $517/1648=0.3137135922\ldots$, the exponent stated by Bourgain
+and Watt in~\cite[Theorem~2]{BW17}.
 
 The two refinements are separate. A ruling-line contribution is assigned its own amplitude bound, rather than the larger bound for a whole angular sector. In the remaining fourth moment, each pair retains its fine-cap membership. The second refinement enlarges the upper endpoint of the $q=9/2$ square-root range from $K\le L^2$ to $K\le L^3$.
 
@@ -1086,7 +1090,7 @@ For the selected actual length $N$, the standing scale conditions include
 \end{gather}
 Here $C_2\ge1$ is a fixed regularity constant from the construction.
 These are the standing conditions in \cite[(5.2)--(5.5)]{BW17}; the construction in \cite[(4.12)--(4.13)]{LY} retains $R_0\le Q\le3H\le3N/(64C_2)$.
-The citation to the withdrawn precursor is used only to identify the construction hypotheses behind the arithmetic interface restated in \cite{LY}. Its first-spacing assertions and numerical conclusions are not used.
+Here \cite{BW17} is used to identify the construction hypotheses behind the arithmetic interface restated in \cite{LY}. The proof does not rely on its first-spacing estimates or numerical conclusions.
 
 \begin{remark}[The case conditions alone do not suffice]\label{rem:casecounterexample}
 Take $H=1$ and $M=T^{1/2}$. Both upper conditions in \eqref{eq:caseB} hold, but for sufficiently large $T$,
@@ -2202,9 +2206,9 @@ These computations verify the subsidiary scale hypotheses used with the arithmet
 
 
 \section*{Acknowledgements}
-The author thanks Professor Xiaochun Li for pointing out that the discrete
-formulation in the work of Jing and Wu~\cite{JW} allows a more elegant
-organization of the proof of the first-spacing estimate.
+The author is grateful to Xiaochun Li for suggesting the use of Jing and Wu's
+discrete formulation~\cite{JW}, which led to a simpler and clearer presentation
+of the first-spacing argument.
 
 \section*{Statement on the use of AI}
 OpenAI's ChatGPT was used during the preparation of this manuscript.
@@ -2227,7 +2231,6 @@ Int. Math. Res. Not. IMRN \textbf{2018} (2018), no.~17, 5219--5296.
 J.~Bourgain and N.~Watt,
 \emph{Mean square of zeta function, circle problem and divisor problem revisited},
 \href{https://arxiv.org/abs/1709.04340v1}{arXiv:1709.04340v1} (2017), withdrawn in 2023.
-Cited only for the standing arithmetic-construction hypotheses behind \cite{LY}; its first-spacing assertions and numerical conclusions are not used.
 
 \bibitem{GK}
 S.~W.~Graham and G.~Kolesnik,

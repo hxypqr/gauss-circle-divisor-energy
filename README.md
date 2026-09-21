@@ -1,6 +1,6 @@
-# Amplitude-dependent first spacing and the circle and divisor problems
+# A remark on first spacing in the circle and divisor problems
 
-Lean 4 formalization of *Amplitude-dependent first spacing and the circle and divisor problems*. The `EnergyV3` development formalizes the internal proof of the first-spacing estimate and the resulting circle and divisor error bounds, with the external mathematical inputs stated explicitly as theorem parameters.
+Lean 4 formalization of *A remark on first spacing in the circle and divisor problems*. The `EnergyV3` development formalizes the internal proof of the first-spacing estimate and the resulting circle and divisor error bounds, with the external mathematical inputs stated explicitly as theorem parameters.
 
 The project uses **Lean 4.32.1** and **mathlib v4.32.1**. The supplied verification records report a successful build and an axiom audit of 2,133 exported project theorems. The Lean sources contain no `sorry`, `admit`, `native_decide`, or project-declared `axiom`.
 
@@ -93,6 +93,6 @@ The supplied [verification snapshot](verification/STATUS_ENERGY_V3.md), dated 20
 | [verification/](verification/) | Build records, dependency audits, and verification instructions |
 | [manuscript/](manuscript/) | Reference manuscript snapshots and supporting notes |
 
-The current reference manuscript is the **2026-09-08** version: [TeX](manuscript/Gauss_circle_divisor_energy.tex) and [PDF](manuscript/Gauss_circle_divisor_energy.pdf). These files are preserved as supplied with the formalization. A separate [submission TeX](manuscript/Gauss_circle_divisor_energy_submission.tex) contains the revised abstract, acknowledgements, AI statement, affiliation, and formatting; its mathematical body and bibliography are unchanged.
+The reference manuscript is the **2026-09-08** version: [TeX](manuscript/Gauss_circle_divisor_energy.tex) and [PDF](manuscript/Gauss_circle_divisor_energy.pdf). These files are preserved as supplied with the formalization. A separate [submission TeX](manuscript/Gauss_circle_divisor_energy_submission.tex) contains the revised title, abstract, introductory numerical comparison, acknowledgements, AI statement, affiliation, and formatting, with corresponding citation notes updated. The theorem statements, estimates, and proofs are unchanged.
 
 The dated [September 6 README](README_2026-09-06.md), the `ROUND2` reports, and other earlier notes document historical stages. Their incomplete-status statements and earlier exponent do not describe the `EnergyV3` main theorem. For the current proof coverage, use the `EnergyV3` proof map, final external-input audit, and [STATUS_ENERGY_V3.md](verification/STATUS_ENERGY_V3.md).
