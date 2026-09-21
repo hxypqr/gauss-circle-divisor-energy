@@ -1,0 +1,7 @@
+.lake/
+.elan/
+*.olean
+*.ilean
+*.trace
+.DS_Store
+Thumbs.db

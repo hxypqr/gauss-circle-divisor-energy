@@ -1,0 +1,9 @@
+import CircleDivisor.ReciprocalPhase
+
+#print axioms CircleDivisor.ReciprocalPhase.phaseDerivative_formula
+#print axioms CircleDivisor.ReciprocalPhase.phase_curvature_formula
+#print axioms CircleDivisor.ReciprocalPhase.reciprocal_phase_control
+#print axioms CircleDivisor.ReciprocalPhase.one_div_phase_control
+#print axioms CircleDivisor.ReciprocalPhase.affine_reciprocal_phase_control
+#print axioms CircleDivisor.ReciprocalPhase.circle_shifted_phase_control
+#print axioms CircleDivisor.ReciprocalPhase.circle_progression_phase_control

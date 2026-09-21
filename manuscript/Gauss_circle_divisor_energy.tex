@@ -1,0 +1,2281 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1in,headheight=14pt,headsep=18pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{booktabs,array}
+\usepackage{aliascnt}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\theoremstyle{definition}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ED}{\mathcal E_D}
+\newcommand{\EC}{\mathcal E_C}
+\newcommand{\Gq}{\mathcal G_q}
+\newcommand{\Gnine}{\mathcal G_{9/2}}
+\newcommand{\vth}{\vartheta}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\BV}{\mathrm{BV}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\blocklog}{b}
+\newcommand{\paircount}{\mathcal N(K,L;V,W)}
+\hypersetup{pdftitle={Amplitude-dependent first spacing and the circle and divisor problems},pdfauthor={Xiyu Hu},pdfsubject={Algebraic pair energies on a ruled cone and amplitude-dependent first spacing},pdfkeywords={circle problem, divisor problem, first spacing, additive energy, ruled cone}}
+\title[First spacing and lattice-point discrepancy]{Amplitude-dependent first spacing\texorpdfstring{\\}{ }and the circle and divisor problems}
+\author{Xiyu Hu}
+\date{September 8, 2026}
+\subjclass[2020]{11P21, 11L07, 11N37, 42B10, 42B25}
+\keywords{Gauss circle problem, Dirichlet divisor problem, first spacing, additive energy, ruled cones, canonical caps, large values}
+
+\begin{document}
+\begin{abstract}
+We prove that the error terms in Gauss's circle problem and Dirichlet's divisor problem are
+$O_\eps(X^{573/1828+\eps})$.
+The first-spacing frequencies $(l,kl,l\sqrt{k})$ lie on a quadratic cone.
+We organize their fourth moments by pairs: differences along one generator carry the radial
+additive energy, while differences between generators retain two distinct angular widths.
+An elementary factorization count gives
+$K(W^2L^2+VWL)(KL)^\eps$ for the latter configurations.
+A projected difference-energy identity makes this estimate uniform in complex coefficients
+and in the third physical coordinate; a periodization argument transfers it to the actual
+localized averages without replacing approximate relations by exact ones.
+Combining these algebraic fourth moments with the amplitude-dependent wave-envelope theorem
+of Guth and Maldague gives square-root first spacing for $4<q\le9/2$ when
+$K^{q-4}\le L^{6-q}$ and $L^{3q-8}\le K^{8-q}$.
+The arithmetic input and block lengths are those of Li and Yang.
+All construction conditions are verified on the difficult range, and four fixed moments suffice
+for the final optimization.
+\end{abstract}
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+\subsection{The circle and divisor errors}
+For $X\ge2$, put
+\begin{align}
+ R(X)&=\#\{(m,n)\in\Z^2:m^2+n^2\le X\}-\pi X,\label{eq:circle}\\
+ \Delta(X)&=\sum_{n\le X}d(n)-X\log X-(2\gamma-1)X.\label{eq:divisor}
+\end{align}
+Here $d(n)$ is the divisor function and $\gamma$ is Euler's constant.
+We use the squared-radius variable $X$ throughout. Thus an exponent $\theta$ in \eqref{eq:circle} corresponds to $2\theta$ in the radius variable.
+The conjectural pointwise order in both problems is $O_\eps(X^{1/4+\eps})$; see the introduction of Li--Yang~\cite{LY}.
+
+These two problems share more than a conjectured exponent. Hyperbola decompositions express their errors through fractional parts of reciprocal functions. A finite Fourier expansion produces double exponential sums in an integer frequency and an integer position variable.
+The Bombieri--Iwaniec method~\cite{BI}, adapted to these problems by Iwaniec and Mozzochi~\cite{IM}, cuts the position interval into short blocks, classifies their slopes by rational approximation, and applies Poisson summation.
+A double large sieve separates the transformed estimate into two spacing problems.
+The first concerns additive relations among the transformed frequencies; the second concerns coincidences among the rational and curvature data of the original blocks.
+Huxley's resonance-curve estimates~\cite{H90,H93,H03} developed the second branch. In the present normalization, \cite{H03} gives the exponent $131/416=0.314903\ldots$.
+
+Decoupling provides a different source of information for first spacing.
+Bourgain and Watt~\cite{BW18} studied perturbed cones in connection with mean squares of the zeta function.
+The cone square-function theorem of Guth, Wang, and Zhang~\cite{GWZ} is formulated using wave envelopes, which average a local square function at intermediate angular scales.
+Guth and Maldague~\cite{GM} retained an amplitude threshold in this estimate and obtained small-cap decoupling as a consequence.
+Li and Yang~\cite{LY} combined small-cap decoupling, local arithmetic fourth moments, and Huxley's second-spacing input to obtain
+\begin{equation}\label{eq:lyexponent}
+ R(X),\ \Delta(X)\ll_\eps X^{\theta_*+\eps},
+ \qquad \theta_*=0.3144831759741\ldots.
+\end{equation}
+The arithmetic framework and short-block lengths are unchanged. The refinement concerns the organization of the first-spacing fourth moments and the amplitude assigned to each type of pair.
+
+\begin{theorem}\label{thm:main}
+Let
+\begin{equation}\label{eq:theta}
+ \vth=\frac{573}{1828}=0.3134573304157549234\ldots.
+\end{equation}
+For every $\eps>0$,
+\begin{equation}\label{eq:main}
+ R(X)\ll_\eps X^{\vth+\eps},\qquad
+ \Delta(X)\ll_\eps X^{\vth+\eps}.
+\end{equation}
+\end{theorem}
+
+The two refinements are separate. A ruling-line contribution is assigned its own amplitude bound, rather than the larger bound for a whole angular sector. In the remaining fourth moment, each pair retains its fine-cap membership. The second refinement enlarges the upper endpoint of the $q=9/2$ square-root range from $K\le L^2$ to $K\le L^3$.
+
+\subsection{The first-spacing estimate}
+Write $e(t)=\exp(2\pi it)$, and let $k\sim K$ mean $k\in\Z\cap[K,2K)$.
+For $1\le L\le K$ and $|a_{kl}|\le1$, define
+\begin{equation}\label{eq:Fa}
+ F_a(x_1,x_2,x_3)=\sum_{k\sim K}\sum_{l\sim L}
+ a_{kl}e(lx_1+klx_2+l\sqrt{k}\,x_3).
+\end{equation}
+Let
+\begin{equation}\label{eq:Gq}
+ \Gq(K,L)^q=\sup_{|a_{kl}|\le1}
+ \frac1{2\sqrt K}\int_{-\sqrt K}^{\sqrt K}\int_0^1\int_0^1
+ |F_a(x_1,x_2,x_3)|^q\,dx_1\,dx_2\,dx_3.
+\end{equation}
+The supremum makes the bound uniform in the coefficient arrays that arise in the large sieve.
+
+\begin{theorem}\label{thm:first}
+Let $1\le L\le K$, $P=KL$, and $4<q\le9/2$. For every $\eps>0$,
+\begin{equation}\label{eq:fourterm}
+ \begin{aligned}
+ \Gq(K,L)^q\le C_\eps\frac{q}{q-4}P^\eps
+ \bigl(&P^{q/2}+KL^{2q-5}+K^{q-2}L^{q-3}\\
+       &+K^{3q/4-2}L^{5q/4-2}\bigr).
+ \end{aligned}
+\end{equation}
+The constant $C_\eps$ is independent of $q,K,L$ and the coefficient array. In particular, the constants are uniform for $q$ in any fixed compact subinterval of $(4,9/2]$. The quantitative dependence is proved in Section~\ref{sec:quniform}.
+\end{theorem}
+
+\begin{corollary}\label{cor:sqrt}
+Under the hypotheses of \cref{thm:first}, if
+\begin{equation}\label{eq:sqrtconditions}
+ K^{q-4}\le L^{6-q},\qquad L^{3q-8}\le K^{8-q},
+\end{equation}
+then
+\begin{equation}\label{eq:sqrtbound}
+ \Gq(K,L)\ll_{q,\eps}(KL)^{1/2+\eps}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:q9range}
+ L^{11/7}\le K\le L^3
+ \quad\Longrightarrow\quad
+ \Gnine(K,L)\ll_\eps(KL)^{1/2+\eps}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The ratios of the third and fourth terms of \eqref{eq:fourterm} to $P^{q/2}$ are, respectively,
+\[
+ \left(\frac{K^{q-4}}{L^{6-q}}\right)^{1/2},
+ \qquad
+ \left(\frac{L^{3q-8}}{K^{8-q}}\right)^{1/4}.
+\]
+The second term has ratio $K^{-(q-2)/2}L^{(3q-10)/2}$.
+The second condition in \eqref{eq:sqrtconditions} makes this at most one, because
+\[
+ (3q-8)(q-2)-(3q-10)(8-q)=6(q-4)^2\ge0.
+\]
+Set $q=9/2$ for \eqref{eq:q9range}.
+\end{proof}
+For unit-modulus arrays, orthogonality in $x_1,x_2$ gives $\|F_a\|_{L^2_\#}^2\asymp KL$.
+Hence a bound uniform in these arrays cannot improve the square-root order itself. The issue is the parameter range in which that order holds.
+
+\subsection{The algebraic structure of the fourth moment}
+Put $p_{kl}=(l,kl,l\sqrt{k})$ and $Q(x,y,z)=z^2-xy$. The identity
+\begin{equation}\label{eq:introconeidentity}
+ Q(p_{kl}-p_{k'l'})=ll'(\sqrt{k}-\sqrt{k'})^2
+\end{equation}
+identifies pairs on a common generator without reference to a Fourier decomposition:
+they are exactly the pairs whose difference is null for $Q$.
+This is the ruling-line obstruction in concrete coordinates.
+
+Jing and Wu~\cite[Theorem~1.1]{JW} show that the exact additive energy of a finite set on an
+irreducible nonplanar algebraic surface is bounded by its squared cardinality, up to an
+arbitrarily small power and the maximum occupancy of a line contained in the surface.
+Their difference-fiber viewpoint separates geometric degeneracy from generic interactions.
+The complexity-sensitive framework of~\cite[Theorem~1.1 and Proposition~5.1]{HuEnergy}
+extends this viewpoint to bounded-degree varieties and hereditary weighted estimates.
+For the present cone grid, the relevant information can be kept at the level of individual
+pairs, rather than represented by a single worst-line occupancy.
+
+There are two reasons to do so. Each generator contains about $L$ points, but the radial
+fourth moment costs $KL^3$, not a factor $L$ times every other configuration.
+Also, the two pairs occurring in a cross-ray fourth moment each have width
+$W\asymp\sqrt{K/L}$, although their combined diameter may be as large as $V\asymp sK$.
+Keeping both widths gives the elementary count
+\begin{equation}\label{eq:paircountintro}
+ \mathcal N(K,L;V,W)\ll_\eps (KL)^\eps K(W^2L^2+VWL).
+\end{equation}
+Its proof reduces the two integer equations to one factorization,
+\[
+ u a=-(\delta_1l_1+\delta_2l_3),
+\]
+and treats the zero and nonzero right-hand sides separately.
+
+Exact surface energy is not, by itself, the finite-window norm in \eqref{eq:Gq}.
+We therefore use a more direct bridge. Project $p_{kl}$ onto the integer coordinates
+$(l,kl)$, apply Parseval on $\T^2$, and keep the third coordinate as an arbitrary phase in
+the coefficients. The resulting fourth-moment inequalities hold for each value of that
+phase parameter, and hence for every finite averaging interval. No exactness of the
+square-root relation is needed. The full argument is given in Section~\ref{sec:algebra}.
+The general theorems of~\cite{JW,HuEnergy} motivate this organization but are not invoked
+as substitutes for finite-window estimates.
+
+\subsection{From pair energy to amplitude}
+The normalized frequency and physical coordinates are
+\begin{equation}\label{eq:cone}
+ \xi_{kl}=\left(\frac lL,\frac{l\sqrt{k}}{L\sqrt K},\frac{lk}{LK}\right)
+ =r(1,t,t^2),\qquad r=l/L,\quad t=\sqrt{k/K},
+\end{equation}
+\[
+ z_1=Lx_1,\qquad z_2=L\sqrt K\,x_3,\qquad z_3=KLx_2,\qquad P=KL.
+\]
+The geometric scale $s$ corresponds to a coarse angular sector.
+For its local square-function average $M_U$, write
+\[
+ M_U=D_U+C_U.
+\]
+Here $D_U\ge0$ averages products on one generator, while the real quantity $C_U$
+contains the cross-ray products. The pointwise bounds are
+\begin{align}
+ D_U&\lesssim D(s):=sP\left(1+\frac1{Ks^2}\right),\label{eq:introD}\\
+ M_U,\ |C_U|&\lesssim M(s):=sP\left(1+\frac1{Ks^2}\right)
+                                  \left(1+\frac1{Ls}\right).\label{eq:introM}
+\end{align}
+The algebraic estimates yield
+\begin{equation}\label{eq:energyintro}
+ \ED(s)\lesssim sP^2+KL^3,\qquad
+ \EC(s)\ll_\eps P^\eps(K^2L+sK^{5/2}L^{1/2}).
+\end{equation}
+
+To pass from these fourth moments to $q>4$, one further input is needed.
+The amplitude-dependent theorem of Guth and Maldague~\cite[Theorem~2]{GM} restricts a
+contributing envelope at level $\alpha$ by
+\begin{equation}\label{eq:introthreshold}
+ M_U\gtrsim_\delta P^{-\delta}\alpha^2s^2.
+\end{equation}
+This allows the two energies in \eqref{eq:energyintro} to be integrated with their own
+amplitude bounds. In particular, the radial term contributes
+\begin{equation}\label{eq:radialgain}
+ K^{3q/4-2}L^{5q/4-2}
+ \quad\hbox{rather than}\quad K^{q-3}L^{q-1}.
+\end{equation}
+The ratio is $(L/K)^{(q-4)/4}$. This refines the assignment of amplitude to energy; it does
+not invalidate the elementary interpolation inequality
+\begin{equation}\label{eq:interpolation}
+ \|F_\sigma\|_q^q\le\|F_\sigma\|_\infty^{q-4}\|F_\sigma\|_4^4.
+\end{equation}
+The higher-moment transfer remains analytic. The fourth-moment argument itself is
+algebraic and is completed before envelopes are introduced.
+
+\begin{figure}[tb]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ width=.91\textwidth,height=5.7cm,
+ xmin=1,xmax=5,ymin=4,ymax=4.56,
+ xlabel={Anisotropy ratio $r=\log K/\log L$},
+ ylabel={Admissible $q$},
+ xtick={1,1.571428571,2,3,4,5},
+ xticklabels={$1$,$11/7$,$2$,$3$,$4$,$5$},
+ ytick={4,4.1,4.2,4.3,4.4,4.5},
+ tick label style={font=\small},label style={font=\small},
+ legend style={at={(.5,-.25)},anchor=north,draw=none,font=\small},
+ legend cell align={left}]
+\addplot[thick,domain=1:5,samples=250] {min(4.5,min(4+2/(x+1),8*(x+1)/(x+3)))};
+\addlegendentry{Paired canonical-cap count}
+\addplot[thick,dashed,domain=1:5,samples=250] {min(4.5,min(4+1/x,8*(x+1)/(x+3)))};
+\addlegendentry{Coarse-sector count only}
+\end{axis}
+\end{tikzpicture}
+\caption{The square-root regions for $L>1$. The new upper boundary is
+$\min\{9/2,4+2/(r+1),8(r+1)/(r+3)\}$.
+The dashed comparison retains the same-ray/cross-ray amplitude split but forgets the paired fine-cap restriction.
+It is an internal comparison of the two counts, not a plot of Li--Yang's full estimate.}
+\label{fig:region}
+\end{figure}
+
+\subsection{Organization and inputs}
+Section~\ref{sec:algebra} proves the algebraic pair-energy theorem on $\T^2$, including its
+coefficient and finite-window forms. Section~\ref{sec:transfer} transports these estimates
+to local averages and states the single wave-envelope input.
+Section~\ref{sec:amplitude} derives \cref{thm:first}, with its explicit $q$-dependence.
+Sections~\ref{sec:admissibility} and~\ref{sec:interface} verify the arithmetic scales and
+complete the fixed-moment optimization. Section~\ref{sec:reduction} gives the real
+sawtooth and discrepancy reductions, with circle remainder at most $23$.
+The elementary Fourier-localization details are collected in \cref{app:localization};
+\cref{app:parameters,app:construction} record the remaining parameter checks.
+
+The two substantial external inputs are \cite[Theorem~2]{GM} and
+\cite[Lemma~4.4]{LY}, the latter with its accompanying construction and complementary-range
+estimates. Neither is reproved here. In particular, no approximate-energy version of
+\cite{JW} is assumed, and no refinement of the second-spacing input is used.
+
+\FloatBarrier
+
+\section{Algebraic fourth moments on a ruled cone}\label{sec:algebra}\label{sec:energy}
+The aim of this section is a fourth-moment estimate that is independent of physical
+localization. All integrals on $\T^2=(\R/\Z)^2$ use probability Haar measure.
+
+\subsection{Ruling lines and difference fibers}
+The points $p_{kl}$ can equally be viewed as positive rank-one matrices:
+\[
+ \begin{pmatrix}l&l\sqrt{k}\\l\sqrt{k}&kl\end{pmatrix}
+ =l\begin{pmatrix}1\\\sqrt{k}\end{pmatrix}
+       \begin{pmatrix}1&\sqrt{k}\end{pmatrix}.
+\]
+Let $B_Q$ be the polar form of $Q$, so that
+$Q(v-w)=Q(v)+Q(w)-2B_Q(v,w)$.
+
+\begin{lemma}[The ruling-line test]\label{lem:ruling}
+For $l,l',k,k'>0$, identity \eqref{eq:introconeidentity} holds.
+Consequently $Q(p_{kl}-p_{k'l'})=0$ if and only if $k=k'$.
+Every affine line contained in the cone and meeting its positive patch lies on one of
+its generators. For a fixed difference $d$, the corresponding pairs on the cone satisfy
+\begin{equation}\label{eq:planesection}
+ Q(p)=0,\qquad 2B_Q(p,d)=Q(d).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expanding the left side of \eqref{eq:introconeidentity} gives
+$ll'(k+k'-2\sqrt{kk'})$, which is the stated square.
+If a line is contained in the cone, write it as $p+tv$.
+The coefficient of $t^2$ in $Q(p+tv)$ is $Q(v)$, so the difference of two points on that
+line is null. Two points sufficiently near a positive-patch point are again in that
+patch; the identity forces their $k$-parameters to coincide. They determine the generator.
+Finally, subtracting $Q(p-d)=0$ from $Q(p)=0$ gives \eqref{eq:planesection}.
+\end{proof}
+Thus ``same ray'' is an algebraic condition on a pair, not a choice of terminology.
+We retain it when the difference is projected onto the two integer coordinates.
+
+\subsection{Projected difference energy}
+Let $\Omega\subset(\Z\cap[K,2K))\times(\Z\cap[L,2L))$ and put
+\[
+ \pi(k,l)=(l,kl)\in\Z^2.
+\]
+For an ordered-pair relation $\mathcal P\subset\Omega\times\Omega$, define
+\begin{equation}\label{eq:projectedenergy}
+ r_{\mathcal P}(d)=\#\{(\alpha,\beta)\in\mathcal P:
+              \pi(\alpha)-\pi(\beta)=d\},\qquad
+ \mathfrak E_\pi(\mathcal P)=\sum_{d\in\Z^2}r_{\mathcal P}(d)^2.
+\end{equation}
+This is the energy of a relation of pairs, not necessarily the energy of a point subset.
+That distinction allows the two pair widths to be retained.
+
+\begin{lemma}[Weighted projection principle]\label{lem:projection}
+For any coefficients $|b_{\alpha\beta}|\le1$,
+\begin{align}
+ &\int_{\T^2}\left|
+  \sum_{(\alpha,\beta)\in\mathcal P}
+    b_{\alpha\beta}e\bigl(u\cdot(\pi(\alpha)-\pi(\beta))\bigr)
+                  \right|^2du \notag\\
+ &\hspace{18mm}=
+ \sum_{d\in\Z^2}\left|
+   \sum_{\substack{(\alpha,\beta)\in\mathcal P\\
+                   \pi(\alpha)-\pi(\beta)=d}}b_{\alpha\beta}
+                  \right|^2
+ \le \mathfrak E_\pi(\mathcal P).
+ \label{eq:projectionprinciple}
+\end{align}
+The bound is unchanged when either the index set or the pair relation is restricted.
+It holds pointwise in any auxiliary parameter on which the coefficients depend.
+\end{lemma}
+\begin{proof}
+Group the finite Fourier polynomial by its frequency $d\in\Z^2$ and apply Parseval.
+The absolute value of the coefficient at $d$ is at most $r_{\mathcal P}(d)$.
+Restrictions only decrease these nonnegative multiplicities.
+\end{proof}
+In particular, coefficients of the form
+$a_\alpha\overline{a_\beta}e(t(\omega_\alpha-\omega_\beta))$
+are allowed for arbitrary real $\omega_\alpha$ and every real $t$.
+This deals with bounded complex coefficients directly; no limiting passage from exact
+three-coordinate energy is involved.
+
+\subsection{The two-scale integer count}
+Two pairs may be close internally but far from one another. The following count preserves
+both scales. Alternating signs allow the factorization to remain visible.
+
+\begin{lemma}[Two-scale paired count]\label{lem:paired}
+Fix an absolute constant $C\ge1$. Suppose $1\le W\le V\le CK$ and $1\le L\le K$.
+Let $\paircount$ be the number of integer tuples $(k_i,l_i)_{i=1}^4$ with $k_i\sim K$, $l_i\sim L$,
+\begin{align}
+ l_1-l_2+l_3-l_4&=0,\label{eq:integer1}\\
+ k_1l_1-k_2l_2+k_3l_3-k_4l_4&=0,\label{eq:integer2}
+\end{align}
+and
+\begin{equation}\label{eq:pairrestrictions}
+ 0<|k_1-k_2|\le CW,\qquad
+ 0<|k_3-k_4|\le CW,\qquad
+ \diam\{k_1,k_2,k_3,k_4\}\le CV.
+\end{equation}
+Then, for every $\eps>0$,
+\begin{equation}\label{eq:paircount}
+ \paircount\ll_{C,\eps}P^\eps K(W^2L^2+VWL),\qquad P=KL.
+\end{equation}
+The same conclusion holds for arbitrary subsets of the stated integer ranges.
+\end{lemma}
+\begin{proof}
+Put
+\begin{equation}\label{eq:pairparameters}
+ \delta_1=k_1-k_2,\quad \delta_2=k_3-k_4,
+ \quad u=k_2-k_4,\quad a=l_1-l_2.
+\end{equation}
+Then $0<|\delta_1|,|\delta_2|\lesssim W$, $|u|\lesssim V$, and $|a|\lesssim L$.
+The first equation determines
+\[
+ l_2=l_1-a,\qquad l_4=l_3+a.
+\]
+Writing
+\[
+ k_2=k_4+u,\quad k_1=k_4+u+\delta_1,
+ \quad k_3=k_4+\delta_2,
+\]
+the second equation becomes the single factorization identity
+\begin{equation}\label{eq:factoridentity}
+ ua=-(\delta_1l_1+\delta_2l_3).
+\end{equation}
+This parametrization is injective: $k_4,\delta_1,\delta_2,u,a,l_1,l_3$ recover the original tuple.
+We count separately according to
+$n=\delta_1l_1+\delta_2l_3$.
+
+\smallskip
+\noindent\emph{Case $n\ne0$.}
+Choose $k_4,\delta_1,\delta_2,l_1,l_3$ first.
+There are $O(KW^2L^2)$ choices.
+The nonzero integer $n$ has size $O(WL)\ll P$.
+The equation $ua=-n$ has at most twice the number of positive divisors of $|n|$ in signed integer solutions, and hence $O_\eps(P^\eps)$ solutions.
+Dropping the range restrictions on $u,a$ only increases this count.
+Thus this case contributes $O_\eps(P^\eps KW^2L^2)$.
+
+\smallskip
+\noindent\emph{Case $n=0$.}
+The nonzero paired differences and the positivity of $l_1,l_3$ give
+\begin{equation}\label{eq:zeron}
+ \delta_1l_1=-\delta_2l_3\ne0.
+\end{equation}
+Choose $\delta_1,l_1$ in $O(WL)$ ways.
+A divisor bound applied to the nonzero product $\delta_1l_1$ gives
+$O_\eps(P^\eps)$ choices for $\delta_2,l_3$.
+Now \eqref{eq:factoridentity} is $ua=0$.
+The possibilities $u=0$ and $a=0$, counted with their overlap, give $O(V+L)$ pairs $(u,a)$ in the allowed ranges.
+Choosing $k_4$ yields
+\[
+ O_\eps\bigl(P^\eps KWL(V+L)\bigr).
+\]
+Since $W\ge1$, the term $KWL^2$ is at most $KW^2L^2$.
+Combining the two cases proves \eqref{eq:paircount}.
+Every estimate only increases when range or subset restrictions are dropped, proving the final assertion.
+\end{proof}
+
+The exclusion of zero \emph{paired} differences in \eqref{eq:pairrestrictions} is important.
+It makes \eqref{eq:zeron} a nonzero product identity, even though $n=0$.
+Thus the zero-product alternatives that create the all-equal-ray family never re-enter the cross-ray estimate.
+The count uses only the two integer equations; it does not exploit an approximate square-root equation.
+
+
+\subsection{A finite-window fourth-moment theorem}
+Partition the retained $k$-indices into disjoint coarse sets $\mathcal K_\tau$ of diameter
+at most $CV$. Partition each coarse set into disjoint fine sets $\mathcal K_\theta$ of
+diameter at most $CW$, with $1\le W\le V\le CK$.
+The sets may have gaps; only their diameters and disjointness matter.
+For arbitrary real numbers $\omega_{kl}$, set
+\begin{equation}\label{eq:hk}
+ h_k(u;t)=\sum_{l:(k,l)\in\Omega}
+ a_{kl}e(lu_1+klu_2+t\omega_{kl}),\qquad
+ h_\theta=\sum_{k\in\mathcal K_\theta}h_k.
+\end{equation}
+Define the quadratic polynomials
+\begin{align}
+ \mathsf D_\tau(u;t)&=\sum_{k\in\mathcal K_\tau}|h_k(u;t)|^2,
+       \label{eq:torusD}\\
+ \mathsf C_\tau(u;t)&=\sum_{\theta\subset\tau}|h_\theta(u;t)|^2
+                         -\mathsf D_\tau(u;t) \notag\\
+ &=\sum_{\theta\subset\tau}
+   \sum_{\substack{k,k'\in\mathcal K_\theta\\k\ne k'}}
+                h_k(u;t)\overline{h_{k'}(u;t)}.\label{eq:torusC}
+\end{align}
+Both are real, but only $\mathsf D_\tau$ is necessarily nonnegative.
+
+\begin{theorem}[Algebraic pair energies]\label{thm:algebraic}
+Uniformly in $t\in\R$, in the real array $\omega$, and in $|a_{kl}|\le1$,
+\begin{align}
+ \sum_\tau\int_{\T^2}|\mathsf D_\tau(u;t)|^2\,du
+   &\lesssim KVL^2+KL^3,\label{eq:torusDenergy}\\
+ \sum_\tau\int_{\T^2}|\mathsf C_\tau(u;t)|^2\,du
+   &\ll_{C,\eps}P^\eps K(W^2L^2+VWL).
+       \label{eq:torusCenergy}
+\end{align}
+The same bounds hold after integration against any probability measure in $t$.
+They hold for arbitrary subsets $\Omega$ of the original grid.
+Moreover,
+\begin{equation}\label{eq:torusmass}
+ \sum_\tau\int_{\T^2}\mathsf D_\tau\,du
+ =\sum_\theta\int_{\T^2}|h_\theta|^2\,du
+ =\sum_{(k,l)\in\Omega}|a_{kl}|^2\lesssim P.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $\mathsf D_\tau$, use the relation of pairs with identical $k$.
+The projected differences are $(a,ka)$, where $a=l-l'$.
+Two such differences with $k\ne k'$ can agree only when $a=0$ on both rays.
+Across the coarse sets there are $O(KV)$ ordered choices of these rays,
+with $O(L^2)$ choices of their radial diagonal pairs.
+For identical rays, the remaining equation among four $l$'s has $O(L^3)$ solutions.
+There are $O(K)$ rays. The weighted projection principle gives
+\eqref{eq:torusDenergy}.
+
+For $\mathsf C_\tau$, each ordered pair uses distinct rays in one fine set.
+In \eqref{eq:projectionprinciple}, reverse the labels of the second pair.
+The equality of projected differences is then precisely
+\eqref{eq:integer1}--\eqref{eq:integer2}.
+The two internal widths are $O(W)$ and the total diameter is $O(V)$.
+Apply \cref{lem:paired}.
+Its count already allows $k_4$ to range over the entire grid.
+A fixed tuple lies in at most one coarse set of the disjoint partition, so summing in
+$\tau$ does not introduce a factor $K/V$.
+This proves \eqref{eq:torusCenergy}.
+
+The map $(k,l)\mapsto(l,kl)$ is injective because $l>0$.
+Ordinary orthogonality on $\T^2$ therefore gives \eqref{eq:torusmass}.
+All assertions are pointwise in $t$; integration against a probability measure preserves
+them. Every sum in this proof is finite.
+\end{proof}
+
+The radial term can be seen exactly. For the full grid, unit coefficients, and
+$\omega_{kl}=l\sqrt{k}$, let $m_\tau=\#\mathcal K_\tau$ and
+$n=\#(\Z\cap[L,2L))$. Then for every $t$,
+\begin{equation}\label{eq:exactradial}
+ \sum_\tau\int_{\T^2}\mathsf D_\tau^2\,du
+ =n^2\sum_\tau m_\tau(m_\tau-1)
+   +\frac{2n^3+n}{3}\sum_\tau m_\tau.
+\end{equation}
+Indeed, different rays contribute only their radial diagonals, while on one ray the
+additive energy of an interval of $n$ consecutive integers is $(2n^3+n)/3$.
+The square-root phase cancels in both cases.
+This displays the $KL^3$ obstruction as a contribution of specific pairs, not a
+multiplicative penalty on the entire energy.
+
+\begin{remark}[Exact energy and finite resolution]\label{rem:resolution}
+The distinction between exact and finite-window energy cannot be omitted.
+For example, take $X=\{(1,t_j^2,t_j):1\le j\le n\}$ with distinct $t_j$ in an arbitrarily
+short interval near zero. The sum and sum of squares determine an unordered pair,
+so $E(X)=2n^2-n$.
+On any fixed bounded physical box, however, these frequencies can be chosen so close
+that the exponential sum has modulus at least $n/2$ everywhere, and its normalized
+fourth moment is at least $n^4/16$.
+Thus an exact surface-energy theorem alone gives no uniform estimate at a prescribed
+physical resolution. In \cref{thm:algebraic}, the integer projection and the complete
+$\T^2$ average provide the required finite-window bridge.
+\end{remark}
+
+\section{Transport to local averages}\label{sec:transfer}\label{sec:local}
+The algebraic theorem will now be used with
+\begin{equation}\label{eq:widthchoice}
+ W\asymp\sqrt{K/L},\qquad V\asymp sK.
+\end{equation}
+Only the construction of the averaging regions and the passage to large values depend on
+cone analysis. The fourth moments do not.
+
+\subsection{The localized function and whole-ray caps}
+Use the normalized frequencies \eqref{eq:cone} and put
+\begin{equation}\label{eq:localized}
+ F_0(z)=\sum_{k,l}a_{kl}e(\xi_{kl}\cdot z),\qquad
+ f(z)=\chi(z/P)F_0(z),
+\end{equation}
+where $\chi$ is a fixed Schwartz function, nonvanishing on the normalized averaging box,
+with Fourier support in a sufficiently small fixed ball.
+The elementary normalization and whole-ray construction in
+\cref{app:localization} give
+\begin{equation}\label{eq:normlocalization}
+ \|F_a\|_{L^q_\#}^q\le Cc_\chi^{-q}P^{-3}\int_{\R^3}|f(z)|^q\,dz,
+ \qquad 0<c_\chi\le1,
+\end{equation}
+and divide $f$ into two classes. In either class the exact canonical projections are
+\begin{equation}\label{eq:canonicalprojection}
+ f_\theta=\sum_{k\in\mathcal K_\theta}f_k,
+ \qquad f_k(z)=\chi(z/P)\sum_l a_{kl}e(\xi_{kl}\cdot z).
+\end{equation}
+Each whole ray belongs to one class and one fine cap, and
+\begin{equation}\label{eq:canonicalwidth}
+ \diam\mathcal K_\theta\lesssim\sqrt{K/L}.
+\end{equation}
+Coarse caps are unions of fine caps and have $k$-diameter $O(sK)$.
+We work with one nonzero class; an identically zero class contributes nothing.
+Their final recombination costs at most $2^{q-1}$.
+
+At scale $P^{-1/2}\lesssim s\le1$, the envelopes of a coarse cap have dimensions
+comparable to
+\begin{equation}\label{eq:envelopesize}
+ Ps^2\times Ps\times P.
+\end{equation}
+Use the actual nonnegative weights $W_U$ of~\cite{GM}, transported by the fixed
+linear map to our coordinates. Their mass and overlap satisfy
+\begin{equation}\label{eq:overlap}
+ \int W_U=c_0|U|,\qquad \sum_{U\parallel U_\tau}W_U\le C_{\mathrm{ov}}.
+\end{equation}
+The definitions and uniform estimates, including the countable tilings, are supplied in
+\cref{app:localization}.
+
+\subsection{The elementary localization bridge}
+For any coarse cap define
+\begin{equation}\label{eq:dctau}
+ d_\tau=\sum_{k\in\mathcal K_\tau}|f_k|^2,\qquad
+ c_\tau=\sum_{\theta\subset\tau}|f_\theta|^2-d_\tau.
+\end{equation}
+In the coordinates
+\[
+ u=(z_1/L,z_3/P),\qquad t=z_2/(L\sqrt K),
+\]
+these are exactly $|\chi(z/P)|^2\mathsf D_\tau(u;t)$ and
+$|\chi(z/P)|^2\mathsf C_\tau(u;t)$ from Section~\ref{sec:algebra}.
+
+\begin{lemma}[Periodization transfer]\label{lem:periodization}
+Let $J\ge0$ be measurable and periodic with periods $L$ in $z_1$ and $P$ in $z_3$.
+Suppose
+\[
+ \frac1{LP}\int_0^L\int_0^P J(z_1,z_2,z_3)\,dz_3\,dz_1\le A
+ \quad\hbox{for every }z_2\in\R.
+\]
+For a fixed Schwartz function $\chi$ and $m\in\{2,4\}$,
+\begin{equation}\label{eq:periodizationtransfer}
+ P^{-3}\int_{\R^3}|\chi(z/P)|^mJ(z)\,dz\le C_{\chi,m}A.
+\end{equation}
+No Fourier-support hypothesis on $\chi$ is required for this statement.
+\end{lemma}
+\begin{proof}
+Schwartz decay and summation on the lattice of periods give, for
+$0\le z_1<L$, $0\le z_3<P$,
+\begin{equation}\label{eq:periodizedweight}
+ \sum_{r,n\in\Z}
+ \left|\chi\left(\frac{z_1+rL}{P},\frac{z_2}{P},
+                         \frac{z_3+nP}{P}\right)\right|^m
+ \le C_{\chi,m}K(1+|z_2|/P)^{-2}.
+\end{equation}
+For completeness, bound the summand by a product of three factors
+$(1+|\cdot|)^{-4}$. The first lattice has spacing $L/P=1/K$ and sum $O(K)$;
+the third has spacing one and bounded sum. The remaining factor is integrable in $z_2/P$.
+Tonelli and periodicity reduce the integral to one cell in $(z_1,z_3)$.
+Its bound is $C K(LP)A\cdot P$, which equals $C P^3 A$.
+\end{proof}
+
+Define the local averages and their energies by
+\begin{align}
+ D_U&=|U|^{-1}\int d_\tau W_U,\qquad
+ C_U=|U|^{-1}\int c_\tau W_U,\qquad M_U=D_U+C_U,
+       \label{eq:DC}\\
+ \ED(s)&=P^{-3}\sum_{\tau,U}|U|D_U^2,\qquad
+ \EC(s)=P^{-3}\sum_{\tau,U}|U||C_U|^2.
+       \label{eq:energies}
+\end{align}
+The countable averaging inequality proved in \cref{lem:countable} is
+\begin{equation}\label{eq:countablemain}
+ \sum_{U\parallel U_\tau}|U|
+       \left|\frac1{|U|}\int gW_U\right|^2
+ \le c_0C_{\mathrm{ov}}\|g\|_2^2.
+\end{equation}
+It holds for complex $g$ and is first proved on finite sets of envelopes.
+
+\begin{lemma}[Pair energies in the actual envelopes]\label{lem:energy}
+At each admissible scale,
+\begin{align}
+ \ED(s)&\lesssim sP^2+KL^3,\label{eq:EDarithmetic}\\
+ \EC(s)&\ll_\eps P^\eps(K^2L+sK^{5/2}L^{1/2}).\label{eq:ECarithmetic}
+\end{align}
+Also $P^{-3}\sum_{\tau,U}|U|D_U\lesssim P$ and
+$P^{-3}\sum_{\tau,U}|U|M_U\lesssim P$.
+\end{lemma}
+\begin{proof}
+Both $d_\tau$ and $c_\tau$ lie in $L^2$, being finite sums with the common
+factor $|\chi(z/P)|^2$. Apply \eqref{eq:countablemain} and sum over the finitely many coarse
+caps at this scale. Use \cref{lem:periodization} with $m=4$ and
+$J=\sum_\tau|\mathsf D_\tau|^2$ or $\sum_\tau|\mathsf C_\tau|^2$, in the displayed
+physical coordinates. The uniform bounds are precisely \cref{thm:algebraic}.
+Substitute \eqref{eq:widthchoice} to obtain
+$KVL^2=sP^2$ and
+$K(W^2L^2+VWL)\asymp K^2L+sK^{5/2}L^{1/2}$.
+Endpoint constants are absorbed by fixed enlargements ensuring $1\le W\le V$.
+For the first-mass assertions use nonnegativity, \eqref{eq:overlap},
+\cref{lem:periodization} with $m=2$, and \eqref{eq:torusmass}.
+\end{proof}
+The order is torus orthogonality, periodization, and then local averaging.
+Canonical pair restrictions are preserved throughout; no orthogonality is asserted for
+an individual weighted envelope.
+
+\subsection{Local density and the two energy bounds}
+\begin{lemma}[Density at scale $s$]\label{lem:density}
+The averages satisfy
+\begin{equation}\label{eq:densitybounds}
+ D_U\lesssim D(s),\qquad M_U,\ |C_U|\lesssim M(s),
+\end{equation}
+with $D(s),M(s)$ from \eqref{eq:introD}--\eqref{eq:introM}.
+Consequently,
+\begin{align}
+ \ED(s)&\ll_\eps P^\eps\min\{PD(s),sP^2+KL^3\},\label{eq:EDfinal}\\
+ \EC(s)&\ll_\eps P^\eps\min\{PM(s),K^2L+sK^{5/2}L^{1/2}\}.
+       \label{eq:ECfinal}
+\end{align}
+\end{lemma}
+\begin{proof}
+The actual-weight Fourier kernel in \cref{lem:kernel} and its anisotropic metric imply
+that, for a fixed frequency, the number of possible neighbors in a $2^j$-dilate of the
+dual envelope is at most
+\[
+ C\left(1+\frac{2^j}{Ks^2}\right)
+  \left(1+\frac{2^j}{Ls}\right).
+\]
+There are $O(sP)$ frequencies in the coarse sector. Summing against $2^{-8j}$ proves
+the bound for $M_U$. For $D_U$, $k=k'$ and the second factor is absent.
+Finally $|C_U|\le M_U+D_U$. The complete coordinate and kernel verification is in
+\cref{app:localdensity}.
+Use the first-mass bounds in \cref{lem:energy} to get
+\begin{equation}\label{eq:densityenergies}
+ \ED(s)\lesssim PD(s),\qquad \EC(s)\lesssim PM(s);
+\end{equation}
+for the latter, $|C_U|^2\le2M_U^2+2D_U^2$ suffices.
+Combine these with \eqref{eq:EDarithmetic}--\eqref{eq:ECarithmetic}.
+\end{proof}
+
+\begin{remark}[The role of the two widths]\label{rem:coarse}
+Replacing $W$ by $V$ in \cref{lem:paired} gives only
+$\EC(s)\ll_\eps P^\eps KV^2L^2\asymp P^\eps Ps^2K^2L$.
+It forgets that each of the two pairs was formed inside one fine cap.
+The coarse sector is a grouping device, not the scale of either pair.
+\end{remark}
+
+\subsection{The remaining analytic input}
+We use \cite[Theorem~2]{GM} only through the following level-set statement for the actual
+localized function and its canonical projections:
+\begin{equation}\label{eq:GM}
+ \alpha^4|\{z:|f(z)|>\alpha\}|
+ \le C_\delta P^\delta\sum_s\sum_\tau
+       \sum_{U\in\mathcal U_\tau(\alpha)}|U|M_U^2,
+\end{equation}
+where contributing envelopes satisfy
+\begin{equation}\label{eq:activecondition}
+ C_\delta P^\delta M_U\ge\frac{\alpha^2}{n_s^2},
+ \qquad n_s=\#\{\tau:f_\tau\not\equiv0\}\lesssim s^{-1}.
+\end{equation}
+The number $n_s$ counts all active coarse caps at that scale.
+Thus \eqref{eq:activecondition} implies the threshold
+$M_U\ge c_\delta P^{-\delta}\alpha^2s^2$.
+All constants in this input are independent of the later moment parameter $q$.
+The exact cone, sharp projections, radial truncation, weights, and physical transpose
+convention are matched in \cref{app:localization}.
+
+This is the only deep analytic step left in the argument. The algebraic energy theorem
+controls the size of the right-hand energies, but does not by itself determine which
+local averages can contribute to a prescribed amplitude. That is the additional
+information in \eqref{eq:activecondition}.
+
+\section{Amplitude splitting and the first-spacing bound}\label{sec:amplitude}
+\subsection{A restricted splitting inequality}
+\begin{lemma}\label{lem:split}
+If $M\ge0$, $D\ge0$, $C\in\R$, and $M=D+C$, then, for every $u>0$,
+\begin{equation}\label{eq:split}
+ M^2\one_{\{M\ge u\}}
+ \le4D^2\one_{\{D\ge u/2\}}+4|C|^2\one_{\{|C|\ge u/2\}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+There is nothing to prove if $M<u$.
+Otherwise $\max(D,|C|)\ge M/2\ge u/2$, because $M\le D+|C|$.
+The corresponding summand on the right is at least $M^2$.
+\end{proof}
+
+\begin{proposition}\label{prop:amplitude}
+Let $4<q\le9/2$ and $\rho=(q-4)/2$. Then
+\begin{equation}\label{eq:amplitude}
+\begin{split}
+ \Gq(K,L)^q\ll_{q,\eps}P^\eps\sum_s\Bigg[
+ &\min\{PD(s),sP^2+KL^3\}
+       \left(\frac{D(s)}{s^2}\right)^\rho\\
+ {}+{}&\min\{PM(s),K^2L+sK^{5/2}L^{1/2}\}
+       \left(\frac{M(s)}{s^2}\right)^\rho
+ \Bigg].
+\end{split}
+\end{equation}
+\end{proposition}
+\begin{proof}
+By \eqref{eq:activecondition}, a contributing envelope satisfies
+$M_U\ge c_\delta P^{-\delta}\alpha^2s^2$.
+Apply \cref{lem:split} to $M_U=D_U+C_U$ at this threshold.
+For the same-ray branch to contribute, it is necessary that
+\[
+ D_U\ge\tfrac12c_\delta P^{-\delta}\alpha^2s^2,
+ \qquad\hbox{hence}\qquad
+ \alpha\lesssim_\delta P^{\delta/2}\frac{D(s)^{1/2}}s.
+\]
+The cross-ray branch can contribute only when
+\[
+ \alpha\lesssim_\delta P^{\delta/2}\frac{M(s)^{1/2}}s.
+\]
+Use the layer-cake identity
+\[
+ \int|f|^q=q\int_0^\infty\alpha^{q-1}|\{|f|>\alpha\}|\,d\alpha
+\]
+and insert \eqref{eq:GM} with the split right-hand side.
+The tilings are countable and the scale and sector sets are finite. Tonelli's theorem therefore applies to the product of amplitude measure and counting measure for the two nonnegative majorants. Their energy sums are finite by \cref{lem:countable,lem:energy}.
+The remaining amplitude integral on each branch is
+$\int_0^{A_s}\alpha^{q-5}\,d\alpha=A_s^{q-4}/(q-4)$, with the corresponding value of $A_s$.
+Divide by $P^3$, use \eqref{eq:EDfinal}--\eqref{eq:ECfinal} and \eqref{eq:normlocalization}, and choose $\delta$ small enough to absorb $P^{\delta+\delta(q-4)/2}$ into $P^\eps$.
+Finally sum the two angular classes from \cref{lem:grids}.
+\end{proof}
+
+\subsection{The same-ray contribution}
+If $s\ge K^{-1/2}$, then $D(s)\lesssim sP$.
+The density bound in \eqref{eq:amplitude} gives
+\begin{equation}\label{eq:largeD}
+ PD(s)\left(\frac{D(s)}{s^2}\right)^\rho
+ \lesssim P^{2+\rho}s^{1-\rho}\le P^{q/2}.
+\end{equation}
+If $P^{-1/2}\lesssim s\le K^{-1/2}$, then $D(s)\lesssim L/s$.
+Use the arithmetic energy.
+Its $sP^2$ part contributes $P^2L^\rho s^{1-3\rho}$, maximized at $s=K^{-1/2}$ because $0<\rho\le1/4$.
+Dividing that endpoint value by $P^{2+\rho}$ gives $K^{(\rho-1)/2}\le1$.
+The radial part contributes
+\begin{equation}\label{eq:radialterm}
+ KL^3L^\rho s^{-3\rho}
+ \lesssim KL^{3+\rho}P^{3\rho/2}
+ =K^{3q/4-2}L^{5q/4-2}.
+\end{equation}
+Thus only the first and fourth monomials in \eqref{eq:fourterm} are needed for the same-ray branch.
+
+\subsection{The cross-ray contribution at large and intermediate scales}
+If $s\ge\max(L^{-1},K^{-1/2})$, then $M(s)\lesssim sP$ and
+\begin{equation}\label{eq:largeC}
+ PM(s)\left(\frac{M(s)}{s^2}\right)^\rho
+ \lesssim P^{q/2}s^{3-q/2}\le P^{q/2}.
+\end{equation}
+When $K\le L^2$, the intermediate range is $L^{-1}\le s\le K^{-1/2}$.
+There $M(s)\lesssim L/s$, and the same density bound gives
+\begin{equation}\label{eq:middleC1}
+ PL^{(q-2)/2}s^{5-3q/2}\le PL^{2q-6}=KL^{2q-5}.
+\end{equation}
+The exponent of $s$ is negative, so the maximum is at $s=L^{-1}$.
+
+When $K\ge L^2$, the intermediate range is $K^{-1/2}\le s\le L^{-1}$.
+There $M(s)\lesssim K$, so the contribution is at most
+\begin{equation}\label{eq:middleC2}
+ PK^{(q-2)/2}s^{-(q-4)}
+ \le PK^{q-3}=K^{q-2}L\le K^{q-2}L^{q-3}.
+\end{equation}
+The last inequality uses $q>4$ and $L\ge1$.
+
+\subsection{The cross-ray contribution at the smallest scales}
+It remains to treat
+\begin{equation}\label{eq:smallscales}
+ P^{-1/2}\lesssim s\le\min(L^{-1},K^{-1/2}).
+\end{equation}
+Here $M(s)\lesssim s^{-2}$.
+Using the paired arithmetic energy in \eqref{eq:amplitude}, the contribution is at most
+\begin{equation}\label{eq:smallC}
+ K^2L\,s^{8-2q}+K^{5/2}L^{1/2}s^{9-2q}.
+\end{equation}
+This is where the additional fine-cap restriction changes the estimate.
+
+The exponent $8-2q$ is negative, so the first term is largest at the smallest scale:
+\begin{equation}\label{eq:newthird}
+ K^2L\,s^{8-2q}\lesssim K^2L P^{q-4}
+ =K^{q-2}L^{q-3}.
+\end{equation}
+For the second term, $9-2q\ge0$ throughout our range, including $q=9/2$.
+If $K\ge L^2$, use $s\le K^{-1/2}$ to obtain
+\begin{equation}\label{eq:smallC2a}
+ K^{5/2}L^{1/2}s^{9-2q}
+ \le K^{q-2}L^{1/2}\le K^{q-2}L^{q-3}.
+\end{equation}
+If $K\le L^2$, use $s\le L^{-1}$ instead. The result is
+$K^{5/2}L^{2q-17/2}$.
+Its ratio to $P^{q/2}$ is
+\begin{equation}\label{eq:smallC2b}
+ K^{(5-q)/2}L^{(3q-17)/2}
+ \le L^{(q-7)/2}\le1,
+\end{equation}
+where the first inequality uses $5-q>0$ and $K\le L^2$.
+Thus the second term of \eqref{eq:smallC} introduces no additional monomial.
+
+\begin{proof}[Proof of \cref{thm:first}]
+Insert \eqref{eq:largeD}--\eqref{eq:smallC2b} into \cref{prop:amplitude}.
+Every scale is bounded by the sum of the four monomials in \eqref{eq:fourterm}.
+There are $O(\log(2P))$ scales, absorbed into $P^\eps$ after choosing smaller auxiliary exponents.
+All estimates are uniform in $|a_{kl}|\le1$; taking the supremum in \eqref{eq:Gq} is therefore legitimate.
+The quantitative factor $q/(q-4)$, and a constant independent of $q$, are obtained by the bookkeeping in Section~\ref{sec:quniform} below.
+\end{proof}
+
+\begin{remark}\label{rem:newversusold}
+With only the coarse-sector energy from \cref{rem:coarse}, the smallest-scale contribution would be bounded by
+\[
+ P\min\{s^{6-2q},K^2L s^{10-2q}\}.
+\]
+Its crossing scale $s=K^{-1/2}L^{-1/4}$ produces
+$K^{q-2}L^{(q-1)/2}$.
+The paired count replaces this crossing argument by \eqref{eq:smallC}--\eqref{eq:newthird}, improving that monomial by the factor
+$L^{(q-5)/2}$.
+This factor compares those two monomials; it does not assert that the entire first-spacing norm improves by the same factor in every parameter range.
+\end{remark}
+
+
+\subsection{Quantitative dependence on the moment exponent}\label{sec:quniform}
+We now verify the constant assertion in \cref{thm:first}. Pointwise finiteness of a constant for every $q$ would not, by itself, imply uniformity on a compact $q$-interval.
+The proof here instead provides an explicit bound.
+Let $\mathcal M_q(K,L)$ denote the sum of the four monomials in \eqref{eq:fourterm}, and let $\mathcal B_q(s)$ denote the expression in square brackets in \eqref{eq:amplitude}.
+
+It suffices to take $0<\eps\le1$; a smaller exponent gives the assertion for larger $\eps$.
+Choose the wave-envelope loss and the arithmetic-count loss to be
+\begin{equation}\label{eq:uniformlosschoices}
+ \delta=\gamma=\frac{\eps}{8},
+ \qquad \rho=\frac{q-4}{2}\in(0,1/4].
+\end{equation}
+These choices do not depend on $q$.
+Theorem~2 of \cite{GM}, in the form \eqref{eq:GM}--\eqref{eq:activecondition}, has no moment parameter $q$.
+For this fixed $\delta$, let $A_\delta\ge1$ bound its constants, and choose $B_\delta\ge1$, independently of $q$, so that the two amplitude cutoffs in the proof of \cref{prop:amplitude} are bounded by
+\[
+ B_\delta P^{\delta/2}\frac{D(s)^{1/2}}s,
+ \qquad
+ B_\delta P^{\delta/2}\frac{M(s)^{1/2}}s.
+\]
+Let $C_\gamma$ bound the constants in \eqref{eq:EDfinal}--\eqref{eq:ECfinal} with loss $P^\gamma$.
+The algebraic pair-energy theorem, periodization, the common cutoff, the angular grids, and the weight and density estimates contain no $q$-dependent choices.
+The factors from localization and the two-grid inequality are uniformly bounded because $4<q\le9/2$.
+
+The layer-cake integral is exactly
+\[
+ q\int_0^{A_s}\alpha^{q-5}\,d\alpha
+ =\frac{q}{q-4}A_s^{q-4}.
+\]
+Consequently the proof of \cref{prop:amplitude}, before absorbing losses, gives
+\begin{equation}\label{eq:uniformraw}
+ \Gq(K,L)^q\le
+ C\frac{q}{q-4}A_\delta B_\delta^{q-4}C_\gamma
+ P^{\delta(1+\rho)+\gamma}\sum_s\mathcal B_q(s),
+\end{equation}
+with an absolute $C$ independent of $q,K,L$.
+Since $0<q-4\le1/2$, we have $B_\delta^{q-4}\le B_\delta^{1/2}$.
+Every fixed comparison constant raised to $q$, $q-4$, or $\rho$ is likewise bounded independently of $q$.
+
+The estimates in Sections~4.2--4.4 give
+\[
+ \mathcal B_q(s)\le C\mathcal M_q(K,L)
+ \qquad(4<q\le9/2)
+\]
+with an absolute constant. They only compare powers at endpoints of a scale interval; they do not divide by any of the expressions $q-4$ or $9-2q$.
+In particular, when $q=9/2$, the second term in \eqref{eq:smallC} is constant in $s$, which costs only the number of scales.
+There are $O(\log(2P))$ scales, and
+\[
+ \log(2P)\le C_\eps P^{\eps/4},
+ \qquad
+ \delta(1+\rho)+\gamma+\frac{\eps}{4}
+ \le\frac{17\eps}{32}<\eps.
+\]
+Inserting these bounds into \eqref{eq:uniformraw} proves
+\begin{equation}\label{eq:explicitquniform}
+ \Gq(K,L)^q\le C_\eps\frac{q}{q-4}P^\eps\mathcal M_q(K,L)
+ \qquad(4<q\le9/2).
+\end{equation}
+The bounded values of $P$ follow directly from the finite sum defining $F_a$, with a constant independent of $q$ in this interval.
+Thus, for any $q_*>4$, a common constant for $q\in[q_*,9/2]$ is at most $C_\eps q_* /(q_*-4)$.
+This establishes uniformity from the proof, rather than from compactness alone.
+
+\section{Reciprocal sums and admissible block construction}\label{sec:admissibility}
+\subsection{The double sums and reciprocal phase class}
+For $T\ge2$, $H,M\ge1$, and a real phase $F$ on $[1,2]$, write
+\begin{equation}\label{eq:S}
+ S(H,M,T;F)=\sum_{h\sim H}g(h/H)\sum_{m\sim M}G(m/M)
+ e\left(\frac{hT}{M}F(m/M)\right).
+\end{equation}
+The bounded-variation norm is $\|w\|_\BV=\|w\|_\infty+\Var(w)$.
+Constants may depend on the variation norms of $g,G$ and on fixed derivative bounds for $F$.
+Indicator weights give uniform estimates for both upper summation endpoints.
+
+
+The derivative hypotheses in the arithmetic construction are $F\in C^3([1,2])$ and
+\begin{equation}\label{eq:phaseconditions}
+ c\le|F^{(j)}(t)|\le C\quad(j=1,2,3),\qquad
+ |F'(t)F'''(t)-3F''(t)^2|\ge c.
+\end{equation}
+For the final reductions, it suffices to consider the uniformly regular class
+\begin{equation}\label{eq:reciprocal}
+ F(t)=\frac{c_0}{t+a_0}+b_0,\qquad 1\le t\le2,
+\end{equation}
+where $|c_0|$ and $|t+a_0|$ are bounded above and bounded away from zero, and $b_0\in\R$ is arbitrary.
+Constants may depend on the fixed bounds, but not on $b_0$.
+The class satisfies \eqref{eq:phaseconditions}; in particular,
+\[
+ F'F'''-3(F'')^2=-\frac{6c_0^2}{(t+a_0)^6}.
+\]
+It includes all shifted reciprocals needed in the circle reduction.
+
+
+\subsection{Elementary estimates and the difficult range}
+\begin{lemma}\label{lem:elementary}
+For \eqref{eq:reciprocal}, $M\le T^{1/2}$, and $H\ge1$, uniformly for subintervals and bounded-variation weights,
+\begin{align}
+ |S|/H&\ll(HT)^{2/7}+1,\label{eq:expair}\\
+ |S|/H&\ll(HT/M)^{1/2}+T^{1/4}.\label{eq:secondderivative}
+\end{align}
+\end{lemma}
+\begin{proof}
+The exponent pair $(2/7,4/7)$ applied to the inner reciprocal sum gives
+\[
+ \left|\sum_{m\in I}e\left(\frac{hT}{M}F(m/M)\right)\right|
+ \ll(hT/M^2)^{2/7}M^{4/7}+\frac{M^2}{hT}
+ \ll(hT)^{2/7}+1.
+\]
+The pair follows from $(0,1)$ by $B,A,A,B$; the derivative hypotheses and these operations are given in \cite[Chapters~2--3]{GK}.
+The estimates are uniform over the compact ranges for $a_0,c_0$.
+The constant $b_0$ contributes only a phase depending on $h$ and does not affect the one-dimensional bound.
+Summing over $h\sim H$ proves \eqref{eq:expair}.
+
+The second-derivative estimate \cite[Theorem~2.2]{GK}, with second derivative comparable to $hT/M^3$, gives
+\[
+ \left|\sum_{m\in I}e\left(\frac{hT}{M}F(m/M)\right)\right|
+ \ll(hT/M)^{1/2}+\frac{M^{3/2}}{(hT)^{1/2}}+1.
+\]
+The second term is at most $T^{1/4}$ when $M\le T^{1/2}$ and $h\ge1$.
+Summation in $h$ proves \eqref{eq:secondderivative}.
+Partial summation supplies the weights in both estimates.
+\end{proof}
+
+We seek $|S|/H\ll_\eps T^{\vth+\eps}$ for
+$1\le H\le MT^{-\vth}$ and $M\le T^{1/2}$.
+Since $\vth>1/4$, \cref{lem:elementary} leaves only
+\begin{equation}\label{eq:hard}
+ T^{(7\vth-2)/2}<H\le MT^{-\vth},\qquad
+ H>MT^{2\vth-1},\qquad M\le T^{1/2}.
+\end{equation}
+
+
+Every later invocation of the arithmetic interface is restricted to \eqref{eq:hard}. The Case A/B inequalities below select candidate block lengths within this range; they are not independent sufficient hypotheses for the interface.
+
+\subsection{Candidate block lengths and standing conditions}
+Put $\blocklog=969/14000$ and $B_*=M^{-9}T^4(\log T)^{171/140}$.
+For the actual construction, the lengths below are multiplied by the fixed small factors and rounded to integers as prescribed in \cite{LY}. Comparisons are understood up to those fixed factors.
+
+Case A uses the candidate
+\begin{equation}\label{eq:NA}
+ N_A=M^{41/25}H^{-16/25}T^{-49/100}(\log T)^{\blocklog}
+\end{equation}
+when
+\begin{equation}\label{eq:caseA}
+ H\ge B_*,\qquad H\le MT^{-49/164}.
+\end{equation}
+We impose this lower condition throughout $M\le T^{1/2}$, including where it is unnecessary in \cite{LY}.
+Case B uses
+\begin{equation}\label{eq:NB}
+ N_B=\min\left\{
+ M^{7/8}H^{-29/40}T^{-3/20}(\log T)^{969/5600},
+ M^2H^{-1/3}T^{-2/3}\right\}
+\end{equation}
+when
+\begin{equation}\label{eq:caseB}
+ H\le\min\{M^{35/69}T^{-2/23},B_0M^{3/2}T^{-1/2}\},
+ \qquad M\le T^{1/2},
+\end{equation}
+where $B_0>0$ is fixed by the phase bounds.
+
+For the selected actual length $N$, the standing scale conditions include
+\begin{gather}
+ 64C_2H\le N\le M/10,\qquad
+ R_0=\left\lceil\left(\frac{C_2M^3}{NT}\right)^{1/2}\right\rceil,
+ \label{eq:standingN}\\
+ 2C_2\sqrt H+1\le R_0\le H,\qquad HN^2\le MR_0^2.
+ \label{eq:standing}
+\end{gather}
+Here $C_2\ge1$ is a fixed regularity constant from the construction.
+These are the standing conditions in \cite[(5.2)--(5.5)]{BW17}; the construction in \cite[(4.12)--(4.13)]{LY} retains $R_0\le Q\le3H\le3N/(64C_2)$.
+The citation to the withdrawn precursor is used only to identify the construction hypotheses behind the arithmetic interface restated in \cite{LY}. Its first-spacing assertions and numerical conclusions are not used.
+
+\begin{remark}[The case conditions alone do not suffice]\label{rem:casecounterexample}
+Take $H=1$ and $M=T^{1/2}$. Both upper conditions in \eqref{eq:caseB} hold, but for sufficiently large $T$,
+\[
+ N_B\asymp T^{23/80}(\log T)^{969/5600},\qquad
+ R_0\asymp T^{17/160}(\log T)^{-969/11200}\longrightarrow\infty.
+\]
+The range $R_0\le Q\le3H$ is empty and $L_0=H/R_0$ tends to zero. This is why the restriction \eqref{eq:hard} and the scale checks below are necessary.
+At these parameters \eqref{eq:secondderivative} already gives $|S|/H\ll T^{1/4}$, so no arithmetic interface is needed.
+\end{remark}
+
+\begin{lemma}[Selecting the two cases]\label{lem:caseselection}
+On \eqref{eq:hard}, choose Case A when $H\ge B_*$ and Case B when $H<B_*$. For sufficiently large $T$, the corresponding case inequalities hold. In the selected Case B branch, $N_B\gtrsim N_A$.
+\end{lemma}
+\begin{proof}
+If $H\ge B_*$, use Case A.
+Its upper condition holds because $\vth>49/164$.
+If $H<B_*$, interpolate this inequality and $H\le MT^{-\vth}$ with weights $17/345$ and $328/345$ to obtain
+\begin{equation}\label{eq:caseBinterpolation}
+ H\le M^{35/69}T^{(68-328\vth)/345}(\log T)^{969/16100}.
+\end{equation}
+The exponent of $T$ is strictly less than $-2/23$ because $\vth>49/164$, so the logarithm is absorbed.
+Also, $M\ge HT^{\vth}$ and \eqref{eq:hard} give
+\begin{equation}\label{eq:B0margin}
+ \frac{M^{3/2}T^{-1/2}}H
+ \ge T^{(13\vth-4)/4}\longrightarrow\infty,
+\end{equation}
+since $\vth>4/13$.
+Thus the fixed constant $B_0$ in \eqref{eq:caseB} is permitted for sufficiently large $T$, and Case B applies.
+
+Write $N_{B,1},N_{B,2}$ for the alternatives in \eqref{eq:NB}.
+In Case B under consideration, $H<B_*$ and
+\begin{equation}\label{eq:NB1ratio}
+ \frac{N_{B,1}}{N_A}=\left(\frac{B_*}H\right)^{17/200}\ge1.
+\end{equation}
+Furthermore,
+\begin{equation}\label{eq:H23M27}
+ H^{23}M^{27}\ge H^{50}T^{27\vth}
+ >T^{202\vth-50}>T^{53/4}.
+\end{equation}
+The last step has a fixed positive power margin because $\vth>253/808$.
+Consequently,
+\begin{equation}\label{eq:NB2ratio}
+ \frac{N_{B,2}}{N_A}
+ =\left(\frac{H^{23}M^{27}}{T^{53/4}}\right)^{1/75}
+  (\log T)^{-969/14000}\ge1
+\end{equation}
+for sufficiently large $T$.
+Fixed admissibility constants affect these comparisons only by fixed factors.
+Thus $N_B\gtrsim N_A$. Applying the arithmetic interface still requires the standing conditions, which are checked next.
+
+
+\end{proof}
+
+\subsection{Scale admissibility on the difficult range}
+\begin{proposition}[Scale admissibility on the difficult range]\label{prop:admissibility}
+On \eqref{eq:hard}, select the actual Case A or Case B length as in \cref{lem:caseselection}, with the construction's fixed factors and roundings. For sufficiently large $T$, all inequalities in \eqref{eq:standingN}--\eqref{eq:standing} hold. Moreover, $H/R_0$, $N/H$, and $R_0$ grow by fixed positive powers of $T$, while $N/M\to0$. The denominator cutoff
+\begin{equation}\label{eq:Q2}
+ Q_2=R_0(H/R_0)^{39/119}\bigl(\log(2H/R_0)\bigr)^{-3/4}
+\end{equation}
+satisfies $Q_2/R_0\to\infty$ and $Q_2/H\to0$ uniformly on this range.
+\end{proposition}
+\begin{proof}
+Write $H=MT^x$. Then
+\begin{equation}\label{eq:xrange}
+ 2\vth-1<x\le-\vth,\qquad\text{that is}\qquad-\frac{341}{914}<x\le-\frac{573}{1828}.
+\end{equation}
+Suppressing fixed multiplicative constants, the reference length and its unrounded scale are
+\begin{align}
+ N_A&=M T^{-16x/25-49/100}(\log T)^{\blocklog},\\
+ \mathcal R_A&=(M^3/(N_AT))^{1/2}
+ =M T^{8x/25-51/200}(\log T)^{-\blocklog/2}.
+\end{align}
+For any selected length $N$, put $\mathcal R(N)=(M^3/(NT))^{1/2}$. The actual integer $R_0$ is comparable to $\mathcal R(N)$ once the latter has a positive-power lower bound. In the selected Case B branch write $\mathcal R_B=\mathcal R(N_B)$.
+
+For the reference length $N_A$, the following uniform margins follow from \eqref{eq:xrange} and
+$M\ge HT^{\vth}>T^{(9\vth-2)/2}$:
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}lc@{}}
+\toprule
+Quantity & Lower bound, up to fixed constants\\
+\midrule
+$H/\mathcal R_A$ & $T^{119/91400}(\log T)^{\blocklog/2}$\\
+$N_A/H$ & $T^{11/457}(\log T)^{\blocklog}$\\
+$M/N_A$ & $T^{11481/45700}(\log T)^{-\blocklog}$\\
+$\mathcal R_A$ & $T^{1653/45700}(\log T)^{-\blocklog/2}$\\
+$\mathcal R_A^2/H$ & $T^{49/3656}(\log T)^{-\blocklog}$\\
+$M\mathcal R_A^2/(HN_A^2)$ & $T^{5793/45700}(\log T)^{-3\blocklog}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example,
+\[
+ \frac{H}{\mathcal R_A}=T^{51/200+17x/25}(\log T)^{\blocklog/2},
+ \qquad \frac{\mathcal R_A^2}{H}
+ =M T^{-9x/25-51/100}(\log T)^{-\blocklog},
+\]
+and
+\[
+ \frac{HN_A^3T}{M^4}
+ =T^{-23x/25-47/100}(\log T)^{3\blocklog}.
+\]
+The last two rows are important: they verify the lower bound on $R_0/\sqrt H$ and the condition $HN^2\le MR_0^2$, not just $R_0\le H$.
+
+In the selected Case B branch, \cref{lem:caseselection} gives $N_B\gtrsim N_A$. Hence $N_B/H\to\infty$ and $H/\mathcal R_B\to\infty$.
+
+The inequality $N_B\ll N_{B,2}$ additionally gives
+\begin{align}
+ N_B/M&\ll T^{-1/6}H^{-1/3}\longrightarrow0,\\
+ \mathcal R_B^2&\gg MH^{1/3}T^{-1/3}
+ >T^{(17\vth-5)/3}=T^{601/5484},\\
+ \mathcal R_B^2/H&\gg MH^{-2/3}T^{-1/3}
+ >T^{(13\vth-4)/6}=T^{137/10968}.
+\end{align}
+Finally $HN_B^3T/M^4\ll M^2/T$. In the Case B branch actually chosen here,
+$H=MT^x<B_*$ implies
+\[
+ M^{10}<T^{4-x}(\log T)^{171/140}.
+\]
+Therefore
+\[
+ \frac{HN_B^3T}{M^4}
+ \ll T^{(-1-x)/5}(\log T)^{171/700}
+ \le T^{-2\vth/5}(\log T)^{171/700}\longrightarrow0.
+\]
+This proves the remaining inequality in \eqref{eq:standingN}--\eqref{eq:standing}, with a power margin even in Case B. The ceiling in $R_0$ and every fixed factor are absorbed by the displayed margins. Lastly, if $D=H/R_0\to\infty$ by a fixed power, then
+\[
+ Q_2/R_0=D^{39/119}(\log(2D))^{-3/4}\to\infty,
+ \quad Q_2/H=D^{-80/119}(\log(2D))^{-3/4}\to0.
+\]
+\end{proof}
+
+The strict margins absorb the ceilings, the construction's fixed multiplicative constants, and all fixed logarithmic powers. In particular, the denominator interval is eventually nonempty and remains below $3H$.
+The subsidiary comparisons involving $V_0,V_1,V_2$ are proved in \cref{app:construction}; no second-spacing theorem is being reproved by these scale calculations.
+
+\section{The arithmetic interface and exponent optimization}\label{sec:interface}\label{sec:optimization}
+\subsection{The fixed-moment arithmetic input}
+Assume the reciprocal class \eqref{eq:reciprocal}, the difficult range \eqref{eq:hard}, and the case selection of \cref{lem:caseselection}.
+By \cref{prop:admissibility} and \cref{app:construction}, the selected actual block length satisfies the construction hypotheses.
+For that length, set
+\begin{equation}\label{eq:arithmeticparameters}
+ R_0^2\asymp\frac{M^3}{NT},\qquad
+ K\asymp\frac{NQ}{R_0^2},\qquad
+ L\asymp\frac{HQ}{R_0^2},\qquad
+ \eta\asymp\frac{R_0^2}{NH}.
+\end{equation}
+The arithmetic $R_0$ is the integer scale in \eqref{eq:standingN}, not the cone-localization radius $R$ in \cref{app:localization}.
+Let
+\begin{equation}\label{eq:Geta}
+ \Gq(K,L,\eta)^q=
+ \sup_{|a_{kl}|\le1}\frac1{2A_\eta}
+ \int_{-A_\eta}^{A_\eta}\int_{[0,1]^2}|F_a(x)|^q\,dx_1\,dx_2\,dx_3,
+ \quad A_\eta=(\eta L\sqrt K)^{-1}.
+\end{equation}
+The arithmetic input restated in \cite[Lemma~4.4, equations~(4.8) and~(4.12)]{LY} is
+\begin{equation}\label{eq:interface}
+ |S|\ll_{q,\eps}T^\eps
+ \max_{R_0\le Q\lesssim Q_2}
+ \left(\frac{R_0}{Q}\right)^{3-6/q}
+ \frac{MR_0}{N}\left(\frac H{R_0}\right)^{22/(17q)}
+ \Gq(K,L,\eta),
+\end{equation}
+where $Q_2$ is defined in \eqref{eq:Q2}.
+The quoted input includes the standard treatment of the other denominator ranges and complementary terms; the bound for $S$ is not inferred from the displayed minor-arc range alone.
+It is used in its rectangle-uniform form, or with the bounded-variation weights in \eqref{eq:S}. This endpoint uniformity is needed for the Abel argument in Section~\ref{sec:reduction}.
+
+We use only fixed $q\in(4,9/2]$, allowing the implied constant and the sufficiently-large-$T$ threshold to depend on that value.
+No uniformity over a continuum of $q$ is assumed: \cref{prop:reciprocalsums} uses only the four values in \cref{lem:fourmoments}.
+The construction parameters satisfy $1\le L\le K\le\eta^{-1}\le KL$, up to its fixed endpoint conventions.
+Huxley's resonance-curve theory remains part of the external input.
+Condition~(4.6) of \cite{LY}, obtained there from~(4.15), is needed for that paper's particular first-spacing substitution, not for \eqref{eq:interface} before the substitution.
+Neither the first-spacing assertions nor the numerical conclusion of \cite{BW17} is used here.
+
+\subsection{Normalization and every denominator scale}
+The normalized average over $[-1,1]^2$ used in \cite{LY} equals the average over $[0,1]^2$ exactly, because $l$ and $kl$ are integers. Thus \eqref{eq:Geta} has the same periodic normalization as the cited first-spacing norm.
+Set
+\begin{equation}\label{eq:endpointparameters}
+ \nu=Q/R_0,\qquad K_0=N/R_0,\qquad L_0=H/R_0.
+\end{equation}
+Then $K\asymp\nu K_0$, $L\asymp\nu L_0$, and $\eta KL\asymp\nu^2$, so
+$A_\eta\asymp\sqrt K/\nu^2$.
+When $A_\eta\le\sqrt K$, positivity gives
+\[
+ \int_{-A_\eta}^{A_\eta}\int_{[0,1]^2}|F_a|^q
+ \le\int_{-\sqrt K}^{\sqrt K}\int_{[0,1]^2}|F_a|^q.
+\]
+Only after this comparison do we divide by the two interval lengths, obtaining
+\begin{equation}\label{eq:volumecomparison}
+ \Gq(K,L,\eta)^q\lesssim\nu^2\Gq(K,L)^q.
+\end{equation}
+If fixed comparison constants enlarge the shorter interval, cover it by a bounded number of translates. Translation by $t$ in $x_3$ replaces $a_{kl}$ by $a_{kl}e(tl\sqrt k)$ and is therefore allowed by the coefficient supremum.
+No monotonicity of normalized averages is asserted.
+
+Before making any monomial comparison, remove the auxiliary analytic losses uniformly. Indeed, $R_0\ge1$, $Q\le3H$, $N\le M$, and $H\le M\le\sqrt T$ imply
+\begin{equation}\label{eq:parameterloss}
+ K,L\ll T,\qquad P=KL\ll T^2.
+\end{equation}
+A factor $P^\delta$ can consequently be bounded by a fixed multiple of $T^{2\delta}$ before varying $Q$ or $N$. All auxiliary losses are chosen in terms of the final $\eps$ before the estimates are invoked.
+
+Insert \cref{thm:first} and \eqref{eq:volumecomparison} into \eqref{eq:interface}. After taking the $q$th power and retaining all four monomials, their total powers of $\nu$ are
+\begin{equation}\label{eq:Qpowers}
+ 8-2q,\qquad4-q,\qquad3-q,\qquad4-q.
+\end{equation}
+All are negative for $q>4$. Hence each term is bounded by its value at $Q\asymp R_0$.
+If the square-root conditions hold at $(K_0,L_0)$, the resulting expression is
+\begin{equation}\label{eq:Ssqrt}
+ |S|\ll_{q,\eps}T^\eps M\sqrt{H/N}
+       (H/R_0)^{22/(17q)}.
+\end{equation}
+No square-root condition has been imposed at larger $Q$: the full four-term bound is kept until \eqref{eq:Qpowers} has been checked.
+
+\subsection{Dependence on the block length}
+For fixed $H,M,T$, the endpoint parameters satisfy
+\[
+ R_0\asymp N^{-1/2},\qquad K_0\asymp N^{3/2},\qquad L_0\asymp N^{1/2},
+\]
+where these displays record only the dependence on $N$.
+The prefactor in \eqref{eq:interface} at $Q\asymp R_0$ has $N$-power $-3/2+11/(17q)$.
+Thus the four complete endpoint terms have $N$-powers
+\begin{equation}\label{eq:Npowers}
+ -\frac12+\frac{11}{17q},\qquad
+ -\frac12-\frac6{17q},\qquad
+ \frac12-\frac{131}{34q},\qquad
+ \frac14-\frac{57}{17q}.
+\end{equation}
+All are negative for $4<q\le9/2$.
+In particular, the replacement third monomial has the required sign for both comparisons: its denominator power is $3-q$, and its block-length power is $1/2-131/(34q)$.
+
+It follows that a complete estimate at an admissible $N_B\gtrsim N_A$ can be weakened to its value at $N_A$, term by term.
+This comparison does not assume that $N_A$ itself is the chosen admissible block length in Case B.
+Only after the comparison will we use the square-root conditions at the reference parameters associated with $N_A$.
+
+
+The major-arc term in the quoted construction is $MR_0\log H/\sqrt{HN}$. At a fixed $N$, its ratio to the square-root expression in \eqref{eq:Ssqrt} is
+$(R_0/H)(H/R_0)^{-22/(17q)}\log H$.
+Alternatively, this major-arc expression decreases as $N^{-1}$, so in Case B it can first be compared with its reference value at $N_A$. The power margins in \cref{prop:admissibility} absorb the logarithm. The other complementary terms belong to the stated external input.
+
+\subsection{The reference endpoint and logarithmic powers}
+At $N_A$, let $R_A$ denote the corresponding arithmetic scale and set $K_A=N_A/R_A$, $L_A=H/R_A$.
+The scale formulas proved in \cref{prop:admissibility} give
+\begin{gather}
+ \kappa(x)=-\frac{47}{200}-\frac{24x}{25},\qquad
+ \lambda(x)=\frac{51}{200}+\frac{17x}{25},
+ \label{eq:kappalambda}\\
+ K_A\asymp T^{\kappa(x)}(\log T)^{3\blocklog/2},\qquad
+ L_A\asymp T^{\lambda(x)}(\log T)^{\blocklog/2}.
+ \label{eq:referenceKL}
+\end{gather}
+In particular,
+\begin{equation}\label{eq:lambdamin}
+ \lambda(x)\ge\lambda(2\vth-1)=\frac{119}{91400}>0.
+\end{equation}
+The reference quantities satisfy $R_A\ll H\ll N_A\ll M$ and $1\ll L_A\le K_A$ with the margins in \cref{prop:admissibility}.
+In Case B they are used only to evaluate the algebraically compared bound, not as a second invocation of the arithmetic construction.
+
+\subsection{Choosing the moment exponent}
+At the level of powers of $T$, \eqref{eq:sqrtconditions} becomes
+\begin{equation}\label{eq:sqrtpowers}
+ (q-4)\kappa\le(6-q)\lambda,
+ \qquad (3q-8)\lambda\le(8-q)\kappa.
+\end{equation}
+The new switching point is determined by $\kappa=3\lambda$, namely $x=-1/3$.
+For the algebraic optimization, define
+\begin{equation}\label{eq:qchoice}
+ q(x)=
+ \begin{cases}
+ \displaystyle 4+\frac{2\lambda(x)}{\kappa(x)+\lambda(x)}
+       =\frac{59+24x}{2-28x},&x\le-1/3,\\[6pt]
+ \displaystyle\frac92,&x\ge-1/3.
+ \end{cases}
+\end{equation}
+
+\begin{lemma}\label{lem:qchoice}
+For $x$ in \eqref{eq:xrange}, the choice \eqref{eq:qchoice} satisfies \eqref{eq:sqrtpowers} and
+\begin{equation}\label{eq:qcompact}
+ 4+\frac{119}{5688}\le q(x)\le\frac92.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $r=\kappa/\lambda$. Both numerator and denominator are positive in our range.
+On the first interval, $r\ge3$ and $q=4+2/(r+1)$.
+The first condition in \eqref{eq:sqrtpowers} is an equality.
+After division by $\lambda$, the difference between the right and left sides of the second condition is
+\[
+ (8-q)r-(3q-8)=\frac{4r^2-2r-10}{r+1}>0\qquad(r\ge3).
+\]
+On the second interval $q=9/2$, and the two conditions reduce to $11/7\le r\le3$.
+The function $r(x)$ is decreasing, since
+\[
+ r'(x)=\frac{\kappa'\lambda-\kappa\lambda'}{\lambda^2}
+       =-\frac{17}{200\lambda^2}<0.
+\]
+At its right endpoint,
+\[
+ r(-\vth)=\frac{241}{153}>\frac{11}{7},
+\]
+which proves the conditions throughout this interval.
+Equivalently, its lower condition follows from $x\le-\vth<-89/284$.
+The first expression in \eqref{eq:qchoice} is increasing in $x$.
+At $x=2\vth-1$, it equals $22871/5688=4+119/5688$, and at $x=-1/3$ it equals $9/2$.
+This proves \eqref{eq:qcompact}.
+\end{proof}
+
+The function $q(x)$ is an algebraic comparison choice. The final arithmetic proof will use the finite-valued choice in \cref{lem:fourmoments} instead.
+
+The logarithms in \eqref{eq:referenceKL} do not require strict inequalities in \eqref{eq:sqrtpowers}.
+For the four ratios of the monomials in \eqref{eq:fourterm} to $(K_AL_A)^{q/2}$, the respective logarithmic powers are
+\begin{equation}\label{eq:logratios}
+ 0,\qquad-\blocklog,\qquad
+ \frac{\blocklog(2q-9)}2,\qquad
+ \frac{\blocklog(3q/2-8)}2.
+\end{equation}
+All are nonpositive for $4<q\le9/2$. When \eqref{eq:sqrtpowers} holds, each corresponding $T$-power is also nonpositive.
+Thus these ratios are bounded up to fixed comparison constants, even when the first square-root condition is an equality. The same calculation applies to the four fixed moments below. In Case B it is used only after the complete monomial comparison in Section~\ref{sec:interface}.
+
+\subsection{An exact rational bound for the full difficult interval}
+Divide \eqref{eq:Ssqrt}, evaluated at $N_A$, by $H$.
+The resulting exponent of $T$ is
+\begin{equation}\label{eq:E}
+ E(x,q)=\left(-\frac9{50}+\frac{22}{25q}\right)x
+       +\frac{49}{200}+\frac{33}{100q}.
+\end{equation}
+For the first branch of \eqref{eq:qchoice}, it is
+\begin{equation}\label{eq:Eleft}
+ E_{\mathrm{left}}(x)=
+ -\frac{5792x^2+2444x-3023}{200(24x+59)}.
+\end{equation}
+For the second branch it is
+\begin{equation}\label{eq:Eright}
+ E_{\mathrm{right}}(x)=\frac{28x+573}{1800}.
+\end{equation}
+
+\begin{lemma}\label{lem:exponent}
+Throughout \eqref{eq:xrange},
+\begin{equation}\label{eq:Ebound}
+ E(x,q(x))\le\vth.
+\end{equation}
+On the first branch, the stronger uniform bound $E_{\mathrm{left}}(x)<47/150<\vth$ holds.
+On the second branch equality is attained only at $x=-\vth$.
+\end{lemma}
+\begin{proof}
+A direct rational identity gives
+\begin{equation}\label{eq:rationalcertificate}
+ \frac{47}{150}-E_{\mathrm{left}}(x)
+ =\frac{17376x^2+11844x+2023}{600(24x+59)}.
+\end{equation}
+The denominator is positive on \eqref{eq:xrange}.
+The numerator is positive for all real $x$; for example,
+\begin{equation}\label{eq:positivesquare}
+ 17376x^2+11844x+2023
+ =17376\left(x+\frac{987}{2896}\right)^2+\frac{6797}{1448}.
+\end{equation}
+Thus the first bound follows, with the exact margin
+\begin{equation}\label{eq:47margin}
+ \vth-\frac{47}{150}=\frac{17}{137100}>0.
+\end{equation}
+The second expression \eqref{eq:Eright} is strictly increasing in $x$.
+Its endpoint value satisfies
+\[
+ E_{\mathrm{right}}(-\vth)=\frac{573-28\vth}{1800}=\vth
+\]
+precisely because $1828\vth=573$.
+This proves \eqref{eq:Ebound} without numerical optimization.
+\end{proof}
+
+\begin{figure}[tb]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ width=.91\textwidth,height=5.7cm,
+ xmin=-0.374,xmax=-0.311,ymin=.3122,ymax=.31362,
+ xlabel={Block-ratio exponent $x=\log_T(H/M)$},
+ ylabel={$E(x,q(x))$},
+ scaled y ticks=false,
+ yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=4},
+ xtick={-.37,-.36,-.35,-.34,-.333333333,-.32},
+ xticklabels={$-.37$,$-.36$,$-.35$,$-.34$,$-1/3$,$-.32$},
+ tick label style={font=\small},label style={font=\small},
+ legend style={at={(.5,-.25)},anchor=north,draw=none,font=\small},
+ legend cell align={left}]
+\addplot[thick,domain=-341/914:-1/3,samples=150]
+ {-(5792*x*x+2444*x-3023)/(200*(24*x+59))};
+\addlegendentry{$q=4+2\lambda/(\kappa+\lambda)$}
+\addplot[thick,dashed,domain=-1/3:-573/1828,samples=2]
+ {(28*x+573)/1800};
+\addlegendentry{$q=9/2$}
+\addplot[dotted,thick,domain=-.374:-.311,samples=2] {573/1828};
+\addlegendentry{$\vartheta=573/1828$}
+\addplot[only marks,mark=*,mark size=2pt] coordinates {(-0.313457330415755,0.313457330415755)};
+\end{axis}
+\end{tikzpicture}
+\caption{The exponent obtained from \eqref{eq:qchoice}. The first branch is strictly below $47/150$, while the increasing $q=9/2$ branch attains $573/1828$ at $x=-\vartheta$.
+The proof is the rational identity \eqref{eq:rationalcertificate}, not the plot.}
+\label{fig:exponent}
+\end{figure}
+
+
+\subsection{Four fixed moments suffice}\label{sec:fourmoments}
+The continuous choice \eqref{eq:qchoice} is not necessary for the final exponent.
+The following finite replacement removes any need to prove uniform dependence on $q$ in the external arithmetic interface.
+
+\begin{lemma}[A finite moment selection]\label{lem:fourmoments}
+Put
+\begin{gather}
+ a_0=2\vth-1=-\frac{341}{914},\quad
+ a_1=-\frac{101}{286},\quad a_2=-\frac{251}{736},\quad
+ a_3=-\frac13,\quad a_4=-\vth,\label{eq:fourbreaks}\\
+ (q_1,q_2,q_3,q_4)=
+ \left(\frac{201}{50},\frac{17}{4},\frac{22}{5},\frac92\right).
+ \label{eq:fourfixedqs}
+\end{gather}
+These breakpoints are strictly increasing. Define
+\begin{equation}\label{eq:qhat}
+ \widehat q(x)=q_j\quad\text{for }a_{j-1}<x\le a_j,
+ \qquad j=1,2,3,4.
+\end{equation}
+Throughout \eqref{eq:xrange}, the two inequalities \eqref{eq:sqrtpowers} hold with $q=\widehat q(x)$, and
+\begin{equation}\label{eq:fourmomentbound}
+ E(x,\widehat q(x))\le\vth.
+\end{equation}
+There is no additional power loss in this finite replacement.
+\end{lemma}
+\begin{proof}
+First note the exact identities
+\[
+ q(a_0)-q_1=\frac{131}{142200}>0,
+ \qquad q(a_1)=\frac{17}{4},\qquad q(a_2)=\frac{22}{5},
+ \qquad q(a_3)=\frac92.
+\]
+The first branch of $q(x)$ is increasing, and the second branch is constant.
+Hence $4<\widehat q(x)\le q(x)$ on every interval in \eqref{eq:qhat}.
+For fixed $x$, write the two inequalities in \eqref{eq:sqrtpowers} as
+\[
+ (q-4)\kappa-(6-q)\lambda\le0,
+ \qquad
+ (3q-8)\lambda-(8-q)\kappa\le0.
+\]
+Their left-hand sides have positive derivatives $\kappa+\lambda$ and $3\lambda+\kappa$ with respect to $q$.
+Therefore decreasing $q$ preserves both inequalities, and \cref{lem:qchoice} proves their validity for $\widehat q(x)$.
+
+For each fixed $q\in(4,9/2]$,
+\[
+ \frac{\partial E(x,q)}{\partial x}
+ =-\frac9{50}+\frac{22}{25q}
+ \ge\frac7{450}>0.
+\]
+Thus it suffices to evaluate $E(a_j,q_j)$ at the right endpoint of each interval.
+All comparisons are exact:
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$q_j$ & $a_j$ & $E(a_j,q_j)$ & $\vth-E(a_j,q_j)$\\
+\midrule
+$201/50$ & $-101/286$ & $72053/229944$ & $11257/105084408$\\
+$17/4$ & $-251/736$ & $341/1088$ & $19/497216$\\
+$22/5$ & $-1/3$ & $47/150$ & $17/137100$\\
+$9/2$ & $-573/1828$ & $573/1828$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All entries in the last column are nonnegative.
+This proves \eqref{eq:fourmomentbound}; equality occurs only at $x=-\vth$ on the last interval.
+\end{proof}
+
+The finite selection is independent of $T,H,M$ and of the final $\eps$.
+For each fixed auxiliary loss, apply the first-spacing estimate and the arithmetic interface separately at $q_1,q_2,q_3,q_4$.
+The maximum of these four implied constants and of the four large-parameter thresholds is finite and independent of $T,H,M$.
+This is a maximum over a fixed finite set, not an unproved supremum over a compact interval.
+The original continuous choice remains useful for displaying the optimized first-spacing range, but is not used to justify arithmetic constant uniformity.
+
+\subsection{The uniform rectangle estimate}
+\begin{proposition}\label{prop:reciprocalsums}
+For the reciprocal class \eqref{eq:reciprocal}, uniformly for
+$M\le T^{1/2}$ and $1\le H\le MT^{-\vth}$,
+\begin{equation}\label{eq:reciprocalbound}
+ |S(H,M,T;F)|\ll_\eps HT^{\vth+\eps}.
+\end{equation}
+The estimate is uniform over subintervals of both dyadic ranges and weights of bounded variation norm. In particular, for every integer interval $I\subset[M,2M)$ and $u_m=(T/M)F(m/M)$,
+\begin{equation}\label{eq:rectangle}
+ \sup_{H\le v\le2H}
+ \left|\sum_{H\le h<v}\sum_{m\in I}e(hu_m)\right|
+ \le C_\eps H T^{\vth+\eps}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The ranges outside \eqref{eq:hard} follow from \cref{lem:elementary}.
+On \eqref{eq:hard}, \cref{lem:caseselection,prop:admissibility} and \cref{app:construction} verify the hypotheses before \eqref{eq:interface} is invoked. Put $x=\log_T(H/M)$ and select $q=\widehat q(x)$ from \cref{lem:fourmoments}.
+For that fixed value, first remove all auxiliary $P$-losses by \eqref{eq:parameterloss}, then insert \cref{thm:first} into \eqref{eq:interface}, retain all monomials when using \eqref{eq:Qpowers}, and in Case B compare the endpoint terms using \eqref{eq:Npowers}, \eqref{eq:NB1ratio}, and \eqref{eq:NB2ratio}.
+All four selected moments belong to $(4,9/2]$, so every sign check in Section~\ref{sec:interface} still applies.
+At $N_A$, \cref{lem:fourmoments} supplies \eqref{eq:sqrtpowers}; the logarithmic comparison \eqref{eq:logratios} gives the square-root estimate with an arbitrarily small $T$-power loss.
+Equation~\eqref{eq:fourmomentbound} then bounds the main exponent by $\vth$, without an extra loss from the finite moment selection.
+
+Choose all auxiliary losses sufficiently small in terms of the prescribed $\eps$ before applying the estimates.
+Since there are only four moments, the maximum of their implied constants and large-$T$ thresholds is finite; this yields a constant depending on $\eps$ and the fixed phase and variation bounds, but not on $T,H,M$.
+The finitely bounded $T$-range below that threshold is covered by the trivial bound $|S|/H\ll M\le T^{1/2}$ after increasing the same constant.
+Fixed logarithmic losses and dyadic decompositions are absorbed into the remaining $T^\eps$ allowance.
+The subinterval and weight assertions follow from the corresponding fixed-$q$ uniformity of \eqref{eq:interface} and partial summation.
+Taking $G$ to be the indicator of $I/M$ and $g$ to be the indicator of $[1,v/H)$ gives \eqref{eq:rectangle}. These weights have variation norms bounded independently of their endpoints. Thus the initial partial sums required in the later Abel argument are covered, and no compact-interval uniformity of the external arithmetic constants is used.
+\end{proof}
+
+\section{From reciprocal sums to the discrepancies}\label{sec:reduction}
+\subsection{A finite Fourier approximation with controlled coefficients}
+\begin{lemma}[A discrete Abel bound]\label{lem:Abel}
+Let $A_h\in\mathbb C$ on an integer interval $J$, and assume every initial partial sum on $J$ has absolute value at most $B$. Then
+\[
+ \left|\sum_{h\in J}b_hA_h\right|
+ \le B\bigl(\sup_J|b_h|+\Var_J(b)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+Write $A_h=P_h-P_{h-1}$, where $P_h$ is the corresponding initial partial sum, and telescope. The endpoint term costs $B\sup|b_h|$ and the remaining differences cost $B\sum|b_{h+1}-b_h|$.
+\end{proof}
+
+
+Let $\psi(t)=t-\lfloor t\rfloor-1/2$, including the value $-1/2$ at integers.
+For an integer $Y\ge1$, Vaaler's finite approximation~\cite{Vaaler} is
+\begin{equation}\label{eq:Vaaler}
+ \psi_Y(t)=-\sum_{h=1}^Y\frac{\mathcal W(h/(Y+1))}{\pi h}\sin(2\pi ht),
+ \qquad
+ \mathcal W(u)=\pi u(1-u)\cot(\pi u)+u\quad(0<u<1),
+\end{equation}
+with the continuous endpoint values.
+It satisfies
+\begin{equation}\label{eq:Fejer}
+ |\psi(t)-\psi_Y(t)|\le\frac1{2(Y+1)}
+ \sum_{|h|\le Y}\left(1-\frac{|h|}{Y+1}\right)e(ht).
+\end{equation}
+The right side is a nonnegative Fej\'er kernel divided by $2(Y+1)$.
+At an integer it equals $1/2$, so the stated convention at discontinuities is included.
+The function $\mathcal W$ extends smoothly to $[0,1]$ and has bounded variation there, as is also seen by expanding the cotangent at its endpoints.
+
+\begin{lemma}\label{lem:sawtooth}
+Let $F$ belong to \eqref{eq:reciprocal} and $M\le T^{1/2}$.
+For every integer subinterval $I\subset[M,2M)$,
+\begin{equation}\label{eq:sawtoothbound}
+ \left|\sum_{m\in I}\psi\left(\frac TM F(m/M)\right)\right|
+ \ll_\eps T^{\vth+\eps}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $u_m=(T/M)F(m/M)$. For $M\le2T^\vth$, the trivial bound $|\psi|\le1/2$ suffices. Otherwise put
+\[
+ Y=\lfloor MT^{-\vth}\rfloor\asymp MT^{-\vth},\qquad
+ A_h=\sum_{m\in I}e(hu_m).
+\]
+Partition $1\le h\le Y$ into dyadic integer intervals, with the last one truncated. Each starts at $H\le Y\le MT^{-\vth}$, so \eqref{eq:rectangle} applies, including to every partial sum required by \cref{lem:Abel}.
+
+Apply \eqref{eq:rectangle} with an auxiliary loss $\eta_0>0$, chosen below. On each such interval,
+\[
+ \sup\left|\frac{\mathcal W(h/(Y+1))}{h}\right|
+ +\Var\left(\frac{\mathcal W(h/(Y+1))}{h}\right)\ll H^{-1}.
+\]
+This follows from boundedness of $\mathcal W,\mathcal W'$ and integration of
+$\mathcal W'(h/(Y+1))/((Y+1)h)-\mathcal W(h/(Y+1))/h^2$.
+Thus every main Fourier block costs $O(T^{\vth+\eta_0})$, and all main blocks cost
+$O(T^{\vth+\eta_0}\log(2Y))$.
+
+For the error, the zero mode is at most $C M/Y$. Pairing positive and negative frequencies leaves the real part of a sum with coefficient
+\[
+ b_h=\frac1{Y+1}\left(1-\frac h{Y+1}\right).
+\]
+Its supremum plus variation on each block is $O(Y^{-1})$. The block error is therefore
+\[
+ O\left(\frac HY T^{\vth+\eta_0}\right).
+\]
+Since the dyadic starting points satisfy $\sum H\le2Y$, the total error is
+\[
+ O\left(M/Y+T^{\vth+\eta_0}\right).
+\]
+Consequently
+\begin{equation}\label{eq:sawtoothassembly}
+ \left|\sum_{m\in I}\psi(u_m)\right|
+ \ll T^\vth+T^{\vth+\eta_0}\log(2T)
+ \ll_\eps T^{\vth+\eps}.
+\end{equation}
+For example, request \eqref{eq:rectangle} with $\eta_0=\eps/4$ and absorb the logarithm with a $T^{\eps/4}$ allowance. In the final discrepancy reductions, apply this lemma with a smaller loss before the dyadic decomposition in $m$. The proof never replaces the original Fourier $h$-sum by $\sum_h|A_h|$ before using the rectangle estimate.
+
+\end{proof}
+
+\subsection{The divisor problem}
+Let $U=\lfloor\sqrt X\rfloor$.
+The elementary hyperbola identity is
+\[
+ \sum_{n\le X}d(n)=2\sum_{m\le U}\lfloor X/m\rfloor-U^2.
+\]
+Using $\lfloor t\rfloor=t-\psi(t)-1/2$ and
+\[
+ \sum_{m\le U}\frac1m=\log U+\gamma+\frac1{2U}+O(U^{-2}),
+\]
+we obtain
+\begin{equation}\label{eq:divisorsawtooth}
+ \Delta(X)=-2\sum_{m\le U}\psi(X/m)+O(1).
+\end{equation}
+For completeness, the prospective large error cancels after writing
+$U=\sqrt X+O(1)$: the terms linear in $U-\sqrt X$ vanish, leaving
+$O((U-\sqrt X)^2+X/U^2)=O(1)$.
+Decompose $m\le U$ into dyadic intervals and apply \cref{lem:sawtooth} with $T=X$, $F(t)=1/t$, and a smaller auxiliary loss. The $O(\log(2X))$ position intervals are absorbed into the prescribed $X^\eps$ allowance. The truncated last interval is permitted.
+This proves the divisor assertion in \cref{thm:main}.
+
+\subsection{The circle problem and the character modulo four}
+Let $\chi_4$ be the nonprincipal character modulo four, extended by zero on even integers, and put
+\[
+ A(u)=\sum_{1\le d\le u}\chi_4(d).
+\]
+The two-squares identity gives, for real $X\ge1$,
+\begin{equation}\label{eq:twosquares}
+ \#\{(m,n)\in\Z^2:m^2+n^2\le X\}
+ =1+4\sum_{dm\le X}\chi_4(d).
+\end{equation}
+Indeed, for $n\ge1$, $r_2(n)=4\sum_{d\mid n}\chi_4(d)$.
+This follows from unique factorization in $\Z[i]$: the divisor sum is multiplicative, with local factor $e+1$ at a prime congruent to $1$ modulo $4$, and factor $1$ or $0$ according as the exponent is even or odd at a prime congruent to $3$ modulo $4$.
+The prime $2$ contributes $1$, and the four units account for the factor $4$.
+
+With $U=\lfloor\sqrt X\rfloor$, hyperbola decomposition gives
+\begin{equation}\label{eq:characterhyperbola}
+ \sum_{dm\le X}\chi_4(d)
+ =\sum_{d\le U}\chi_4(d)\lfloor X/d\rfloor
+  +\sum_{m\le U}A(X/m)-UA(U).
+\end{equation}
+The character partial sum has the exact formula
+\begin{equation}\label{eq:Aformula}
+ A(u)=\left\lfloor\frac{u+3}{4}\right\rfloor
+     -\left\lfloor\frac{u+1}{4}\right\rfloor
+ =\frac12+\psi\left(\frac u4+\frac14\right)
+          -\psi\left(\frac u4+\frac34\right).
+\end{equation}
+On $[0,4)$, $A$ is zero on $[0,1)$ and $[3,4)$, and one on $[1,3)$. Hence
+\[
+ B_\chi(t)=\int_0^t(A(v)-1/2)\,dv
+\]
+is periodic with range $[-1/2,1/2]$. Set $J_U(t)=B_\chi(t)-B_\chi(U)$, so that $|J_U(t)|\le1$ and $J_U(U)=0$.
+Integration by parts gives
+\begin{equation}\label{eq:charintegral}
+ e_U:=\int_U^\infty\frac{A(t)-1/2}{t^2}\,dt
+ =2\int_U^\infty\frac{J_U(t)}{t^3}\,dt,
+ \qquad |e_U|\le U^{-2}.
+\end{equation}
+With the endpoint convention in $A$, partial summation yields the exact tail formula
+\begin{equation}\label{eq:chartail}
+ \sum_{d>U}\frac{\chi_4(d)}d
+ =-\frac{A(U)}U+\int_U^\infty\frac{A(t)}{t^2}\,dt
+ =\frac{1/2-A(U)}U+e_U.
+\end{equation}
+Since $\sum_{d\ge1}\chi_4(d)/d=\pi/4$, substitution into the hyperbola identity gives
+\begin{align}
+ R(X)={}&-4\sum_{d\le U}\chi_4(d)\psi(X/d)\notag\\
+ &+4\sum_{m\le U}\left[
+ \psi\left(\frac X{4m}+\frac14\right)
+ -\psi\left(\frac X{4m}+\frac34\right)\right]
+ +\mathcal R(X),\label{eq:circlesawtooth}
+\end{align}
+where
+\begin{equation}\label{eq:circleremainder}
+ \mathcal R(X)=1-2A(U)+4(U-X/U)(1/2-A(U))-4Xe_U.
+\end{equation}
+Because $A(U)\in\{0,1\}$, $0\le X-U^2<2U+1$, and $X<(U+1)^2$, we have
+\[
+ |1-2A(U)|=1,\qquad
+ 4|U-X/U|\,|1/2-A(U)|\le6,\qquad
+ 4X|e_U|\le16.
+\]
+Consequently the remainder in \eqref{eq:circlesawtooth} satisfies
+\begin{equation}\label{eq:23}
+ |\mathcal R(X)|\le23\qquad(X\ge1).
+\end{equation}
+This bound is before the further separation of the finitely many $j=0$ terms in the odd residue classes.
+
+In the first sum in \eqref{eq:circlesawtooth}, split the odd integers into $d=4j+1$ and $d=4j+3$.
+The terms with $j=0$ contribute $O(1)$.
+On a dyadic interval $j\sim M$, the phase is
+\[
+ \frac X{4j+a}=\frac XM\frac1{4(j/M)+a/M},\qquad a\in\{1,3\}.
+\]
+Thus $F(t)=\frac14(t+a/(4M))^{-1}$ lies uniformly in \eqref{eq:reciprocal}.
+For the two other sums use
+\[
+ F(t)=\frac1{4t}+\frac{M\beta}{X},\qquad \beta\in\{1/4,3/4\}.
+\]
+The constant is part of the phase, not a rapidly varying bounded-variation weight in $h$.
+Apply \cref{lem:sawtooth} with $T=X$ and a smaller auxiliary loss to each dyadic interval; the $O(\log(2X))$ position intervals are absorbed into the final $X^\eps$ allowance.
+This proves the circle assertion and completes the proof of \cref{thm:main}.
+
+\section{Scope of the two refinements}\label{sec:limit}
+\subsection{The former internal obstruction disappears}
+The coarser cross-ray energy in \cref{rem:coarse} produces
+$K^{q-2}L^{(q-1)/2}$ and the condition $K^{q-4}\le L$.
+Combined with the same-ray amplitude split and the present block lengths, it leads to
+\[
+ \vth_{\mathrm{coarse}}
+ =\frac{33333-8\sqrt{64515}}{99856}
+ =0.3134615421015514\ldots.
+\]
+That value is determined by an interior maximum of the block-ratio parameter.
+The paired restriction replaces the third monomial by $K^{q-2}L^{q-3}$ and its square-root condition by $K^{q-4}\le L^{6-q}$.
+At $q=9/2$, the latter allows $K\le L^3$ instead of $K\le L^2$.
+Thus the moment exponent can be chosen as in \eqref{eq:qchoice} with switching point $x=-1/3$.
+The former interior obstruction is bounded strictly below $47/150$, and only the right endpoint remains binding.
+
+This is not a change to the arithmetic second-spacing theorem.
+The first-spacing refinement reaches the endpoint value available from the stated arithmetic parameters.
+In particular, the improvement of the numerical exponent is small because the preceding estimate was already close to that endpoint value, not because the paired count is merely a numerical reoptimization.
+
+\subsection{The benchmark of the fixed arithmetic parameters}
+Suppose hypothetically that a square-root first-spacing bound were available for every $4\le q\le9/2$ without restrictions on $K,L$.
+Keep the block lengths and the factor $(H/R_0)^{22/(17q)}$ in \eqref{eq:Ssqrt} unchanged.
+At the Fourier endpoint $x=-\theta$, \eqref{eq:E} would require
+\[
+ E(-\theta,q)\le\theta
+ \quad\Longleftrightarrow\quad
+ \theta\ge\theta_{\mathrm{ideal}}(q)
+ :=\frac{49q+66}{4(41q+44)}.
+\]
+The derivative is
+\[
+ \theta_{\mathrm{ideal}}'(q)
+ =-\frac{275}{2(41q+44)^2}<0,
+\]
+so
+\begin{equation}\label{eq:ideal}
+ \min_{4\le q\le9/2}\theta_{\mathrm{ideal}}(q)
+ =\theta_{\mathrm{ideal}}(9/2)=\frac{573}{1828}.
+\end{equation}
+The argument attains this benchmark on the actual difficult interval, without claiming a parameter-free square-root estimate.
+Equation~\eqref{eq:ideal} is a limitation of this specified parameter architecture and moment range, not a general obstruction for first spacing or for the circle and divisor problems.
+
+The short-block phases are still removed in the quoted arithmetic construction, and the two spacing quantities are still separated by a large sieve.
+Retaining those phases, strengthening the second-spacing input, changing the admissible block lengths, or accessing a different moment range would change another part of the argument.
+No assertion about such improvements is needed for the theorems proved here.
+
+\subsection{Algebraic energy and the higher-moment transfer}
+The algebraic part of the proof is \cref{thm:algebraic}: it is a finite, weighted statement
+on a two-dimensional torus and remains valid for arbitrary third-coordinate phases.
+Its passage to the actual fourth moments uses only positive averaging and periodization.
+Thus the ruling-line interpretation does not depend on wave-packet terminology.
+
+It is important to distinguish this from removing \eqref{eq:GM}--\eqref{eq:activecondition}.
+The exact additive-energy theorems of~\cite{JW,HuEnergy} do not supply that amplitude
+threshold on finite physical windows; \cref{rem:resolution} explains one basic distinction.
+Replacing the threshold would require an additional large-values theorem with the same
+scale and coefficient uniformity. No such replacement is assumed here.
+The present organization therefore separates a fully algebraic fourth-moment argument
+from one explicitly stated analytic transfer, without changing the numerical conclusion.
+
+\appendix
+\section{Elementary localization details}\label{app:localization}
+This appendix verifies the localization hypotheses used in Section~\ref{sec:transfer}.
+No energy estimate is imported from a decoupling theorem here.
+The Fourier transform is $\widehat f(\xi)=\int f(z)e(-z\cdot\xi)\,dz$.
+
+\subsection{The cutoff and normalization}
+We use $\widehat f(\xi)=\int_{\R^3}f(z)e(-z\cdot\xi)\,dz$.
+A factor $P^\eps$ may absorb a fixed number of logarithmic factors.
+When applying the wave-envelope theorem, we choose its exponent $\delta>0$ sufficiently small in terms of the final $\eps$, independently of $q\in(4,9/2]$; the explicit choice is recorded in Section~\ref{sec:quniform}.
+All geometric comparison constants are independent of $K,L,P,s$ and of the envelope centers.
+
+We may assume that $P$ exceeds an absolute constant. Set
+\[
+ F_0(z)=\sum_{k\sim K,l\sim L}a_{kl}e(\xi_{kl}\cdot z).
+\]
+The physical change of variables in Section~\ref{sec:intro} takes the box in \eqref{eq:Gq} to $[0,L]\times[-P,P]\times[0,P]$, of volume $2LP^2$.
+The Jacobian cancels when the integral is normalized by its volume.
+The first variable of $F_0$ has period $L$. Repeating that period $n=\lceil K\rceil$ times preserves the normalized integral and gives a box of volume $2nLP^2\asymp P^3$.
+After division by $P$, the enlarged box lies in a fixed compact set.
+
+Choose a Schwartz function $\chi$ whose Fourier transform is supported in a sufficiently small ball $B(0,c)$ and whose absolute value is bounded below on that compact set.
+For example, start with a nonnegative even smooth Fourier bump of sufficiently small support; its inverse transform is positive on the required compact set.
+No compactly supported Fourier transform is asserted to have inverse transform identically one on an open set.
+Choose $0<c_\chi\le1$ so that $|\chi(z/P)|\ge c_\chi$ on the enlarged box.
+The definition of $f$ in \eqref{eq:localized} then gives \eqref{eq:normlocalization}.
+The factor $c_\chi^{-q}$ is bounded independently of $q\in(4,9/2]$.
+The scaling identity
+$\widehat{\chi(\cdot/P)}(\nu)=P^3\widehat\chi(P\nu)$
+shows that each Fourier atom of $f$ is supported in $B(\xi_{kl},c/P)$.
+
+\subsection{The exact cone and angular projections}
+The fixed linear map
+\[
+ A(u,v,w)=\frac35\left(v,\frac{w-u}{2},\frac{w+u}{2}\right)
+\]
+sends \eqref{eq:cone} to the circular cone:
+\[
+ (A\xi_{kl})_1^2+(A\xi_{kl})_2^2=(A\xi_{kl})_3^2,
+ \qquad \frac35\le(A\xi_{kl})_3<\frac95.
+\]
+This is strictly inside the fixed radial truncation $1/2<\xi_3<2$ used in \cite[Section~5]{GM}.
+To implement the frequency map $\xi\mapsto A\xi$, use the physical function
+$\widetilde f(y)=f(A^{\mathsf T}y)$, for which
+\[
+ \widehat{\widetilde f}(\eta)=|\det A|^{-1}\widehat f(A^{-1}\eta).
+\]
+Thus a circular envelope $U$ in the $y$ variables corresponds to $A^{\mathsf T}U$ in the $z$ variables. The determinant factors cancel in normalized local averages. The same statement holds after either of the orthogonal rotations used below.
+Choose $R\in4^\N$ with $P\le R<4P$.
+Taking $c$ sufficiently small puts every transformed atom in the $R^{-1}$ neighborhood of that cone.
+
+Canonical caps in \cite[Section~5]{GM} are sharp angular sectors of width
+$\delta_0=2\pi R^{-1/2}$.
+Their sharp projections are useful here, provided no atom meets a sector boundary.
+
+\begin{lemma}\label{lem:grids}
+The function $f$ in \eqref{eq:localized} is a sum of two functions, each of which, after a rotation of the circular cone, has canonical projections of
+the form \eqref{eq:canonicalprojection}.
+The sets $\mathcal K_\theta$ are disjoint within each class.
+All frequencies on a fixed $k$-ray are assigned to the same class and the same canonical cap.
+Moreover,
+\eqref{eq:canonicalwidth} holds.
+\end{lemma}
+\begin{proof}
+Consider the angular grids with endpoints $j\delta_0$ and $(j+1/2)\delta_0$.
+Every angle is at distance at least $\delta_0/4$ from the endpoints of one grid.
+The angle of $A\xi_{kl}$ depends only on $k$, so assign the whole $k$-ray to a grid with that separation.
+The angular diameter of an atom is $O(c/P)$, smaller than $\delta_0/8$ for large $P$.
+Thus a sharp projection either retains the whole atom or removes it, proving \eqref{eq:canonicalprojection}.
+
+The second grid is a rotation of the first. The circular cone and the constants in the wave-envelope theorem are rotation-invariant.
+The map $A$ changes volumes by a fixed determinant factor, which cancels in normalized averages.
+Also,
+\[
+ \int|f^{(0)}+f^{(1)}|^q\le2^{q-1}
+ \left(\int|f^{(0)}|^q+\int|f^{(1)}|^q\right).
+\]
+It therefore suffices to estimate either class with the same bound.
+
+For \eqref{eq:canonicalwidth}, one may choose the angular parameter
+$\phi(t)=2\arctan t-\pi/2$ on our fixed arc. Since $t=\sqrt{k/K}\asymp1$,
+\[
+ \frac{d\phi}{dk}=\frac1{K t(1+t^2)}\asymp K^{-1}.
+\]
+An angular interval of width $\delta_0$ consequently has $k$-diameter $O(K\delta_0)$.
+The bounded values of $P$ are absorbed by increasing the constants.
+\end{proof}
+We henceforth work with one class and suppress its superscript.
+Coarse angular sectors are unions of canonical sectors in the same grid, as in \cite[Section~5]{GM}.
+All coarse projections therefore also retain whole atoms.
+
+\subsection{The actual weights and their overlap}
+At a dyadic angular scale $R^{-1/2}\le s\le1$, the envelopes associated with a coarse sector $\tau$ have dimensions comparable to
+$Ps^2\times Ps\times P$
+in the generator, angular tangent, and normal directions of the circular cone.
+The physical transpose convention above takes them to parallelepipeds in the $z$ coordinates. The fixed linear map changes the estimates only by fixed constants.
+
+Let $Q_0=[-1,1]^3$. For each scale and sector, choose an invertible map $B$ carrying $Q_0$ to the centered envelope. Since its largest side is $O(P)$,
+\begin{equation}\label{eq:Bbound}
+ \|B/P\|_{\mathrm{op}}\le C.
+\end{equation}
+A standard tiling is $U_n=z_*+B(2n+Q_0)$, $n\in\Z^3$, with centers $z_n=z_*+2Bn$.
+The nonnegative weights in \cite[(13), Section~5]{GM} have, up to a fixed normalization, the form
+\begin{equation}\label{eq:actualweight}
+ W_{U_n}(z)=W(B^{-1}(z-z_n)),\qquad
+ W(u)=c_W\prod_{i=1}^3(1+u_i^2)^{-100}.
+\end{equation}
+Here $c_W>0$ is fixed; no integral-one normalization is required. We also write $B_U=B$ for an envelope in this tiling. In particular, $|U|=8|\det B_U|$.
+
+\begin{lemma}[Uniform mass and bounded overlap]\label{lem:overlap}
+There are constants $c_0,C_{\mathrm{ov}}>0$, independent of $B,z_*,P,s$, such that
+\eqref{eq:overlap} holds.
+Every derivative of $W$ is integrable.
+\end{lemma}
+\begin{proof}
+Changing variables gives $c_0=\frac18\int W$, since $|U|=8|\det B|$.
+In normalized coordinates $v=B^{-1}(z-z_*)$,
+\[
+ \sum_{n\in\Z^3}W(v-2n)
+ =c_W\prod_{i=1}^3\sum_{m\in\Z}(1+(v_i-2m)^2)^{-100}.
+\]
+Each factor is periodic of period two. On a compact period, its tails are bounded by a fixed summable series, uniformly in $v_i$. This proves bounded overlap. Every derivative of $(1+u^2)^{-100}$ is bounded by a constant depending on its order times $(1+u^2)^{-100}$, proving the final assertion.
+The same overlap bound holds for any tiling by parallel translates: normalized centers have bounded packing, and $W(u)\ll(1+|u|)^{-200}$ is summable against the resulting three-dimensional annular count.
+\end{proof}
+
+\subsection{The adapted Fourier metric}
+Fix $\tau$, choose $t_0$ at one angular endpoint, and set
+\begin{equation}\label{eq:etacoordinates}
+ \eta_0=r,\qquad\eta_1=r(t-t_0),\qquad\eta_2=r(t-t_0)^2.
+\end{equation}
+These are linear functions of $(r,rt,rt^2)$.
+With $B_U$ defined by the reference cube $Q_0$ above,
+\begin{equation}\label{eq:dualmetric}
+ |B_U^{\mathsf T}\nu|\asymp
+ Ps^2|\eta_0(\nu)|+Ps|\eta_1(\nu)|+P|\eta_2(\nu)|.
+\end{equation}
+Here each $\eta_j$ acts linearly on a frequency difference $\nu$.
+
+To check \eqref{eq:dualmetric}, omit the harmless factor $3/5$ in $A$ and put $D_0=1+t_0^2$.
+In the generator, tangent, and normal frame, the coefficients are
+\[
+ a_c=\frac{D_0}{2}\eta_0+t_0\eta_1+\frac{t_0^2}{2D_0}\eta_2,
+ \quad a_t=\eta_1+\frac{t_0}{D_0}\eta_2,
+ \quad a_n=-\frac1{2D_0}\eta_2.
+\]
+This triangular change and its inverse are uniformly bounded.
+Weighting their coordinates by $Ps^2,Ps,P$ preserves that property because $s\le1$.
+
+\begin{lemma}[The actual-weight kernel]\label{lem:kernel}
+For every $A_0>0$,
+\begin{equation}\label{eq:kernel}
+ \left|\widehat{|\chi(\cdot/P)|^2W_U}(\nu)\right|
+ \le C_{A_0,\chi}|U|(1+|B_U^{\mathsf T}\nu|)^{-A_0},
+\end{equation}
+uniformly in the center, orientation, scale and dimensions of $U$ satisfying \eqref{eq:Bbound}.
+\end{lemma}
+\begin{proof}
+Set
+\[
+ a_U(u)=\left|\chi\left(\frac{z_U+B_Uu}{P}\right)\right|^2W(u).
+\]
+By the chain rule, \eqref{eq:Bbound}, and the global boundedness of every derivative of $\chi$, every derivative of the first factor is bounded independently of $z_U,B_U,P$.
+Leibniz's rule and \cref{lem:overlap} give, for every integer $m\ge0$,
+\begin{equation}\label{eq:L1seminorm}
+ \norm{(1-\Delta_u)^m a_U}_{L^1(\R^3)}\le C_{m,\chi}.
+\end{equation}
+For each fixed $U$, $a_U$ is Schwartz, so integration by parts is legitimate. Uniformity of its full Schwartz seminorms is not needed; only \eqref{eq:L1seminorm} is used.
+Changing variables in the Fourier integral,
+\[
+ \widehat{|\chi(\cdot/P)|^2W_U}(\nu)
+ =|\det B_U|e(-z_U\cdot\nu)\widehat{a_U}(B_U^{\mathsf T}\nu).
+\]
+The Fourier multiplier of $(1-\Delta)^m$ is $(1+4\pi^2|\omega|^2)^m$. Hence
+\[
+ |\widehat{a_U}(\omega)|\le C_{m,\chi}(1+4\pi^2|\omega|^2)^{-m}.
+\]
+Choose $2m\ge A_0$ and use $|\det B_U|=|U|/8$.
+\end{proof}
+
+\begin{remark}
+The weight $W$ has polynomial decay and is not Schwartz. Integrability of all its derivatives is sufficient.
+Differentiation is performed in the normalized variable $u$, so the chain rule introduces $B_U/P$, not $B_U^{-1}$. The use of globally bounded derivatives of $\chi$ makes the constants independent of the envelope center.
+\end{remark}
+This kernel estimate is used only for local density. The fourth-moment integer identities are instead established on $\T^2$ in \cref{lem:projection} and transported by \cref{lem:periodization}.
+
+
+\subsection{The neighbor count}\label{app:localdensity}
+We give the density calculation used in \cref{lem:density}.
+
+If two frequencies in $\tau$ differ by a point in the $2^j$ dilation of the dual envelope, \eqref{eq:dualmetric} implies
+\[
+ |r-r'|\lesssim\frac{2^j}{Ps^2},
+ \qquad |r(t-t_0)-r'(t'-t_0)|\lesssim\frac{2^j}{Ps}.
+\]
+Since $r,r'\asymp1$ and $|t-t_0|,|t'-t_0|\lesssim s$, these give
+\begin{equation}\label{eq:neighbours}
+ |l-l'|\lesssim\frac{2^j}{Ks^2},
+ \qquad |k-k'|\lesssim\frac{2^j}{Ls}.
+\end{equation}
+For a fixed frequency, the number of possible neighbors is therefore at most
+\[
+ C\left(1+\frac{2^j}{Ks^2}\right)
+  \left(1+\frac{2^j}{Ls}\right).
+\]
+The number of frequencies in $\tau$ is $O(sP)$: its $k$-diameter is $O(sK)$, and $sK\gtrsim\sqrt{K/L}\gtrsim1$ up to fixed constants.
+Expand \eqref{eq:DC}, take absolute values, apply \cref{lem:kernel}, and sum the neighbor bounds against $2^{-8j}$. The only shell summation needed is
+\[
+ \sum_{j\ge0}2^{-8j}(1+2^ja)(1+2^jb)\le C(1+a)(1+b),\qquad a,b\ge0.
+\]
+This gives $M_U\lesssim M(s)$.
+For $D_U$, each pair has $k=k'$, so the second factor in the neighbor count is absent.
+Finally $|C_U|\le M_U+D_U\lesssim M(s)$.
+
+
+The first-mass assertions are obtained in the proof of \cref{lem:energy} from torus
+orthogonality and periodization, so they do not require a separate Fourier-support
+argument.
+
+\subsection{Countable averaging}
+The next lemma applies to signed and complex quadratic polynomials without any exchange
+of a signed infinite sum with an integral.
+
+\begin{lemma}[Countable averaging bound]\label{lem:countable}
+Let $\{W_U\}$ satisfy \cref{lem:overlap}, and let $g\in L^2(\R^3)$ be complex valued. Define
+\[
+ m_U(g)=|U|^{-1}\int g(z)W_U(z)\,dz.
+\]
+Then every integral exists absolutely and
+\begin{equation}\label{eq:countable}
+ \sum_U|U|\,|m_U(g)|^2\le c_0C_{\mathrm{ov}}\norm g_2^2<\infty.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The weights belong to $L^2$, so absolute integrability follows from Cauchy--Schwarz. Weighted Cauchy--Schwarz gives
+\[
+ |U|\,|m_U(g)|^2
+ \le\frac{\int W_U}{|U|}\int|g|^2W_U
+ =c_0\int|g|^2W_U.
+\]
+For every finite set $\mathcal J$ of envelopes,
+\[
+ \sum_{U\in\mathcal J}|U|\,|m_U(g)|^2
+ \le c_0\int|g|^2\sum_{U\in\mathcal J}W_U
+ \le c_0C_{\mathrm{ov}}\norm g_2^2.
+\]
+Take the supremum over finite $\mathcal J$, or an increasing exhaustion of the countable tiling. All terms are nonnegative, so monotone convergence applies. No signed infinite series has been interchanged with an integral.
+\end{proof}
+
+\section{Parameter identities and exact comparison margins}\label{app:parameters}
+\subsection{Monomial bookkeeping}
+Ignoring logarithms only after allowing a $T^\eps$ loss, write $H=MT^x$.
+The relevant identities at $N_A$ are
+\begin{align*}
+ \log_T(N_A/M)&=-16x/25-49/100,\\
+ \log_T(R_0/M)&=8x/25-51/200,\\
+ \log_TK_0&=-24x/25-47/200,\\
+ \log_TL_0&=17x/25+51/200,\\
+ \log_T(K_0L_0)&=1/50-7x/25.
+\end{align*}
+For a monomial $K^aL^b$ in the $q$th-power first-spacing bound, its total $Q/R_0$ power after \eqref{eq:volumecomparison} and the large sieve is
+\[
+ a+b+8-3q.
+\]
+At $Q\asymp R_0$, its $N$-power after taking the $q$th root and including the prefactor is
+\[
+ -\frac32+\frac{11}{17q}+\frac{3a+b}{2q}.
+\]
+The complete list is
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Monomial & $Q/R_0$ power & $N$ power\\
+\midrule
+$(KL)^{q/2}$ & $8-2q$ & $-1/2+11/(17q)$\\
+$KL^{2q-5}$ & $4-q$ & $-1/2-6/(17q)$\\
+$K^{q-2}L^{q-3}$ & $3-q$ & $1/2-131/(34q)$\\
+$K^{3q/4-2}L^{5q/4-2}$ & $4-q$ & $1/4-57/(17q)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every sign used in Sections~\ref{sec:interface}--\ref{sec:optimization} follows from these identities and $4<q\le9/2$.
+
+\subsection{Strict margins used for the block construction}
+For $\vth=573/1828$, the following exact differences are positive:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Threshold $t$ & $\vth-t$ & Use\\
+\midrule
+$49/164$ & $275/18737$ & Case A upper bound; Case B interpolation\\
+$4/13$ & $137/23764$ & The fixed constant $B_0$\\
+$253/808$ & $125/369256$ & $N_{B,2}\gtrsim N_A$\\
+$5/16$ & $7/7312$ & $x>-3/8$ and positive $\lambda$\\
+$89/284$ & $5/64894$ & The $q=9/2$ lower square-root condition\\
+$47/150$ & $17/137100$ & Strict separation of the left exponent branch\\
+\bottomrule
+\end{tabular}
+\end{center}
+The lower endpoint and moment range have the exact values
+\[
+ 2\vth-1=-\frac{341}{914},\qquad
+ \lambda(2\vth-1)=\frac{119}{91400},\qquad
+ q(2\vth-1)=\frac{22871}{5688}.
+\]
+These strict margins absorb the fixed logarithmic powers. The uniform analytic constant is proved quantitatively in Section~\ref{sec:quniform}; the arithmetic application instead uses the four fixed moments in \cref{lem:fourmoments}. Compactness alone is not used to bound an unspecified family of constants.
+No decimal approximation is used in the proof.
+
+\subsection{Proof dependencies}
+The fourth-moment branch is entirely internal:
+\cref{lem:projection,lem:paired,thm:algebraic} prove the torus estimates, and
+\cref{lem:periodization,lem:countable,lem:energy} transport them to the actual averages.
+The density estimate and the external input \eqref{eq:GM}--\eqref{eq:activecondition}
+then give \cref{prop:amplitude,thm:first}.
+The arithmetic branch first isolates \eqref{eq:hard}, verifies the scales through
+\cref{lem:caseselection,prop:admissibility} and \cref{app:construction}, and only then
+invokes \eqref{eq:interface}. The branches meet in \cref{prop:reciprocalsums}.
+\Cref{lem:Abel,lem:sawtooth} and the two hyperbola identities finish the discrepancy
+reductions, including \eqref{eq:23}.
+
+\section{Subsidiary scales in the arithmetic construction}\label{app:construction}
+All parameters in this appendix are the actual selected construction parameters on \eqref{eq:hard}. The constant factors in $N$ are those prescribed by the cited construction.
+For completeness, the additional quantities used to obtain the cited arithmetic interface are
+\[
+ V_0=(H/R_0)^{18/17},\quad V_1=R_0^4/(HN),\quad V_2=M^2/(HN^3).
+\]
+In Case A, direct substitution gives, up to the fixed construction factors,
+\begin{align}
+ V_1/V_0&\asymp
+ \left(\frac{HM^9}{T^4(\log T)^{171/140}}\right)^{1/5},\\
+ V_2/V_0&\asymp
+ \left(\frac{HT^6}{M^{11}(\log T)^{171/140}}\right)^{1/5}.
+\end{align}
+Both are bounded below when $H\ge B_*$ and $M\le T^{1/2}$. Taking the small length factor prescribed in the construction ensures its required constant separation: reducing $N$ multiplies either ratio by the inverse $60/17$ power of that factor.
+In Case B, its small factor in $N_{B,2}$ ensures $V_1\ge1$, while
+\[
+ V_2\gg M^{-5/8}H^{47/40}T^{9/20}(\log T)^{-2907/5600}
+ \ge T^{11/80}(\log T)^{-2907/5600}\to\infty.
+\]
+
+The range requirement (5.20) of~\cite{BW17}, for its fixed constants $B_5,B_6$, is
+\[
+ (B_5^2B_6)^{357/113}\le H/R_0
+ \le\left(HT/(2B_5M^2)\right)^{357/487}.
+\]
+Its lower bound follows from \cref{prop:admissibility}. For the upper bound, use
+$HT/M^2\ge H\gg(H/R_0)^2$ and $714/487>1$.
+The further requirement is $MR_0^2/(HN)\gg V_0^2$.
+In Case A,
+\[
+ \frac{MR_0^2}{HN}=N\sqrt{V_1V_2}
+ \gg NV_0\gg (H/R_0)^{52/17},
+\]
+which dominates $(H/R_0)^{36/17}$.
+In Case B, $M>T^{(9\vth-2)/2}$ and $M\le T^{1/2}$ show
+\[
+ N_B\ll M^{23/40}H^{-29/40}(\log T)^{969/5600}
+ \ll M^{3/5}H^{-29/40}.
+\]
+Consequently $M\gg N_B^{5/3}H^{29/24}$, and
+\[
+ \frac{MR_0^2}{HN_B}\gg \frac M{N_B}
+ \gg H^{15/8}\gg(H/R_0)^{15/4},
+\]
+which again dominates $(H/R_0)^{36/17}$.
+These computations verify the subsidiary scale hypotheses used with the arithmetic interface. The resonance-curve estimate itself remains an external input.
+
+
+\begin{thebibliography}{14}
+
+\bibitem{BI}
+E.~Bombieri and H.~Iwaniec,
+\emph{On the order of $\zeta(\frac12+it)$},
+Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4) \textbf{13} (1986), no.~3, 449--472.
+
+\bibitem{BW18}
+J.~Bourgain and N.~Watt,
+\emph{Decoupling for perturbed cones and the mean square of $|\zeta(\frac12+it)|$},
+Int. Math. Res. Not. IMRN \textbf{2018} (2018), no.~17, 5219--5296.
+
+\bibitem{BW17}
+J.~Bourgain and N.~Watt,
+\emph{Mean square of zeta function, circle problem and divisor problem revisited},
+\href{https://arxiv.org/abs/1709.04340v1}{arXiv:1709.04340v1} (2017), withdrawn in 2023.
+Cited only for the standing arithmetic-construction hypotheses behind \cite{LY}; its first-spacing assertions and numerical conclusions are not used.
+
+\bibitem{GK}
+S.~W.~Graham and G.~Kolesnik,
+\emph{Van der Corput's Method of Exponential Sums},
+London Mathematical Society Lecture Note Series, vol.~126,
+Cambridge University Press, Cambridge, 1991.
+
+\bibitem{GM}
+L.~Guth and D.~Maldague,
+\emph{Amplitude dependent wave envelope estimates for the cone in $\R^3$},
+\href{https://arxiv.org/abs/2206.01093v2}{arXiv:2206.01093v2} (2022).
+Version~2 is used for the theorem and localization conventions cited here.
+
+\bibitem{GWZ}
+L.~Guth, H.~Wang, and R.~Zhang,
+\emph{A sharp square function estimate for the cone in $\R^3$},
+Ann. of Math. (2) \textbf{192} (2020), no.~2, 551--581.
+
+\bibitem{H90}
+M.~N.~Huxley,
+\emph{Exponential sums and lattice points},
+Proc. London Math. Soc. (3) \textbf{60} (1990), no.~3, 471--502.
+
+\bibitem{H93}
+M.~N.~Huxley,
+\emph{Exponential sums and lattice points. II},
+Proc. London Math. Soc. (3) \textbf{66} (1993), no.~2, 279--301.
+
+\bibitem{H03}
+M.~N.~Huxley,
+\emph{Exponential sums and lattice points. III},
+Proc. London Math. Soc. (3) \textbf{87} (2003), no.~3, 591--609.
+
+\bibitem{IM}
+H.~Iwaniec and C.~J.~Mozzochi,
+\emph{On the divisor and circle problems},
+J. Number Theory \textbf{29} (1988), no.~1, 60--93.
+
+\bibitem{HuEnergy}
+X.~Hu,
+\emph{Complexity-sensitive additive energy and off-diagonal Young inequalities on bounded-degree algebraic varieties},
+\href{https://arxiv.org/abs/2608.18956v1}{arXiv:2608.18956v1} (2026).
+
+\bibitem{JW}
+Y.~Jing and S.~Wu,
+\emph{Near diagonal additive energy bound for points on algebraic surfaces},
+\href{https://arxiv.org/abs/2608.14467v2}{arXiv:2608.14467v2} (2026).
+
+\bibitem{LY}
+X.~Li and X.~Yang,
+\emph{An improvement on Gauss's circle problem and Dirichlet's divisor problem},
+\href{https://arxiv.org/abs/2308.14859v2}{arXiv:2308.14859v2} (2023).
+Version~2 is used for Lemma~4.4 and the accompanying parameter definitions.
+
+\bibitem{Vaaler}
+J.~D.~Vaaler,
+\emph{Some extremal functions in Fourier analysis},
+Bull. Amer. Math. Soc. (N.S.) \textbf{12} (1985), no.~2, 183--216.
+
+\end{thebibliography}
+\end{document}

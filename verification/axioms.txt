@@ -1,0 +1,16 @@
+AUDIT_OK: 504 exported CircleDivisor theorems; axiom dependencies are contained in propext, Classical.choice, Quot.sound.
+SCOPE: MainTheoremStatement and FirstSpacingUniformStatement remain unproved specifications.
+'CircleDivisor.Optimization.hard_interval_optimization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.Optimization.optimized_exponent_at_x0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.SpacingCount.lemma_3_2_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.SpacingCount.lemma_3_2_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.ScaleBounds.full_scale_bound_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.AmplitudeIntegration.integral_norm_moment_two_cutoffs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.FourierEnergy.integral_weighted_fourth_moment_le_balanced_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.Connections.spacing_count_from_divisor_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+CircleDivisor.MainTheoremStatement : Prop
+CircleDivisor.FirstSpacingUniformStatement : Prop

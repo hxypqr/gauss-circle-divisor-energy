@@ -1,0 +1,9 @@
+import CircleDivisor.DiscrepancyReduction
+
+#print axioms CircleDivisor.DiscrepancyReduction.divisorSummatory_hyperbola
+#print axioms CircleDivisor.DiscrepancyReduction.divisorError_sawtooth
+#print axioms CircleDivisor.DiscrepancyReduction.circleCount_eq_sum_twoSquares
+#print axioms CircleDivisor.DiscrepancyReduction.circleCount_hyperbola
+#print axioms CircleDivisor.DiscrepancyReduction.beta_tail_bound
+#print axioms CircleDivisor.DiscrepancyReduction.circleError_sawtooth
+#print axioms CircleDivisor.DiscrepancyReduction.sawtooth_sum_le_fourier

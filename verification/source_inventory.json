@@ -1,0 +1,88 @@
+{
+  "status": "partial_not_end_to_end",
+  "files": [
+    {
+      "file": "CircleDivisor\\AmplitudeIntegration.lean",
+      "lines": 224,
+      "theorem_declarations": 7
+    },
+    {
+      "file": "CircleDivisor\\Arithmetic.lean",
+      "lines": 382,
+      "theorem_declarations": 36
+    },
+    {
+      "file": "CircleDivisor\\ClassicalInputs.lean",
+      "lines": 77,
+      "theorem_declarations": 5
+    },
+    {
+      "file": "CircleDivisor\\ConeGeometry.lean",
+      "lines": 109,
+      "theorem_declarations": 11
+    },
+    {
+      "file": "CircleDivisor\\Connections.lean",
+      "lines": 34,
+      "theorem_declarations": 2
+    },
+    {
+      "file": "CircleDivisor\\Energy.lean",
+      "lines": 112,
+      "theorem_declarations": 8
+    },
+    {
+      "file": "CircleDivisor\\FirstSpacingConsequences.lean",
+      "lines": 130,
+      "theorem_declarations": 8
+    },
+    {
+      "file": "CircleDivisor\\FourierEnergy.lean",
+      "lines": 330,
+      "theorem_declarations": 22
+    },
+    {
+      "file": "CircleDivisor\\Hyperbola.lean",
+      "lines": 65,
+      "theorem_declarations": 5
+    },
+    {
+      "file": "CircleDivisor\\LatticeDomain.lean",
+      "lines": 43,
+      "theorem_declarations": 4
+    },
+    {
+      "file": "CircleDivisor\\Optimization.lean",
+      "lines": 259,
+      "theorem_declarations": 31
+    },
+    {
+      "file": "CircleDivisor\\Sawtooth.lean",
+      "lines": 119,
+      "theorem_declarations": 18
+    },
+    {
+      "file": "CircleDivisor\\ScaleBounds.lean",
+      "lines": 321,
+      "theorem_declarations": 27
+    },
+    {
+      "file": "CircleDivisor\\ScaleExponents.lean",
+      "lines": 170,
+      "theorem_declarations": 14
+    },
+    {
+      "file": "CircleDivisor\\SpacingCount.lean",
+      "lines": 882,
+      "theorem_declarations": 34
+    },
+    {
+      "file": "CircleDivisor\\Statements.lean",
+      "lines": 80,
+      "theorem_declarations": 1
+    }
+  ],
+  "total_lines": 3337,
+  "top_level_theorem_declarations": 233,
+  "forbidden_code_tokens": []
+}

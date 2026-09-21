@@ -1,0 +1,59 @@
+AUDIT_OK: 2133 exported CircleDivisor theorems; axiom dependencies are contained in propext, Classical.choice, Quot.sound.
+SCOPE: EnergyV3 main and uniform first-spacing theorems are conditional only on named external inputs. Legacy target statements are separate.
+'CircleDivisor.Optimization.hard_interval_optimization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.Optimization.optimized_exponent_at_x0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.SpacingCount.lemma_3_2_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.SpacingCount.lemma_3_2_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.ScaleBounds.full_scale_bound_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.AmplitudeIntegration.integral_norm_moment_two_cutoffs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.FourierEnergy.integral_weighted_fourth_moment_le_balanced_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.Connections.spacing_count_from_divisor_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.SchwartzCutoff.exists_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.AngularGrid.same_cell_of_safe_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.FourierLocalization.exists_scaled_energy_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.FourierLocalization.sharpProjection_modulated_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.firstSpacing_uniform_iff_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.BlockSeparation.caseB_uniform_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.BlockSeparation.actual_separation_of_power_margins' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.ExternalInterfaces.etaMoment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.ExternalPeriodBridge.etaSourceMoment_eq_etaMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.DiscrepancyReduction.divisorError_sawtooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.DiscrepancyReduction.circleError_sawtooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.DiscrepancyReduction.beta_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.FinalAssembly.main_of_sawtooth_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.GuthMaldague.contributing_mass_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.GuthMaldague.weightNormalization_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.ReciprocalPhase.reciprocal_phase_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.LogScale.blockLengthB_eq_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.LogScale.log_correction_eventually_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+CircleDivisor.MainTheoremStatement : Prop
+CircleDivisor.FirstSpacingUniformStatement : Prop
+'CircleDivisor.EnergyV3.uniformFirstSpacing_of_external_inputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.EnergyV3.firstSpacing_of_external_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.EnergyV3.main_of_external_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircleDivisor.EnergyV3.circle_and_divisor_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+CircleDivisor.EnergyV3.main_of_external_inputs (hGM : CircleDivisor.GuthMaldague.GuthMaldagueInput)
+  (hLY : CircleDivisor.EnergyV3.LiYangInput) (hGK : CircleDivisor.EnergyV3.ElementaryReciprocal.GrahamKolesnikInput)
+  (hclassical : CircleDivisor.ClassicalInputs.Inputs) : CircleDivisor.EnergyV3.MainTheoremStatement
+CircleDivisor.EnergyV3.uniformFirstSpacing_of_external_inputs (hGM : CircleDivisor.GuthMaldague.GuthMaldagueInput)
+  (hdiv : CircleDivisor.ClassicalInputs.DivisorBound) : CircleDivisor.EnergyV3.UniformFirstSpacingStatement
+'CircleDivisor.EnergyV3.Corollaries.sqrt_moment_of_external_inputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CircleDivisor.EnergyV3.Corollaries.nine_halves_moment_of_external_inputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

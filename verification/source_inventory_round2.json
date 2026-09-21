@@ -1,0 +1,178 @@
+{
+  "status": "partial_not_end_to_end",
+  "round": 2,
+  "date": "2026-09-07",
+  "files": [
+    {
+      "file": "CircleDivisor/AmplitudeIntegration.lean",
+      "lines": 225,
+      "theorem_declarations": 7,
+      "sha256": "C566203D42FB32882E5E6BB6DAED08320750ED351BA06BBB8F52B668F6C7CB22"
+    },
+    {
+      "file": "CircleDivisor/AngularGrid.lean",
+      "lines": 91,
+      "theorem_declarations": 3,
+      "sha256": "D05681466B0FA637CA576558F432F753731F5BD2F8C6E93A527A4D1921B71278"
+    },
+    {
+      "file": "CircleDivisor/Arithmetic.lean",
+      "lines": 383,
+      "theorem_declarations": 36,
+      "sha256": "0AB132089240A52838902453E1D915A0764E137E336FF1C64E6CF369EDBD9B05"
+    },
+    {
+      "file": "CircleDivisor/BlockSeparation.lean",
+      "lines": 127,
+      "theorem_declarations": 6,
+      "sha256": "44B96861FBA709943731768C263867B111D72A25C901948CE1C7503A87F44CA1"
+    },
+    {
+      "file": "CircleDivisor/ClassicalInputs.lean",
+      "lines": 78,
+      "theorem_declarations": 5,
+      "sha256": "55F3F5249D6C45F2EA121754D07FF51B9BA642BA54106513FD9E72F4CB4F8DC5"
+    },
+    {
+      "file": "CircleDivisor/ConeGeometry.lean",
+      "lines": 110,
+      "theorem_declarations": 11,
+      "sha256": "6A4B832AC9484EF32954F9FF7C6599BC1619DA696A84776C3E76F55011D9F48F"
+    },
+    {
+      "file": "CircleDivisor/Connections.lean",
+      "lines": 35,
+      "theorem_declarations": 2,
+      "sha256": "74546028458B700FECE4DA521D200165043AC49C97DE7650CD27F070F62917EF"
+    },
+    {
+      "file": "CircleDivisor/DiscrepancyReduction.lean",
+      "lines": 754,
+      "theorem_declarations": 42,
+      "sha256": "5D75662F2492671F8B9599D78E66813E5D374394A3B97D9F90B133F3485059EC"
+    },
+    {
+      "file": "CircleDivisor/Energy.lean",
+      "lines": 113,
+      "theorem_declarations": 8,
+      "sha256": "077047644F5E1A8BE4E2E7CB43F17506DDFC19ABD3F15B28886DC8691C9636CB"
+    },
+    {
+      "file": "CircleDivisor/ExternalInterfaces.lean",
+      "lines": 336,
+      "theorem_declarations": 18,
+      "sha256": "19DEE6925C114AA6995EF17A8C58B2969C4142789F2AB1503DCD3011D06DE284"
+    },
+    {
+      "file": "CircleDivisor/ExternalPeriodBridge.lean",
+      "lines": 172,
+      "theorem_declarations": 9,
+      "sha256": "E52BDE18F9EF23E3CE22594D94FF766FF469F48869AB4197FB9C61F741700270"
+    },
+    {
+      "file": "CircleDivisor/FinalAssembly.lean",
+      "lines": 52,
+      "theorem_declarations": 1,
+      "sha256": "3E1BEC4DCA9202A32F2F58ABADFA74E011002AF6E83A28232E9CE9F5464D2372"
+    },
+    {
+      "file": "CircleDivisor/FirstSpacingConsequences.lean",
+      "lines": 131,
+      "theorem_declarations": 8,
+      "sha256": "1768FBE3CAE10668F28290E0822A2B7BDB4859A1755787A521D1D80CD32CDC1D"
+    },
+    {
+      "file": "CircleDivisor/FourierEnergy.lean",
+      "lines": 331,
+      "theorem_declarations": 22,
+      "sha256": "7BB76A0D07D7F87802D15E0710C753B2166B851F7699C766574E3E0EEA9201CD"
+    },
+    {
+      "file": "CircleDivisor/FourierLocalization.lean",
+      "lines": 576,
+      "theorem_declarations": 47,
+      "sha256": "B71ECA1153B7C9844DB619018CCCCF6E43C2DD7C2A76B649C0DED0C22740FBF0"
+    },
+    {
+      "file": "CircleDivisor/GuthMaldagueInput.lean",
+      "lines": 282,
+      "theorem_declarations": 20,
+      "sha256": "1308EB2D60D8C0CACDA7B2FC642BD85D55DF7B908186DF10966DFE7676CA2265"
+    },
+    {
+      "file": "CircleDivisor/Hyperbola.lean",
+      "lines": 66,
+      "theorem_declarations": 5,
+      "sha256": "54B21A4C34F1563DEE881A0FCD75D5390A2BCCAE6C4FE2B5AB197572CA184A2D"
+    },
+    {
+      "file": "CircleDivisor/LatticeDomain.lean",
+      "lines": 44,
+      "theorem_declarations": 4,
+      "sha256": "26E28DD4D8BAEEC8C94E06396C35521433E27FE1723E0DFEE0237C1CDA58804F"
+    },
+    {
+      "file": "CircleDivisor/LogScale.lean",
+      "lines": 95,
+      "theorem_declarations": 6,
+      "sha256": "0C1A92E3CE296188C27E243CDD9882E86F3AE59F1115E02064A3867D927C6F88"
+    },
+    {
+      "file": "CircleDivisor/Optimization.lean",
+      "lines": 260,
+      "theorem_declarations": 31,
+      "sha256": "028D94166D6FCED8CB0FE6305043A5E1BAD0BCBC814B80C6998495BD0BA936BE"
+    },
+    {
+      "file": "CircleDivisor/ReciprocalPhase.lean",
+      "lines": 167,
+      "theorem_declarations": 15,
+      "sha256": "FF2D7A1366B49121A568BD1DF126FBEB1E2B4CB98FEAE72471364F55E89144F0"
+    },
+    {
+      "file": "CircleDivisor/Sawtooth.lean",
+      "lines": 120,
+      "theorem_declarations": 18,
+      "sha256": "200126F1EA7AAB05D8D7BD15B2AF9357EFFAF4217E57EC1BC3830907444E09A2"
+    },
+    {
+      "file": "CircleDivisor/ScaleBounds.lean",
+      "lines": 322,
+      "theorem_declarations": 27,
+      "sha256": "CEC8D9D45FCBF8FE88A167461D77E4D906EE0C669259EF5C95E8AFD1E79959FC"
+    },
+    {
+      "file": "CircleDivisor/ScaleExponents.lean",
+      "lines": 171,
+      "theorem_declarations": 14,
+      "sha256": "F4200D617ED879890542A94EE5110A51F1F5945253389643393A6033E6763A60"
+    },
+    {
+      "file": "CircleDivisor/SchwartzCutoff.lean",
+      "lines": 105,
+      "theorem_declarations": 3,
+      "sha256": "DCDD706A8E8FE17AA9864630DF161906C8723E9359BCC32D8E6C9A9E40B343B1"
+    },
+    {
+      "file": "CircleDivisor/SpacingCount.lean",
+      "lines": 883,
+      "theorem_declarations": 34,
+      "sha256": "B357098718340BE18D268DD499BD6A27AC1193AF88FE919744DB53C80A682982"
+    },
+    {
+      "file": "CircleDivisor/Statements.lean",
+      "lines": 81,
+      "theorem_declarations": 1,
+      "sha256": "084A621D269F4EB2D39112EDAEC93509225A50D12202A7B1831043DD4B34A064"
+    },
+    {
+      "file": "CircleDivisor/UniformMoment.lean",
+      "lines": 198,
+      "theorem_declarations": 13,
+      "sha256": "F8E74535D3E5447CFE532A4F757606034F8F924F745DE07843287DA281C62355"
+    }
+  ],
+  "file_count": 28,
+  "total_lines": 6308.0,
+  "theorem_declarations": 416.0
+}

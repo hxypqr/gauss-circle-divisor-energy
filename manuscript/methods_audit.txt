@@ -1,0 +1,1845 @@
+ORDERED CURVATURE, JOINT SPACING, AND HIGHER
+                    JETS
+        IN THE GAUSS CIRCLE PROBLEM
+
+                                       XIYU HU
+
+
+        Abstract. Li and Yang improved the pointwise exponent in the Gauss
+        circle and Dirichlet divisor problems by combining a new first-spacing
+        estimate, obtained from small-cap decoupling for the cone, with Huxley’s
+        second-spacing theory inside the Bombieri–Iwaniec method. This note
+        audits the main transformations in that argument and isolates the steps
+        at which a further power saving can plausibly remain. The audit suggests
+        that the first-spacing problem is already close to its natural square-root
+        floor and cannot by itself cross the apparent 5/16 barrier within the
+        present parameter architecture. The larger unexploited structure occurs
+        earlier and at the large-sieve interface: the short sums are ordered pieces
+        of one curved trajectory, while the double large sieve replaces their joint
+        oscillatory geometry by unordered pair energies and separate worst-case
+        estimates on the two sides.
+           We formulate three research directions. The first is an ordered
+        short-block theory, based on fixed-shift correlations and a finite-scale
+        transversality-versus-rigidity dichotomy. The second is a curvature-
+        weighted joint moment that keeps first and second spacing coupled and
+        retains the fourth Poisson coordinate. The third uses higher Taylor
+        jets of the reciprocal phase together with the translation-orbit inverse
+        theorem for large Weyl sums. For F (t) = t−1 , the normalized coefficient
+        jets form an anisotropically scaled moment curve and satisfy exact recur-
+        rences among consecutive coefficients. This gives a concrete reduction
+        of an exceptional large block to a thin arithmetic resonance relation.
+        The statements labeled as targets, conjectures, or model problems are
+        proposed directions rather than established theorems. This expanded
+        version supplies proofs of the elementary geometric and arithmetic re-
+        ductions, separates quoted unpublished inputs from their consequences,
+        and records the exact analytic verification problem for an amplitude-
+        dependent first-spacing proposal.
+
+
+
+   Revised and expanded methods audit; no new circle exponent is claimed here.
+
+
+
+
+   Date: September 6, 2026; expanded research note.
+   2020 Mathematics Subject Classification. 11P21, 11L07, 11J54, 42B10.
+   Key words and phrases. Gauss circle problem, Bombieri–Iwaniec method, first spacing,
+second spacing, large sieve, Weyl sums, inverse theorems, translation orbits, decoupling.
+                                            1
+2                                  XIYU HU
+
+                                 Contents
+    1. Introduction                                                     3
+    Background and the scope of this audit                              4
+    What this version adds                                              4
+    2. The Li–Yang architecture                                         5
+    2.1. From the discrepancy to a standard double sum                  5
+    2.2. Short blocks, rational slopes, and Poisson summation           6
+    2.3. The double large sieve and the two spacing problems            7
+    2.4. The two numerical landmarks                                    8
+    3. Audit of the available room                                      8
+    3.1. Steps with no visible large power loss                         8
+    3.2. The block length and second spacing                            8
+    3.3. First spacing is close to its natural floor                    9
+    3.4. The two structural losses                                     10
+    4. The translation-orbit inverse theorem                           11
+    4.1. The available theorem                                         11
+    4.2. Why the mechanism, rather than only the bound, matters        12
+    5. Direction I: an ordered theory of short blocks                  13
+    5.1. The curvature-jet trajectory                                  13
+    5.2. A family large-value target                                   14
+    5.3. Fixed-shift correlations                                      15
+    5.4. A finite-scale transversality–rigidity dichotomy              15
+    6. Direction II: a joint first–second spacing moment               16
+    6.1. The joint object                                              16
+    6.2. Retaining the fourth coordinate                               17
+    6.3. An ordered version of the joint moment                        18
+    7. Direction III: higher reciprocal jets and Weyl inverse theory   18
+    7.1. Higher Taylor blocks                                          18
+    7.2. A rigorous exceptional-block reduction                        19
+    7.3. The counting problem                                          20
+    7.4. A hybrid rather than a complete replacement                   20
+    8. Secondary directions                                            20
+    8.1. Amplitude-dependent first spacing                             21
+    8.2. Circle-specific second spacing                                22
+    8.3. The Fourier tail and the initial sawtooth step                22
+    9. A concrete research program                                     22
+    9.1. Stage I: the fixed-h reciprocal model                         22
+    9.2. Stage II: ordered T T ∗                                       22
+    9.3. Stage III: a joint fourth or sixth moment                     23
+    9.4. Stage IV: restore the h-sum and optimize                      23
+    9.5. Priority and risk                                             23
+    10. Conclusion                                                     23
+    Appendix A. The first-spacing room calculation in full             24
+    Appendix B. Why the double large sieve loses compatibility         26
+                   ORDERED CURVATURE AND HIGHER JETS                          3
+
+  Appendix C. The exact four-dimensional cone and its elementary
+                 rigidity                                             26
+  When the missing coordinate becomes visible                         28
+  Appendix D. Farey adjacency: an exact identity and its limitation 28
+  Appendix E. Taylor error, smooth weights, and the inverse reduction 29
+  The remainder and an amplitude-sensitive direct comparison          29
+  Partial summation at the full unit-error scale                      30
+  A useful exact fixed-shift derivative formula                       31
+  Appendix F. The all-cuts and sampling mechanism behind the
+                 quoted inverse input                                 31
+  Many large partial sums from one large full sum                     32
+  A maximal moment on a leading-coefficient fiber                     32
+  Anisotropic sampling and a collision                                33
+  Triangular algebra and the remaining external step                  33
+  Appendix G. The amplitude proposal: conditional scale calculation 34
+  Why the local density has the proposed size                         34
+  The arithmetic energy                                               34
+  Layer cake with a scale-dependent amplitude cutoff                  35
+  The three ranges of angular scale                                   35
+  Appendix H. Revision and dependency ledger                          36
+  References                                                          37
+
+
+
+
+                              1. Introduction
+  Let
+                                      X
+                          R(X) =               1 − πX                      (1.1)
+                                   m2 +n2 ≤X
+
+be the error term in the Gauss circle problem. Here X is the squared
+radius; in radius notation an exponent heta becomes 2heta. The conjectural
+pointwise estimate is
+                              R(X) ≪ε X 1/4+ε .                            (1.2)
+Li and Yang proved
+           R(X), ∆(X) ≪ε X θ∗ +ε ,       θ∗ = 0.3144831759741 . . . ,      (1.3)
+where ∆(X) is the Dirichlet divisor error term and −θ∗ is the relevant solution
+of
+          8        1 q
+                      
+                                          √         2
+                                                           51
+        − x−              2(1 − 14x) − 5 −1 − 8x +             = −x.       (1.4)
+         25       200                                     200
+Their proof uses the Bombieri–Iwaniec method, a new first-spacing bound
+obtained from the Guth–Maldague small-cap decoupling theorem for the
+cone, and Huxley’s second-spacing estimates [7, 4, 6].
+4                                  XIYU HU
+
+Background and the scope of this audit. The method developed by
+Bombieri and Iwaniec [1] replaces a long oscillatory sum by short sums whose
+local slopes admit rational approximations. Poisson summation then supplies
+a dual family of frequencies, and a double large sieve measures how much
+orthogonality can be recovered from spacing on the original and dual sides.
+Later second-spacing work of Huxley [6] uses all four proximity conditions
+and resonance curves. The decoupling viewpoint makes the dual first-spacing
+geometry accessible to Fourier-analytic estimates; Bourgain–Watt’s work
+on perturbed cones [2] is part of this development. Li–Yang’s particular
+improvement uses Guth–Maldague small-cap decoupling, a consequence of
+an amplitude-dependent wave-envelope theorem [4].
+   These references play different roles. The historical architecture explains
+which objects occur. Theorems quoted below are used only with their
+stated parameter and regularity hypotheses. By contrast, the proposed
+ordered, joint-spacing, and higher-jet mechanisms are research programs, not
+consequences of the existing decoupling theorems alone.
+
+
+What this version adds. The elementary expansions and determinant
+calculations in the main text and appendices are proved here. The Weyl
+inverse theorem is quoted from the supplied unpublished manuscript [5];
+deductions using it are conditional on that input, not an independent cer-
+tification of that manuscript. A separate anonymous candidate argument
+proposes a numerical first-spacing improvement. Its mechanism is recorded in
+Section 8.1, but its unresolved analytic compatibility check is not promoted
+to a theorem in this methods audit.
+   Several qualifications matter. A square-root lower obstruction is a state-
+ment about the worst case over coefficients, not about every bounded coef-
+ficient array. The smooth jet trajectory should not be identified with the
+discontinuous modular coordinates of the Poisson points. Consecutive block
+approximants need not be neighboring Farey fractions. Unit Taylor-phase
+accuracy does not by itself preserve a small relative large-value threshold.
+The precise versions are given below and collected in Appendix H.
+   The purpose of this note is not to reprove the Li–Yang theorem. It is to
+identify which parts of the proof are already quantitatively close to sharp,
+and which parts discard structure large enough to plausibly support a genuine
+new exponent. The main conclusions of the audit are as follows.
+  (i) The reduction from the lattice-point problem to a dyadic double expo-
+      nential sum is essentially lossless up to logarithms and a natural Fourier
+      cutoff.
+ (ii) The choice of short-block length N and the later Huxley second-spacing
+      estimate may admit quantitative refinements, but no additional large
+      conceptual loss is visible there.
+(iii) The Li–Yang first-spacing estimate is close to its unavoidable square-
+      root floor. Even a formally perfect first-spacing estimate, while all other
+                   ORDERED CURVATURE AND HIGHER JETS                         5
+
+     inputs are held fixed, gives only a small numerical improvement and
+     does not cross 5/16 in the range 4 ≤ q ≤ 4.5.
+(iv) The first major structural loss occurs when the ordered sum of short
+     blocks is replaced by positive blockwise information. This weakens
+     cancellation caused by the systematic rotation of the tangent and
+     curvature of the original long phase.
+ (v) The second major structural loss occurs at the double-large-sieve in-
+     terface. A joint Fourier matrix is bounded by a product of first- and
+     second-spacing quantities. The order of the short blocks, the correla-
+     tion between the two sides, and part of the four-dimensional Poisson
+     geometry are no longer visible.
+   A second input is the inverse theorem developed in [5]. Its mechanism is
+based on all cuts of one large Weyl sum, a critical maximal Vinogradov mean
+value estimate on a fixed-leading-coefficient fibre, anisotropic sampling, and
+a collision in a polynomial translation orbit. This mechanism is particularly
+relevant here because the short blocks in the circle problem are themselves
+translations of one phase. The main proposal is therefore not to replace
+cone decoupling by a one-dimensional Weyl estimate. Rather, one should
+move the translation-orbit and large-value structure to an earlier point in
+the Bombieri–Iwaniec information flow.
+   The three principal directions are:
+ D1. an ordered large-value or T T ∗ theory for the family of short blocks;
+ D2. a joint first–second spacing moment, before Hölder separates the two
+     geometries;
+ D3. a higher-jet decomposition of the reciprocal phase, followed by the
+     simultaneous rational approximation theorem from [5].
+The first two directions address the loss explicitly emphasized by Li and Yang:
+the large sieve retrieves only part of the orthogonality between the short
+sums [7, Introduction]. The third direction supplies a concrete arithmetic
+normal form for exceptional blocks and makes direct use of the new Weyl
+inverse theorem.
+
+
+                     2. The Li–Yang architecture
+2.1. From the discrepancy to a standard double sum. For the divisor
+problem, the hyperbola method gives
+                        X                                       1
+          ∆(X) = −2           ψ(X/m) + O(1),        ψ(t) = {t} − .        (2.1)
+                         √                                      2
+                       m≤ X
+
+The truncated Fourier expansion
+                         e(ht)        1
+                    X                         
+     ψ(t) = − Im               +O           ,          e(z) = e2πiz ,     (2.2)
+                   1≤h≤Y
+                          πh      1 + Y ∥t∥
+6                                      XIYU HU
+
+followed by dyadic decomposition in m and h, reduces the problem to sums
+of the form
+                                                 hT
+                     X X                                   
+       S(H, M, T ) =         g(h/H)G(m/M )e         F (m/M ) ,       (2.3)
+                     h∼H m∼M
+                                                 M
+where g, G have bounded variation and, in the basic divisor model,
+                                     F (t) = t−1 .                        (2.4)
+The circle problem is reduced in [7, Section 5] to the same class of reciprocal
+profiles, after fixed affine shifts and scalings. This is a quoted√arithmetic
+reduction, not the assertion that the direct boundary graph X − m2 is
+itself reciprocal. The Fourier cutoff is taken at the scale
+                                     Y ≍ M T −θ ,                         (2.5)
+so the hard dyadic blocks satisfy
+                                 H ≲ M T −θ .                             (2.6)
+The target exponent estimate is
+                            S(H, M, T )
+                                        ≪ε T θ+ε .                       (2.7)
+                                H
+   The passage from (2.1) to (2.3) costs logarithmic factors and the natural
+cost of approximating a discontinuous periodic function by frequencies h ≤ Y .
+It does not account for the power gap between θ∗ and 1/4.
+2.2. Short blocks, rational slopes, and Poisson summation. Write
+the m-interval as a union of intervals Ij of length N , with centre mj . For
+m = mj + n,
+     hT     mj + n
+                   
+        F              = ch,j + hαj n + hµj n2 + higher-order terms,  (2.8)
+     M         M
+where, up to the normalization used at a given stage,
+                     T                          T
+              αj = 2 F ′ (mj /M ),       µj =       F ′′ (mj /M ).    (2.9)
+                    M                          2M 3
+The linear coefficient is approximated by a reduced rational number a/r.
+This gives a locally almost-periodic arithmetic model and permits a clean
+Poisson transformation. After major arcs and error terms are separated, the
+principal minor-arc expression has the form
+                    R2   X       X X                  
+                                         e xa/r · yk,l ,                 (2.10)
+                    Q a/r∈C(A,Q) k∼K l∼L
+with                                     √  l
+                                                         
+                         yk,l = l, kl, l k, √                ∈ R4        (2.11)
+                                                     k
+and                                                             !
+                                 a ac  1    κ
+                        xa/r =    , , p 3, p 3                      .    (2.12)
+                                 r r   µr   µr
+                     ORDERED CURVATURE AND HIGHER JETS                                                     7
+
+Here aa ≡ 1 (mod r), while c and κ record the integer and fractional parts
+of the transformed local phase; see [7, Section 4.4]. The crucial point for
+this note is that µ, and hence the local curvature, is present in the third and
+fourth coordinates of (2.12).
+
+2.3. The double large sieve and the two spacing problems. The
+double large sieve yields, in the notation of Li–Yang and Bourgain–Watt,
+
+     X       X
+                   e(xa/r · yk,l ) ≲ |C(A, Q)|1−2/q
+  a/r∈C(A,Q) k,l                                                                                    (2.13)
+                                                                                      1/q
+                                          × R−8 H 4 N 2 Q2 V B(A, Q; V )                     Gq .
+
+The first-spacing quantity is (with Lq# denoting the integral divided by the
+volume before taking its qth root)
+
+         X X                           √
+ Gq =              akl e(lx1 + klx2 + l k x3 )                                                         ,
+                                                                                             √
+         k∼K l∼L                                           Lq#   (|x1 |≤1, |x2 |≤1, |x3 |≤(ηL K)−1 )
+                                                                    (2.14)
+where |akl | ≤ 1. Li and Yang prove, under their parameter hypotheses,
+                                    q−4                                       1/q
+              Gq ≪ε η −ε η q(q−2) (KL)1−2/q 1 + η 2/(q−2) K                           .             (2.15)
+
+The second-spacing quantity B(A, Q; V ) counts pairs of x-points that are
+indistinguishable at the reciprocal Fourier resolution dictated by the ranges
+of yk,l . Huxley’s resonance-curve method controls this count.
+   After the second-spacing input and the optimization in Q, one obtains
+                                              22/(17q)              1−2/q− q−4
+                                MR        H                  NH
+                                    
+                                                                                q(q−2)
+                        ε
+             S ≪ε T
+                                N         R                  R2
+                                                 !2/(q−2)         1/q                             (2.16)
+                                           R2                    N
+                            × 1 +                                        .
+                                          NH                     R
+
+where
+                                                    M3
+                                          R2 ≍         .                                            (2.17)
+                                                    NT
+In the active region the final bracket is harmless, and the Case A choice of
+N is
+                                                  41/25
+                                              M
+                                          
+                                N ≍H                       T −49/100 ,                              (2.18)
+                                              H
+up to logarithms.
+8                                      XIYU HU
+
+2.4. The two numerical landmarks. Put
+                               H
+                                  = T x.                                  (2.19)
+                               M
+An elementary van der Corput estimate gives
+                                           1/2
+                         S         HT
+                               
+                           ≪                      = T (1+x)/2 .           (2.20)
+                         H         M
+Thus this estimate reaches a target exponent θ whenever
+                                   x ≤ 2θ − 1.                            (2.21)
+In the Bombieri–Iwaniec region the optimized Li–Yang choice satisfies qx = 4
+at x = −3/8. Requiring the hard region x > 2θ − 1 to remain within
+x ≥ −3/8 gives
+                                   3               5
+                        2θ − 1 ≥ −      ⇐⇒ θ ≥ .                       (2.22)
+                                   8              16
+At x = −3/8, both the elementary estimate and the q = 4 Bombieri–Iwaniec
+estimate equal T 5/16 . This is the precise parameter origin of the apparent
+5/16 barrier in the current framework.
+
+                    3. Audit of the available room
+3.1. Steps with no visible large power loss. The following operations
+are either exact, naturally scaled, or cost only T ε :
+ (a) the hyperbola or lattice-point reduction to sawtooth sums;
+ (b) the truncated Fourier expansion with cutoff (2.5);
+ (c) dyadic decomposition in h and m and partial summation of the 1/h
+      weight;
+ (d) dyadic pigeonholing of the rational denominator and numerator;
+ (e) the local Taylor expansion and Poisson transform, provided the block
+      length satisfies the stated remainder conditions;
+  (f) boundedly many decompositions of complex weights into positive pieces.
+These operations should not be the first targets of a new approach.
+
+3.2. The block length and second spacing. The exponents 41/25 and
+49/100 in (2.18) arise by balancing the diagonal term in the second-spacing
+count with the off-diagonal resonance-curve estimate. Within the existing
+positive pair-counting framework, this is a natural optimization rather than
+an arbitrary loss. Likewise, the factor
+                                           22/(17q)
+                                       H
+                                   
+                                                                           (3.1)
+                                       R
+is a quantitative remnant of the resonance-curve theorem. It may be improved
+by a sharper circle-specific lattice-point theorem, but it appears after the
+more serious loss of oscillatory information. It is therefore a secondary target
+unless it can be coupled to the order and phase of the original blocks.
+                   ORDERED CURVATURE AND HIGHER JETS                            9
+
+3.3. First spacing is close to its natural floor. There is an unavoidable
+square-root obstruction for any estimate uniform over all arrays |akl | ≤ 1.
+More precisely, for unit-modulus arrays, orthogonality in the two periodic
+variables gives
+                                   X
+                         ∥F ∥2L2 =   |akl |2 ≍ KL.
+                                  #
+                                       k,l
+Since the measure is normalized, monotonicity of Lq norms gives
+                           Gq ≳ (KL)1/2 ,          q ≥ 2.                   (3.2)
+For q = 4, Huxley’s bound
+                              G4 ≪ε (KL)1/2 K ε                             (3.3)
+is therefore essentially sharp in the relevant first-spacing regime. The lower
+bound is not asserted for arbitrary bounded arrays: the zeroParray, for
+example, gives zero. For general coefficients the L2 identity has |akl |2 on
+its right-hand side.
+   The map from (k, l) to the cone is exact. If s = l/L and t = k/K, then
+                     √                s(t − 1)               s(t + 1)
+               ξ1 = s t,       ξ2 =            ,      ξ3 =                  (3.4)
+                                          2                      2
+satisfies ξ12 +ξ22 = ξ32 . Guth–Maldague small-cap decoupling localizes the (k, l)
+variables into anisotropic rectangles. The local L4 count in Li–Yang is already
+dominated by degenerate families that survive the discarded approximate
+square-root equation. Thus the superficially crude step of ignoring one local
+constraint does not leave a large active power saving.
+   The visibly soft step inside the first-spacing proof is the interpolation
+                ∥Fσ ∥qq ≤ ∥Fσ ∥q−4    4
+                               ∞ ∥Fσ ∥4 ,          ∥Fσ ∥∞ ≤ #Rσ .           (3.5)
+An amplitude-dependent superlevel estimate or a direct L6 moment may
+improve this. However, the total available room is small at the active Li–Yang
+point.
+Proposition 3.1 (Formal first-spacing room calculation). Assume Q =
+R, the harmless bracket in (2.15) is bounded, and the remaining Li–Yang
+parameter choices are unchanged. Then
+                              1                         (q − 4)2
+                 Gq ≪ (KL) 2 +δ(q)+ε ,        δ(q) =             .          (3.6)
+                                                       2q(q − 2)
+At the optimized value q = 4.291635 . . . one has δ(q) = 0.00432396 . . ..
+Moreover,
+                KL = T 1/50+7θ∗ /25+o(1) = T 0.108055...+o(1) ,   (3.7)
+so the gap between the Li–Yang first-spacing estimate and the square-root
+floor is only
+                            T 0.0004673...+o(1) .                   (3.8)
+10                                       XIYU HU
+
+Proof. At Q = R one has η = (KL)−1 . The main part of (2.15) becomes
+
+                             (KL)1−2/q−(q−4)/(q(q−2)) .
+
+A direct simplification gives
+
+                             2   q−4     1  (q − 4)2
+                       1−      −        = +          .
+                             q q(q − 2)  2 2q(q − 2)
+
+The identity (3.7) follows from KL = N H/R2 together with (2.17) and
+(2.18). Substitution gives the stated numerical exponent.          □
+
+  There is an even stronger sanity check. Replace the first-spacing input by
+the formally optimal estimate
+
+                                 Gq ≪ε (KL)1/2+ε                                 (3.9)
+
+while keeping all other inputs fixed. Then (2.16) gives
+                                  9  22     49   561
+                                                   
+                 Eideal (x, q) = − +     x+    +                                (3.10)
+                                  50 25q    200 1700q
+for the exponent of T in S/H. The fixed point Eideal (−θ, q) = θ is
+                                             49     561
+                                             200 + 1700q
+                              θideal (q) =    41    22 .                        (3.11)
+                                              50 + 25q
+
+At the existing optimized q, this is 0.314027 . . .; at q = 4.5, it is 0.313457 . . . >
+5/16. Thus first spacing alone cannot plausibly be the source of a large
+improvement in the current architecture.
+
+3.4. The two structural losses. The remaining large room is concentrated
+in two connected operations.
+Loss I: positive treatment of the short blocks. The long sum is
+                                             X
+                                     S=            Sj .                         (3.12)
+                                             j∈J
+
+The centres mj are ordered, and the local tangent, curvature, and higher
+derivatives vary smoothly with j. After local arithmetic normalization,
+the method works with expressions such as (2.10), in which an absolute
+value is attached to each rationally classified block. A possible Fresnel-type
+cancellation
+                                     X
+                                         Aj e(Φ(j))                             (3.13)
+                                     j
+
+is then no longer visible.
+                      ORDERED CURVATURE AND HIGHER JETS                                     11
+
+Loss II: marginalization by the double large sieve. The proof of a double-
+large-sieve inequality uses Hölder and an interpolation between an L1 mass
+and an L2 close-pair energy. Schematically,
+  Z
+                                                                        1−2/q        2/q
+       FY (x)ρX (x) dx ≤ ∥FY ∥Lq ∥ρX ∥Lp ,        ∥ρX ∥Lp ≤ ∥ρX ∥L1             ∥ρX ∥L2 .
+                                                                      (3.14)
+Consequently the X-side is compressed to an unordered close-pair count,
+while the Y -side is bounded by an independent Lq norm. The method does
+not record whether the worst X-clusters actually lie at peaks of the Y -sum.
+Nor does it preserve the joint coding
+                                                                    
+                  t1 < t2 < · · · ,    j 7−→ Γjet (tj ), aj /rj , xj ,               (3.15)
+in which the jet coordinates vary smoothly while the rational and modular
+coordinates may jump. It would be inaccurate to assert that the full Poisson
+vectors xj themselves
+             √            lie on a single smooth curve. Finally, the fourth
+coordinate l/ k in (2.11) is frozen into arbitrary coefficients when one passes
+to the three-variable first-spacing norm (2.14). Any improvement exploiting
+this coordinate must therefore act before or at the large-sieve separation, not
+merely inside Proposition 3.1 of Li–Yang.
+Step                      Audit                                          Priority
+                                                               ε
+Sawtooth, truncation,     Exact or naturally scaled, up to T             Low
+and dyadic
+decomposition
+Taylor expansion and      Essentially a local normal-form                Low–medium
+Poisson inside one        transformation
+block
+Choice of N               Optimized inside the positive                  Medium only
+                          second-spacing framework                       after changing
+                                                                         the framework
+First spacing             Close to the square-root floor; little         Secondary
+                          numerical room remains
+Huxley second spacing     Quantitative resonance-curve penalty,          Secondary
+P                         but no newly created oscillatory loss
+  j Sj replaced by        Loses systematic phase rotation across         Highest
+positive block data       ordered blocks
+Double large sieve        Loses joint X–Y geometry, order, and           Highest
+                          one structured coordinate
+
+
+                4. The translation-orbit inverse theorem
+4.1. The available theorem. For d ≥ 3, define
+                            ∆d = min{2d−1 , d(d − 1)}.                                (4.1)
+The supplied unpublished manuscript [5] states the following input. We
+preserve its formulation and provenance; this note does not independently
+12                                     XIYU HU
+
+re-audit the inverse theorem or its denominator-compression step. Results
+below that invoke this input are to be read with that dependency.
+Quoted input 4.1 (Short rational Weyl sums, as stated in [5]). Let
+                 a
+         P (X) = X d + αd−1 X d−1 + · · · + α0 ,  (a, q) = 1,
+                 q
+and let I be an interval of H ≤ q consecutive integers. Then
+                     X
+                           e(P (n)) ≪d,ε q 1/d H ε + H 1−1/∆d +ε .          (4.2)
+                     n∈I
+
+     The underlying large-value theorem is more directly relevant here.
+Quoted input 4.2 (Simultaneous approximation, as stated in [5]). Let
+                                      N
+                                      X
+                       gd (α; N ) =         e(α1 n + · · · + αd nd ).
+                                      n=1
+
+If
+                        |gd (α; N )| ≥ A > N 1−1/[d(d−1)]+ε ,               (4.3)
+then there are integers q, a1 , . . . , ad such that
+                               1 ≤ q ≪d,ε N ε (N A−1 )d                     (4.4)
+and
+                |qαj − aj | ≪d,ε N −j+ε (N A−1 )d ,            1 ≤ j ≤ d.   (4.5)
+Combining this with classical Weyl differencing gives the same conclusion
+above the threshold A > N 1−1/∆d +ε .
+4.2. Why the mechanism, rather than only the bound, matters. The
+proof in [5] uses all cuts of a full-length sum. For each cut, either the prefix
+or the tail remains large. After reversing prefixes, this supplies linearly many
+large partial sums with a fixed leading coefficient, while the lower coefficient
+vectors lie on one integer translation orbit. A critical maximal Vinogradov
+mean value estimate on this fixed-leading-coefficient fibre and an anisotropic
+sampling theorem force two orbit points to collide at the canonical scales
+N −j . The triangular translation action converts the difference of the two
+translation parameters into a preliminary common denominator, which is
+then compressed to the scale in (4.4).
+   This is precisely the type of information that disappears if the short blocks
+in (3.12) are immediately treated as an unordered family. The transferable
+principle is the following.
+Principle 4.3. When many local polynomial sums arise by translating one
+global phase, first seek a large-value estimate for the entire translation family.
+Use the geometry of the coefficient orbit before applying a pointwise inverse
+theorem or a positive recombination inequality.
+                     ORDERED CURVATURE AND HIGHER JETS                                      13
+
+   A direct substitution of Theorem 4.1 into the Li–Yang first-spacing problem
+is not appropriate. The first-spacing norm is a two-parameter cone problem,
+and the local Bombieri–Iwaniec phase is quadratic. The improvement in
+[5] begins in a substantial way only in higher degree, with the first strict
+threshold gain at degree six. The useful connection is therefore earlier:
+translation families, collisions, and higher Taylor jets.
+
+         5. Direction I: an ordered theory of short blocks
+5.1. The curvature-jet trajectory. For fixed h and a block centre m0 ,
+define
+                                     hT
+                           Φh (m) =      F (m/M ).               (5.1)
+                                      M
+The degree-d local coefficient vector is
+                 hT ′             hT                             hT
+                                                                                          
+ Γh,d (m0 ) =        F (m0 /M ),        F ′′ (m0 /M ), . . . ,         F (d) (m0 /M ) .
+                M  2             2!M  3                        d!M d+1
+                                                                                   (5.2)
+Thus the local polynomial sums do not have arbitrary coefficients: their
+coefficients lie on a one-dimensional curve.
+  For F (t) = t−1 , the structure is especially transparent. Put u = M/m0 ≍ 1.
+Then, up to fixed signs and anisotropic scale factors,
+ e (m0 ) := diag(N, N 2 , . . . , N d )Γ (m0 )
+ Γh,d                                   h,d
+                                                                         !
+                    hT N 2 hT N 2 3               d hT N
+                                                         d                                (5.3)
+            =     −     u ,      u  , . . . , (−1)         ud+1               (mod 1).
+                     M2     M3                      M d+1
+The underlying unscaled curve is (u2 , u3 , . . . , ud+1 ), a segment of a moment
+curve.
+Lemma 5.1 (Nondegeneracy of the reciprocal jet). The Wronskian of the
+functions u2 , u3 , . . . , ud+1 is
+                    W (u2 , u3 , . . . , ud+1 ) = cd u2d ,       cd ̸= 0.                 (5.4)
+In particular, on u ≍ 1 the reciprocal coefficient trajectory is uniformly
+nondegenerate after anisotropic rescaling.
+Proof. For distinct exponents λj = j + 1, the standard monomial Wronskian
+formula is
+                                                            
+                                                                 P
+                                         Y                             λj −d(d−1)/2
+           W (uλ1 , . . . , uλd ) =           (λj − λi ) u       j                  .
+                                     1≤i<j≤d
+      P
+Here j λj = d(d + 3)/2, so the exponent is 2d, and the Vandermonde
+constant is nonzero.                                            □
+   For applications to a curve, it is useful also to check the derivative matrix
+rather than only the Wronskian containing zeroth derivatives.
+14                                         XIYU HU
+
+Lemma 5.2. For γd (u) = (u2 , u3 , . . . , ud+1 ),
+                                            (d)
+               det[γd′ (u), γd′′ (u), . . . , γd (u)] = c′d ud ,   c′d ̸= 0.    (5.5)
+Proof. Take exponents λj = j + 1, 1 ≤ j ≤ d. Factor uλj from row j and
+u−r from column r, 1 ≤ r ≤ d. The remaining matrix has entries (λj )r , the
+falling factorials. Its determinant equals
+                                    
+                                 Y     Y
+                                 λj    (λj − λi ),
+                                    j        i<j
+
+up to the orientation sign: after removing λj from each row, the columns are
+monic polynomials in λj − 1 of successive degrees 0, . . . , d − 1. The power of
+u is λj − dr=1 r = d. This proves the claim.
+    P       P
+                                                                              □
+   Neither determinant estimate, on its own, proves cancellation for sam-
+pled exponential sums modulo one. It supplies a nondegenerate real curve;
+arithmetic resonances and the sampling scale still have to be controlled.
+   This observation suggests that moment-curve decoupling and the orbit-
+restricted broad–narrow idea already present in [5, Section 9.3] may be
+relevant to the family of block centres. The relevant curve is not an auxiliary
+analogy; it is the actual curve of Taylor coefficients of the reciprocal phase.
+5.2. A family large-value target. Let w be a fixed smooth cutoff and let
+mj = m0 + jN be consecutive block centres. Define
+                                     X                             
+                     Wh,j (N ) =           w(n/N )e Φh (mj + n) .               (5.6)
+                                     n∈Z
+
+There are J ≍ M/N such blocks.
+Target estimate 5.3 (Large values along the jet curve). In the Li–Yang
+hard range, prove for some fixed integer s ≥ 2 and some σ > 0 an estimate
+of the form
+                     |Wh,j (N )|2s ≪ε JN s+ε + J 1−σ N 2s+ε ,
+                 X
+                                                                     (5.7)
+                   j∈J
+uniformly in h ∼ H, or an analogous amplitude-dependent estimate with a
+power saving for
+                        #{j : |Wh,j (N )| ≥ λN }.                 (5.8)
+   The first term in (5.7) represents square-root-size blocks. The second
+allows exceptional coherent blocks but requires them to be sparse along the
+curved coefficient trajectory. The consequences are precise: if (5.7) holds,
+then Hölder gives
+                     X
+                          |Wh,j | ≪ε T ε JN 1/2 + J 1−σ/(2s) N ,
+                                                                   
+                                                                                (5.9)
+                      j
+
+and Markov’s inequality gives
+               #{j : |Wh,j | ≥ λN } ≪ε T ε λ−2s JN −s + J 1−σ .
+                                                                         
+                                                                               (5.10)
+                   ORDERED CURVATURE AND HIGHER JETS                          15
+
+                                    |Wj | ≤ J 1−1/(2s) ( |Wj |2s )1/(2s) and (a +
+                                P                           P
+For the first estimate, use
+b)1/(2s) ≤ a1/(2s) + b1/(2s) . For the second, each counted term contributes at
+least (λN )2s to the moment. These deductions show exactly           what a proof
+of the target would buy for the positive recombination j |Wh,j |. More
+                                                               P
+
+importantly, it can be combined with a direct treatment of the phase of the
+exceptional blocks.
+   The proof mechanism in [5] suggests expanding a high moment, classifying
+relative configurations by the first nonvanishing power-sum difference, and
+exploiting the resulting lower-degree phase in the block-centre variable. The
+block-centre curve is one-dimensional and nondegenerate by Theorem 5.1, so
+a broad–narrow decomposition in this variable is a natural possibility.
+5.3. Fixed-shift correlations. A more direct way to retain the order is to
+begin with
+                                    2
+                        X                   XX
+                             Wh,j       =           Wh,j+r Wh,j .         (5.11)
+                       j∈J                  r   j
+For a fixed shift r, the coefficient difference is governed by
+                Dr (t) = Γh,d (t + rδ) − Γh,d (t),          δ ≍ N/M.      (5.12)
+For small rδ,
+                                     (rδ)2 ′′
+                   Dr (t) = rδ Γ′h,d (t) +Γh,d (t) + · · · .       (5.13)
+                                       2
+Thus fixed-shift pairs do not form arbitrary close pairs. They lie on an
+ordered difference curve whose derivative is controlled by curvature and
+higher torsion.
+Research problem 5.4 (Ordered second spacing). Replace the unordered
+count
+                            #{(j, j ′ ) : Γ(tj ) ≈ Γ(tj ′ )}
+by fixed-shift oscillatory correlations along Dr and prove a saving after sum-
+ming in r. The estimate should distinguish adjacent or moderately separated
+blocks from arbitrary pairs and should retain the phase of Wh,j+r Wh,j .
+5.4. A finite-scale transversality–rigidity dichotomy. A motivating
+analogy in the earlier working note was an oscillation-versus-rigidity alter-
+native, inspired by work on Möbius disjointness for analytic skew products
+[10]. We do not import an ergodic dichotomy as an applicable theorem here:
+the circle problem supplies neither a fixed stationary skew product nor the
+hypotheses of that dynamical theory. The proposal is instead a finite-scale
+analytic alternative, which must be established directly for the coefficient
+trajectories below.
+   For a frequency vector ξ arising after a moment expansion, consider
+                              Ψr,ξ (t) = ⟨Dr (t), ξ⟩ .                    (5.14)
+A useful dichotomy would be:
+16                                     XIYU HU
+
+  (i) some derivative of Ψr,ξ is quantitatively nonzero on a controlled partition,
+      so van der Corput or a decoupling estimate gives cancellation;
+ (ii) several consecutive derivatives are simultaneously small, which forces
+      ξ into a thin exceptional set determined by the annihilator of the
+      jet matrix. The Wronskian nondegeneracy then converts persistent
+      resonance into arithmetic rigidity.
+Target estimate 5.5 (Finite-scale dichotomy). For the reciprocal jet curve
+and every nonzero integral or rational frequency vector ξ in the ranges
+produced by the Poisson or moment expansion, prove that either
+                          X
+                                e(Ψr,ξ (tj )) ≪ |I|1−σ T ε                       (5.15)
+                          j∈I
+
+for every relevant interval I, or ξ obeys a bounded-complexity rational relation
+that can be counted separately.
+Remark 5.6. A nonzero real derivative is not by itself an arithmetic non-
+resonance condition. For example, e(an) is identically one on the integers
+when a ∈ Z, however large |a| may be. Any proof of the transverse branch
+must specify a derivative test with its distance-to-integers hypotheses, or a
+valid higher-derivative estimate with all its scale restrictions. Likewise, an
+ordered family of rationals is not automatically a family of consecutive Farey
+neighbors; see Appendix D.
+   The convexity of F (t) = 1/t strengthens this proposal. The slope F ′ (t)
+is monotone, so a fixed rational resonance is swept through rather than
+revisited in an arbitrary order. The higher jet is analytic and nondegenerate.
+A persistent failure of cancellation should therefore be much more rigid than
+a large unordered close-pair energy suggests.
+
+       6. Direction II: a joint first–second spacing moment
+6.1. The joint object. The principal Poisson matrix before the double
+large sieve is
+                 X X
+           S=             e(x · y) ,       X = {xa/r },           Y = {yk,l }.    (6.1)
+                x∈X y∈Y
+
+The large sieve bounds X and Y separately. To retain their correlation,
+define for an integer s ≥ 2
+                                                             2s
+                                         X X
+                       E2s (X, Y ) =              e(x · y)        .               (6.2)
+                                       x∈X y∈Y
+
+Expanding gives
+                                     X            X
+                     E2s (X, Y ) =       Ns (∆)         e(x · ∆),                 (6.3)
+                                     ∆            x∈X
+                   ORDERED CURVATURE AND HIGHER JETS                         17
+
+where Ns (∆) counts tuples satisfying
+                    ∆ = y1 + · · · + ys − ys+1 − · · · − y2s .            (6.4)
+The diagonal ∆ = 0 is exactly the first-spacing additive-energy contribution.
+For ∆ ̸= 0, the inner sum is an oscillatory sum over the curvature and
+arithmetic data in X.
+   For the displayed unweighted finite sets, the expansion is exact: choose
+the s frequencies from the sum and the s frequencies from its conjugate,
+and group the resulting finitely many terms by their difference ∆. In a
+weighted Poisson sum, Ns (∆) must be replaced by the corresponding sum of
+products of coefficients and conjugates. It need not be nonnegative. Taking
+its absolute value is another relaxation that must be justified, not hidden in
+a counting notation.
+   Equation (6.3) is the desired meeting point of the two methods. It does
+not replace one spacing theorem by another. It asks whether the frequencies
+with large multiplicity Ns (∆) are precisely the frequencies for which the
+X-trajectory can remain resonant. Hölder does not see this compatibility.
+Target estimate 6.1 (Joint energy gain). Prove an estimate
+                                     Diag
+                      E2s (X, Y ) ≤ E2s   + T ε G(X, Y ),                 (6.5)
+        Diag
+where E2s    is the exact ∆ = 0 contribution and G(X, Y ) is smaller by a
+fixed power than the bound obtained by separately maximizing the first-spacing
+energy and the second-spacing close-pair count.
+   A broad–narrow decomposition in the difference variable ∆ is natural.
+Broad differences should be transverse to the ordered X-trajectory and yield
+oscillation. Narrow differences should force rational relations among the
+four coordinates of yk,l and can feed into a translation-collision or higher-jet
+inverse theorem. This mirrors the proposed iteration in [5, Section 9.3]: the
+first nonvanishing difference produces a lower-degree phase, while the narrow
+case supplies additional rational structure.
+6.2. Retaining the fourth   √ coordinate. The three-variable norm Gq treats
+the phase arising from l/ k as part of arbitrary coefficients. Uniformity
+in arbitrary coefficients is powerful, but it discards the fact that all four
+coordinates                             √    l
+                                                  
+                                 l, kl, l k, √                           (6.6)
+                                                k
+come from the same two-parameter surface. The fourth coordinate is not
+a lower-order perturbation; it is algebraically linked to the third. A joint
+estimate may exploit this linkage even when a purely three-dimensional
+first-spacing estimate cannot improve.
+   Two possible implementations are:
+  (a) a four-dimensional decoupling or square-function estimate with co-
+      efficients restricted to the structured phase supplied by the fourth
+      coordinate;
+18                                    XIYU HU
+
+ (b) a direct arithmetic moment estimate for (6.3), in which the third and
+     fourth coordinate equations are kept simultaneously.
+The goal is not a generic four-dimensional theorem. It is a theorem adapted to
+the sparse two-parameter set (6.6) and to the particular ordered X-trajectory
+produced by the reciprocal phase.
+6.3. An ordered version of the joint moment. The rational points a/r
+are selected from consecutive short intervals, so they inherit an order from
+their block centres even though the chosen rational approximants jump. One
+should keep both the smooth parameter and its arithmetic coding:
+                                                          !
+                                             aj
+                            j 7−→   αj , µj , , xaj /rj       .                           (6.7)
+                                             rj
+The smooth variables αj , µj retain curvature; the rational variables permit
+Poisson summation and complete-sum structure. An ordered joint moment
+would sum over fixed shifts r in the block index and over difference frequencies
+∆:                XXX
+                              Ns,j,r (∆)e ((xj+r − xj ) · ∆) .             (6.8)
+                    r   j    ∆
+This simultaneously addresses Loss I and Loss II from Equations (3.12)
+and (3.14).
+
+7. Direction III: higher reciprocal jets and Weyl inverse theory
+7.1. Higher Taylor blocks. For the basic reciprocal phase and m = m0 +n,
+                        d
+                                                                      hT |n|d+1
+                                                                                  !
+            hT      hT X        hT
+                  =   +   (−1)j j+1 nj + Od                                           ,   (7.1)
+           m0 + n   m0 j=1     m0                                      M d+2
+for m0 ≍ M and |n| ≤ N . Hence a degree-d Taylor model is valid at unit
+phase accuracy provided
+                                                  !1/(d+1)
+                                          M d+2
+                            N ≲ Nd :=                             .                       (7.2)
+                                          HT
+If HT /M > 1, then
+                                   HT −1/(d+1)
+                                             
+                             Nd = M              ,                      (7.3)
+                                    M
+which increases with d. The highest retained term has total oscillation
+                        HT            HT 1/(d+1)
+                                                 
+                                d
+                              N   ≍               ,                 (7.4)
+                        M d+1 d       M
+so the higher-degree term is visible in the hard range rather than being
+merely formal.
+  The polynomial coefficients are
+                                  hT
+                    αj = (−1)j j+1 ,       1 ≤ j ≤ d,               (7.5)
+                                m0
+                    ORDERED CURVATURE AND HIGHER JETS                                      19
+
+and satisfy the exact recurrence
+                        αj + m0 αj+1 = 0,                 1 ≤ j < d.                     (7.6)
+This is far stronger than the structure of a general polynomial phase.
+7.2. A rigorous exceptional-block reduction.
+Conditional proposition 7.1 (Large block implies a thin reciprocal reso-
+nance). Assume Theorem 4.2, and let m0 ∈ Z with m0 ≍ M . Define
+                                                 
+                            N          d
+                            X          X                                     hT
+            Wm0 ,d (N ) =         e         αj nj  ,          αj = (−1)j          .    (7.7)
+                            n=1        j=1                                   mj+1
+                                                                              0
+
+Suppose
+                      |Wm0 ,d (N )| ≥ λN > N 1−1/∆d +ε .                                 (7.8)
+Then there are integers q, a1 , . . . , ad such that
+                                  1 ≤ q ≪d,ε λ−d N ε                                     (7.9)
+and
+                            |qαj − aj | ≪d,ε λ−d N −j+ε .                               (7.10)
+In particular,
+                   qhT − (−1)d ad md+1
+                                   0   ≪d,ε λ−d M d+1 N −d+ε .                          (7.11)
+Moreover,
+                                                     M
+                                                                       
+                                                 −d      −j+ε
+                |aj + m0 aj+1 | ≪d,ε λ N         1+        .           (7.12)
+                                                      N
+Whenever the right-hand side of (7.12) is less than 1, it follows that
+                                   aj = −m0 aj+1                                        (7.13)
+exactly.
+Proof. Apply Theorem 4.2 with A = λN . Then N A−1 = λ−1 , giving (7.9)
+and (7.10). The case j = d in (7.10), multiplied by md+1
+                                                     0   ≍ M d+1 , is (7.11).
+Finally, (7.6) gives
+                 aj + m0 aj+1 = (aj − qαj ) + m0 (aj+1 − qαj+1 ),
+and (7.12) follows. If its right-hand side is less than 1, the left-hand side is
+an integer of absolute value less than 1, hence vanishes.                     □
+Remark 7.2. The deduction of an exact integer relation uses m0 ∈ Z. For a
+rational affine shift of the reciprocal denominator, clear its fixed denominator
+before making this deduction; the smallness threshold changes by that fixed
+factor. For an arbitrary real center, the conclusion “absolute value less
+than one implies zero” is invalid. Moreover, the proposition concerns the
+polynomial sum explicitly displayed in (7.7). A large original reciprocal sum
+must first be transferred to this polynomial model. The quantitative transfer
+is proved in Appendix E.
+20                                  XIYU HU
+
+   The reduction (7.11) turns a large local block into a lattice point near the
+thin surface
+                               qhT = amd+1 .                             (7.14)
+The additional recurrences (7.13), when available for the upper coefficients,
+reduce the number of independent numerators. This is the higher-jet analogue
+of a resonance curve, but it retains the entire reciprocal jet and a common
+denominator.
+7.3. The counting problem.
+Research problem 7.3 (Multiplicity of reciprocal resonances). For d ≥ 6,
+h ∼ H, and m0 ranging over the centres of the degree-d blocks, bound the
+number of triples (m0 , q, a) satisfying
+            q ≪ λ−d T ε ,       qhT − amd+1
+                                        0   ≪ λ−d M d+1 N −d T ε ,      (7.15)
+together with all numerator recurrences inherited from (7.12). The target is
+a power saving over the trivial number M/N of block centres.
+   Several ingredients may be combined:
+ (a) derivative spacing for m 7→ md+1 after fixing (q, a);
+ (b) common-divisor and denominator factorization information from the
+      simultaneous inverse theorem;
+ (c) a determinant method for several resonant centres;
+ (d) translation-orbit collisions among the centres themselves;
+ (e) a broad–narrow decomposition in the moment-curve parameter u =
+      M/m0 .
+The exact relation (7.6) should make the narrow branch substantially more
+rigid than for a general degree-d polynomial.
+7.4. A hybrid rather than a complete replacement. A higher-degree
+Taylor model complicates the classical Poisson and first/second-spacing
+machinery. It is therefore not necessary to replace the quadratic Bombieri–
+Iwaniec treatment on every block. A more realistic hybrid is:
+  (i) use the existing quadratic method for typical blocks;
+ (ii) apply Theorem 7.1 only to blocks above an amplitude threshold;
+(iii) show that the large blocks lie on sparse resonance surfaces and cannot
+      persist along the ordered trajectory;
+(iv) recombine the remaining blocks by a square function or a refined large
+      sieve.
+This approach uses the higher-degree theorem exactly where it is strongest:
+as an inverse theorem for exceptional large values.
+
+                            8. Secondary directions
+  The following ideas remain mathematically reasonable, but the audit
+indicates that they have less room than the three principal directions.
+                    ORDERED CURVATURE AND HIGHER JETS                                    21
+
+8.1. Amplitude-dependent first spacing. One may replace the L4 –L∞
+interpolation (3.5) by a superlevel-set estimate derived from wave-envelope
+methods, or by a direct sixth moment. This could improve the numerical
+record. The formal room calculation is local in the old choice of q: an
+improved estimate over a larger admissible range of q must be reoptimized,
+rather than assigned only the saving at the old optimum. Even then, the
+ideal bound for 4 ≤ q ≤ 9/2 remains above 5/16 in this architecture.
+   Here is the precise candidate mechanism now under consideration. Put
+P = KL, and work first at η = P −1 . After a common bandlimited cutoff at
+physical scale P , let MU be the normalized local square-function mass in a
+wave envelope U at angular scale s, and set
+                                                             1               1
+                                                                            
+     A(s) = P −3
+                    X
+                            |U |MU2 ,   M (s) = sP 1 +                 1+       .      (8.1)
+                    τ,U
+                                                             Ls             Ks2
+
+The proposed comparison is
+
+     MU ≲ M (s),              A(s) ≲ε P ε min{P M (s), P (s2 K 2 L + L2 )}.            (8.2)
+
+The first energy bound is local frequency density times total second moment.
+The second is the same kind of arithmetic fourth-moment count as in Li–Yang.
+The issue is whether both bounds hold for exactly the canonical components
+and weights in [4, Theorem 2] after discrete localization.
+   That theorem restricts a contributing envelope at amplitude α to MU ≳ε
+P −ε α2 s2 . Thus, if (8.2) is validated, layer cake gives
+                                                                        (q−4)/2
+                                                   M (s)
+                    X                                         
+     Gqq ≲q,ε P ε                           2    2
+                      min{P M (s), P (s K L + L )}       2
+                                                                                   .   (8.3)
+                    s                               s2
+
+Appendix G proves the conditional scale calculation and gives the relevant
+arithmetic count. Its outcome is
+                        h                                                       i
+        Gqq ≲q,ε P ε P q/2 + KL2q−5 + K q−2 L(q−1)/2 + K q−3 Lq−1 .                    (8.4)
+
+This candidate estimate implies a square-root bound under
+
+                              K q−4 ≤ L,        Lq−2 ≤ K 6−q .                         (8.5)
+
+Its proposed reoptimization gives
+                             √
+                    4727 + 25 2773
+            θcand =                = 0.3135887325948608 . . . .
+                         19272
+This number is a conditional output, not an established bound in the present
+note. No higher reciprocal jet, ordered-block cancellation, or fourth Poisson
+coordinate is used in this proposal. It changes only the first-spacing module,
+leaving the main structural losses in Sections 5 and 6 untouched.
+22                                 XIYU HU
+
+8.2. Circle-specific second spacing. Huxley’s theorem treats a broad class
+of C 3 phases. The reciprocal function has additional algebraic structure and
+symmetry, so its resonance curves may admit a sharper lattice-point theorem.
+Such an improvement is worth testing after the exact resonance equations
+are written in reciprocal coordinates. It should nevertheless be viewed as a
+quantitative refinement unless it retains ordered phase information.
+
+8.3. The Fourier tail and the initial sawtooth step. A signed treatment
+of the high Fourier tail in (2.2), or a Voronoi/Bessel formulation, might
+reorganize cancellation. The natural error scale M/Y and the absence of
+a large dyadic loss make this a lower-priority direction. Any successful use
+of such a reformulation would probably need to recover the same ordered
+curvature structure identified above.
+
+                   9. A concrete research program
+9.1. Stage I: the fixed-h reciprocal model. Begin with
+                                       X
+                           Sh (M ) =         e(hT /m).                   (9.1)
+                                       m∼M
+
+The original proposed test was d = 6 and N ≤ N6 from (7.2), because six
+is the first degree of strict threshold improvement in the quoted inverse
+theorem. That does not make it the optimal first cut: lower-degree models
+have different block lengths and inverse thresholds, and should be tested
+before restricting to degree six. The immediate goals for each fixed degree
+are:
+ (1) prove Theorem 7.1 with smooth cutoffs and controlled Taylor error;
+ (2) count the large blocks and obtain a power saving over M/N for a
+     nontrivial amplitude range;
+ (3) compare the resulting block moment with the positive recombination
+     used in Bombieri–Iwaniec;
+ (4) identify whether the narrow resonant branch satisfies exact numerator
+     recurrences for at least the top two or three coefficients.
+A success at this stage would already demonstrate that short-block orthogo-
+nality can be recovered by the translation-collision mechanism.
+
+9.2. Stage II: ordered T T ∗ . For fixed h, expand (5.11), dyadically decom-
+pose the shift r, and study the difference trajectories Dr . The desired output
+is a bound of the form
+
+                         Wh,j+r Wh,j ≪ T ε diagonal scale T −σ
+               X X                                        
+                                                                         (9.2)
+              r∼R0   j
+
+outside an explicitly classified rational branch. The rational branch should
+be passed to Theorem 7.1 or to a Farey/continued-fraction analysis.
+                      ORDERED CURVATURE AND HIGHER JETS                            23
+
+9.3. Stage III: a joint fourth or sixth moment. At the Poisson level,
+first study s = 2 in (6.2). Keep all four coordinates of yk,l and organize the
+off-diagonal terms by the rank and first nonvanishing component of ∆. If the
+fourth moment is saturated by unavoidable degeneracies, pass to s = 3 and
+seek an amplitude-dependent decomposition. The concrete success criterion
+is a fixed power improvement over the product bound (2.13) in the Li–Yang
+active range.
+
+9.4. Stage IV: restore the h-sum and optimize. Only after a power
+gain has been proved for the fixed-h model should one restore h ∼ H. The
+dependence on h is multiplicative in the jet scales and may itself create
+an additional translation or dilation orbit. The final test is to replace the
+appropriate factor in (2.16), rerun the optimization in (N, Q, q), and check
+whether the new estimate covers a portion of
+                                              3
+                                2θ − 1 < x < − ,                                (9.3)
+                                              8
+which is precisely the gap that appears when θ < 5/16.
+
+9.5. Priority and risk.
+Direction                 Potential reward         Main obstruction
+Ordered block large      Large; directly           Keep the global phase while the
+values / T T ∗           attacks incomplete        selected rational approximants
+                         recovery of               jump
+                         orthogonality
+Joint first–second       Large; avoids             Obtain simultaneous arithmetic
+spacing moment           multiplying               and Fourier control
+                         unrelated worst
+                         cases and retains
+                         four-dimensional
+                         structure
+Higher reciprocal jets + Large if resonance        Count thin resonance surfaces
+inverse theorem          multiplicity is sparse;   uniformly in h, T, M, N
+                         most direct use of [5]
+Amplitude-dependent      Small to moderate         The square-root floor leaves little
+first spacing            numerical gain            exponent room
+Sharper second spacing Moderate numerical          Huxley already uses curvature
+alone                    gain                      and all four proximity conditions
+
+
+                                10. Conclusion
+   The Li–Yang proof is not visibly losing a large power at every technical
+step. Its first-spacing theorem is close to the natural square-root limit, the
+short-block length is optimized within the positive second-spacing framework,
+and the later resonance-curve estimate is a quantitative rather than a newly
+created oscillatory loss. The substantial remaining room is concentrated
+24                                    XIYU HU
+
+where coherent information is converted into positive energy:
+
+                      X                 X
+                            Sj    ⇝          |Sj | ,
+                       j                 j                                (10.1)
+      joint (X, Y ) geometry      ⇝     first spacing × second spacing.
+   The reciprocal phase provides more structure than a generic smooth phase.
+Its Taylor coefficients lie on an anisotropically scaled moment curve, its
+consecutive coefficients satisfy exact recurrences, and its rational resonances
+are swept through in an ordered fashion. The translation-orbit inverse
+theorem from [5] supplies a mechanism for converting large local values into
+simultaneous rational structure. These facts point to a common strategy:
+
+     Localize enough to expose arithmetic structure, but retain the
+     block parameter, the curved jet trajectory, and the joint Poisson    (10.2)
+     phase until after cancellation or rigidity has been extracted.
+
+   Among the proposed tests, a concrete starting point is the fixed-h reciprocal
+model (9.1): prove a large-block multiplicity estimate using Theorem 7.1.
+The degree-six test should be compared with lower-degree cuts rather than
+assumed optimal. The most structural target is the ordered joint moment
+(6.8). Either would give a rigorous first indication that the orthogonality
+lost at the beginning of the Bombieri–Iwaniec method can be recovered by
+exploiting the fact that the short sums are not independent objects, but
+ordered translations along one convex analytic trajectory.
+
+      Appendix A. The first-spacing room calculation in full
+   This appendix makes the distinction between a fixed-q saving and a
+reoptimization explicit. The calculations use the parameter architecture
+already recorded in Section 2, not a new estimate.
+   At Q = R, put P = KL = N H/R2 . From (2.15), when the last bracket is
+bounded,
+                           Gq ≪ε P 1−2/q−(q−4)/(q(q−2))+ε .
+Subtracting 1/2 from the exponent gives
+                  q(q − 2) − 4(q − 2) − 2(q − 4)    (q − 4)2
+                                                 =           .
+                            2q(q − 2)              2q(q − 2)
+Thus the loss relative to the square-root scale is exactly the δ(q) in (3.6).
+Since δ(q) > 0 for q > 4, a uniform square-root estimate would be genuinely
+stronger in that range.
+   Write H = M T x and temporarily omit logarithmic factors. The block
+length and spacing parameter are
+              N = M T −16x/25−49/100 ,           R = M T 8x/25−51/200 .
+                    ORDERED CURVATURE AND HIGHER JETS                          25
+
+Consequently,
+
+                             logT K = −47/200 − 24x/25,                     (A.1)
+                             logT L = 51/200 + 17x/25,                      (A.2)
+                       logT (KL) = 1/50 − 7x/25.                            (A.3)
+
+At x = −θ∗ , the last expression is 0.1080552892 . . .. Multiplication by
+δ(4.2916352435 . . .) gives approximately 0.0004672268. This is the excess in
+the first-spacing factor at the old operating point; it is not itself an optimized
+new circle exponent.
+   If the first-spacing factor is replaced formally by P 1/2 , the upper bound
+for S/H is
+                                                 22/(17q)
+                                  M          H
+                                         
+                                 √                           .
+                                   HN        R
+The first factor has exponent 49/200 − 9x/50 and the second has exponent
+                       22        51    17x              33    22x
+                                              
+                                     +             =        +     .
+                       17q       200    25             100q   25q
+This proves (3.10); in particular 561/1700 = 33/100, so the two common
+forms of the constant are identical. The fixed point is
+                                                49q + 66
+                              θideal (q) =                 .                (A.4)
+                                               4(41q + 44)
+It is strictly decreasing in q, because its derivative has negative numerator.
+On 4 ≤ q ≤ 9/2 its minimum is therefore
+
+                 θideal (9/2) = 0.3134573304157549 . . . > 5/16.
+
+At the old q = 4.2916352435 . . ., it is 0.3140273672 . . ..
+
+Remark A.1. This is a formal obstruction within a specified architecture and
+range of q, not an impossibility theorem for the circle problem or for every
+first-spacing method. In particular, it does not rule out changing the block
+length, the second-spacing theorem, the way the two sides are combined, or
+the treatment of the elementary range. Even in the same architecture, a
+replacement bound must be tested at all denominator scales and in both
+block-length cases before its fixed point can be used.
+
+  The familiar 5/16 meeting point can be checked without decimals:
+                                        5              1 + (−3/8)  5
+                 Eideal (−3/8, 4) =        ,                      = .
+                                        16                  2      16
+A target θ < 5/16 leaves a new interval 2θ − 1 < x < −3/8 not covered by
+merely retaining this meeting-point argument.
+26                                          XIYU HU
+
+     Appendix B. Why the double large sieve loses compatibility
+  The following elementary argument makes the marginalization precise.
+Let ρ ≥ 0 be a smoothed counting function for the X-points, and let FY be
+a Fourier sum associated with the Y -points. Put p = q/(q − 1), with q ≥ 2.
+Then 1 ≤ p ≤ 2 and
+                Z
+                                                             1−2/q      2/q
+                    FY ρ ≤ ∥FY ∥q ∥ρ∥p ≤ ∥FY ∥q ∥ρ∥1                 ∥ρ∥2 .   (B.1)
+
+Indeed, interpolation between L1 and L2 uses the parameter a = 2/q, since
+1/p = (1 − a) + a/2 = 1 − 1/q.
+  If ρ(x) = j w(x − xj ), then
+            P
+
+                               XZ
+                     ∥ρ∥22 =               w(x − xj )w(x − xj ′ ) dx.         (B.2)
+                               j,j ′
+
+For a nonnegative rapidly decaying kernel w adapted to a Fourier-resolution
+box, this is a smoothed close-pair energy. Formula (B.1) sees its size and
+total mass but not whether its peaks are located at the peaks of FY . The
+later arithmetic estimates refine this close-pair count; they do not undo the
+separation in (B.1).
+   This observation does not prove that the inequality wastes a fixed power on
+the actual arithmetic sets. Hölder can be nearly sharp when the two factors
+are appropriately aligned. A successful joint-spacing improvement must
+show that such alignment is impossible, quantitatively, for the particular X-
+and Y -families generated by the original phase. That is the compatibility
+problem posed in Theorem 6.1.
+   Likewise, for any finite sequence Wj , extended by zero outside its index
+set,
+                                       2
+                          X                    XX
+                                Wj         =           Wj+r Wj .              (B.3)
+                           j                   r∈Z j
+
+This follows by setting r = j ′ − j in the expansion. It is an exact reorganiza-
+tion, whereas replacing the right side by the sum of the absolute values of the
+correlations is an additional loss. The purpose of a fixed-shift theory is to
+exploit the structure of each correlation before making such a replacement.
+
+
+        Appendix C. The exact four-dimensional cone and its
+                              elementary rigidity
+   The fourth coordinate of the Poisson frequency gives a particularly trans-
+parent algebraic model. This is a rigorous geometric fact, but the passage
+from it to a joint-spacing gain remains a research problem.
+                     ORDERED CURVATURE AND HIGHER JETS                                   27
+
+Proposition C.1. Under a fixed permutation and the natural diagonal
+normalization of the coordinates,
+    √         √         !
+   l K l l k lk                                   q         l/L
+    √ , , √ ,             = ρ(1, t, t2 , t3 ), t = k/K, ρ =     . (C.1)
+   L k L L K LK                                               t
+In particular, the normalized full frequency set lies on the cone over the cubic
+moment curve, with positive radial parameter ρ ≍ 1.
+Proof. The first two coordinates are ρ and ρt. Since t2 = k/K, the next two
+are ρt2 and ρt3 . This verifies the identity coordinate by coordinate.    □
+Lemma C.2. Let γ(t) = (1, t, t2 , t3 ) and let ρ1 , ρ2 > 0, t1 ̸= t2 . The four
+numbers
+                mj = ρ1 tj1 + ρ2 tj2 ,     j = 0, 1, 2, 3,
+determine the unordered two-point measure ρ1 δt1 + ρ2 δt2 uniquely among
+positive measures supported on two distinct points.
+Proof. The Hankel determinant is
+                      D = m0 m2 − m21 = ρ1 ρ2 (t1 − t2 )2 > 0.                        (C.2)
+Write u = t1 + t2 , v = t1 t2 . The roots satisfy t2i = uti − v, hence
+                    m2 = um1 − vm0 ,               m3 = um2 − vm1 .
+This linear system has determinant D and therefore
+                         m0 m3 − m1 m2                      m1 m3 − m22
+                   u=                  ,              v=                .
+                               D                                D
+The unordered roots of z 2 − uz + v recover t1 , t2 . The equations for m0 , m1
+then recover the two weights. This proves uniqueness.                         □
+Lemma C.3. The sum map
+                        (ρ1 , t1 , ρ2 , t2 ) 7−→ ρ1 γ(t1 ) + ρ2 γ(t2 )
+has Jacobian determinant
+              det[γ(t1 ), ρ1 γ ′ (t1 ), γ(t2 ), ρ2 γ ′ (t2 )] = ρ1 ρ2 (t2 − t1 )4 .   (C.3)
+Proof. Remove ρ1 , ρ2 from the derivative columns. The remaining deter-
+minant is the confluent Vandermonde determinant at the two nodes. One
+direct derivation starts with the ordinary Vandermonde at t1 , t1 + h, t2 , t2 + k,
+subtracts the first column from the second and the third from the fourth,
+divides by hk, and lets h, k → 0. The four cross-node factors converge to
+(t2 − t1 )4 ; the two within-node factors cancel hk.                            □
+  For clarity, here is the continuous estimate this identity actually proves.
+Define                        Z
+                                                               
+                        Ef (x) =        f (ρ, t)e x · ργ(t) dρ dt,
+28                                           XIYU HU
+
+with ρ in a fixed positive compact interval. If f1 , f2 are supported in angular
+intervals at distance at least δ > 0, then
+                           ∥Ef1 Ef2 ∥L2 (R4 ) ≲ δ −2 ∥f1 ∥2 ∥f2 ∥2 .                            (C.4)
+To prove this, first use bounded compactly supported functions. The Fourier
+transform of the product is the pushforward of f1 f2 under the sum map. By
+Theorem C.2, its multiplicity is bounded (and is one after the angular order
+is fixed). By Theorem C.3, the absolute Jacobian is bounded below by cδ 4 .
+Change variables and apply Plancherel:
+                          |f1 (ρ1 , t1 )|2 |f2 (ρ2 , t2 )|2
+                      Z
+     ∥Ef1 Ef2 ∥22 ≲                                         dρ1 dt1 dρ2 dt2 ≲ δ −4 ∥f1 ∥22 ∥f2 ∥22 .
+                                ρ1 ρ2 |t2 − t1 |4
+Density gives the stated bound.
+   There are two limitations. First, when t1 = t2 , the radial weights can
+redistribute along one ray: only their sum is visible. Second, the continuous
+L2 (R4 ) estimate is not a bound for a discrete Fourier sum sampled on the
+arithmetic X-points. A discretization and sampling theorem with the actual
+anisotropic scales is still needed. No power saving for the circle problem
+follows from (C.4) alone.
+
+When the missing coordinate becomes visible. For t0 ≍ 1 and |t−t0 | ≤
+δ,
+                     3t 3t2 t3            t 3
+                                           
+                  1−    + 2 − 3 = 1−          .                (C.5)
+                     t0   t0   t0        t0
+Thus the coordinate ρ is a linear combination of the retained coordinates, up
+to an error O(δ 3 ). If the physical variable dual to ρ ranges over an interval of
+length D, the leftover phase is O(Dδ 3 ). It is invisible at unit phase precision
+when Dδ 3 ≲ 1. This gives the model scale δ ≍ D−1/3 .
+   The often-suggested scale L−1/3 is the specialization D ≍ L. That special-
+ization must be checked in the actual Poisson box at each parameter scale;
+it is not a universal consequence of the algebraic identity. Even at that scale,
+a narrow packet can absorb the fourth coordinate to cubic accuracy, so a
+generic four-dimensional estimate does not automatically create an extra
+power.
+
+       Appendix D. Farey adjacency: an exact identity and its
+                                  limitation
+  Suppose three fractions are genuine neighboring fractions in one Farey
+sequence, in increasing order. They satisfy
+                 aj rj−1 − aj−1 rj = 1,               aj+1 rj − aj rj+1 = 1.
+Reduction modulo rj gives
+                              aj ≡ rj−1 ≡ −rj+1            (mod rj ).                           (D.1)
+                   ORDERED CURVATURE AND HIGHER JETS                             29
+
+Also the two vectors (aj−1 , rj−1 ) and (aj , rj ) form an integer basis of Z2 .
+Express (aj+1 , rj+1 ) in that basis and use the determinant relations. The
+coefficient of the first vector is −1, so for an integer bj ,
+                   (aj+1 , rj+1 ) = bj (aj , rj ) − (aj−1 , rj−1 ).           (D.2)
+In particular, rj+1 = bj rj − rj−1 .
+   These identities are exact, but they cannot be imposed on an arbitrary
+ordered subsequence of rational approximants. For example, 1/5 and 1/3
+occur in increasing order in the Farey sequence of order five, but after the
+intermediate 1/4 is skipped their determinant is 5 − 3 = 2, not one. The
+congruence 1 ≡ −3 (mod 5) would be false.
+   The rational approximants selected from successive Bombieri–Iwaniec
+blocks may skip intermediate Farey fractions, and dyadic restrictions can
+delete still more. An ordered arithmetic argument must therefore retain
+insertion/deletion data or products of the intermediate unimodular transition
+matrices. The actual problem is to quantify how complicated this induced
+transition can be while the reciprocal jets are simultaneously resonant. For-
+mula (D.1) is a useful local model, not a proven recurrence for the selected
+X-set.
+
+
+  Appendix E. Taylor error, smooth weights, and the inverse
+                               reduction
+   The higher-jet proposal must distinguish an accurate phase model from a
+valid large-value transfer. We give both a direct subtraction argument and a
+bounded-variation argument.
+
+The remainder and an amplitude-sensitive direct comparison. For
+m0 ≍ M , 0 ≤ n ≤ N ≤ cM with fixed small c, the finite geometric series
+gives the exact remainder
+              d
+  hT      hT X        hT                                         hT (−n)d+1
+        =   +   (−1)j j+1 nj + rd (n),               rd (n) =               . (E.1)
+ m0 + n   m0 j=1     m0                                         md+1
+                                                                 0 (m0 + n)
+
+Differentiating this explicit rational function gives
+                                                           hT N d+1
+                ∥rd ∥∞ + N ∥rd′ ∥∞ ≪d R,            R=              .         (E.2)
+                                                            M d+2
+The inequality |e(u) − e(v)| ≤ 2π|u − v| shows that the difference between
+the unweighted original sum and its polynomial model, after removing the
+constant phase, is at most Cd N R. Therefore a direct subtraction transfer
+of a value λN requires R ≤ cd λ, not merely R = O(1). A sufficient block
+length is
+                               N ≤ cd λ1/(d+1) Nd .
+30                                      XIYU HU
+
+Partial summation at the full unit-error scale. A stronger transfer is
+possible because the residual phase has bounded variation. This does not
+assert that the full polynomial sum is large; it extracts a large prefix, which
+is enough for the inverse theorem.
+Lemma E.1. Let P be a real polynomial, r ∈ C 1 ([0, N ]), and let w have
+bounded variation on [0, 1]. Set
+                                                             Z N
+              V = ∥w∥∞ + Var(w),              B =1+                   |r′ (t)| dt.
+                                                                  0
+If
+                          N
+                          X
+                                w(n/N )e(P (n) + r(n)) ≥ λN,
+                          n=1
+then for some integer 1 ≤ L ≤ N ,
+                              L
+                                   e(P (n)) ≥ c(V B)−1 λN.
+                              X
+                                                                                        (E.3)
+                             n=1
+                                                    P
+Proof. Put bn = w(n/N )e(r(n)) and AL =                    n≤L e(P (n)).        Summation by
+parts gives
+                   N
+                   X                             N
+                                                 X −1
+                         bn e(P (n)) = bN AN +         (bn − bn+1 )An .
+                   n=1                           n=1
+The total coefficient mass on the right is at most
+                                                   Z N                   !
+                                                              ′
+                   X
+         |bN | +         |bn − bn+1 | ≤ CV    1+            |r (t)|dt        = CV B.
+                   n<N                                 0
+
+Taking the maximum of |AL | proves the claim.                                             □
+Conditional proposition E.2. Assume the inverse input Theorem 4.2,
+including its classical threshold variant with ∆d . Let m0 ∈ Z, m0 ≍ M ,
+N ≤ cd Nd , and let w have fixed bounded variation and bounded supremum.
+If
+                   N
+                                     hT
+                  X                       
+                      w(n/N )e               ≥ λN > N 1−1/∆d +ε ,        (E.4)
+                  n=1
+                                  m  0 + n
+then, for sufficiently large N , the same simultaneous-approximation bounds as
+in (7.9)–(7.10) hold, with harmless adjustments of ε and constants. In partic-
+ular, the thin reciprocal resonance and the numerator-recurrence conclusions
+remain available for the original weighted sum.
+Proof. The constant phase in (E.1) has no effect on the absolute value.
+Equations (E.2) and N ≤ cd Nd give B = Od (1). By Theorem E.1, a prefix
+polynomial sum has amplitude A ≥ cλN . Its length L satisfies L ≤ N and
+L ≥ A, so it tends to infinity in the range (E.4).
+  Apply the inverse theorem at length L, with an auxiliary error exponent
+η < ε/2. For sufficiently large N ,
+                     A ≥ cλN > N 1−1/∆d +ε/2 ≥ L1−1/∆d +η ,
+                  ORDERED CURVATURE AND HIGHER JETS                               31
+
+so its threshold is satisfied. The resulting denominator obeys
+                         q ≪ (L/A)d Lη ≤ Cλ−d N η .
+For 1 ≤ j ≤ d, the coefficient estimate is
+         |qαj − aj | ≪ (L/A)d L−j+η = A−d Ld−j+η ≤ Cλ−d N −j+η .
+The last inequality uses d − j ≥ 0; thus no extra power of λ−1 is lost by
+extracting a shorter prefix. The coefficients of the prefix are the original
+Taylor coefficients at m0 , so the recurrence is unchanged. Now apply the
+algebra in the proof of Theorem 7.1.                                      □
+  This proves the appropriate large-value transfer at the unit-error scale,
+conditional on the stated inverse theorem. The direct subtraction argument
+and the partial-summation argument should not be conflated: only the second
+one justifies using N ≍ Nd at small relative amplitudes without shrinking
+the block.
+A useful exact fixed-shift derivative formula. For the reciprocal phase
+Φ(m) = hT /m, a fixed displacement u gives
+                                                   hT u
+                     Φ(m + u) − Φ(m) = −                  .                    (E.5)
+                                                 m(m + u)
+For any integer r ≥ 0,
+  dr                                                1Z
+                                 r+1
+                                                      (m + vu)−r−2 dv. (E.6)
+                         
+       Φ(m   + u) − Φ(m)   = (−1)    (r + 1)!hT u
+ dmr                                              0
+To see this, apply the fundamental theorem of calculus to
+                     (−1)r r!hT (m + u)−r−1 − m−r−1 .
+                                                           
+
+If m, m + u ≍ M , the derivative has magnitude comparable to hT |u|M −r−2 ,
+with constants depending on r and the comparison range.
+   For example, the classical second-derivative test for a sum over O(M )
+integers gives the bound
+                                             (                             )
+                                                                  M2
+                                                    p
+         X                                              hT |u|
+              e(Φ(m + u) − Φ(m)) ≪ min M,                      +p
+        m∈I
+                                                        M         hT |u|
+when the interval keeps both arguments comparable to M . This is a useful
+scalar model, not a bound for a whole block correlation without further work.
+Expanding Wh,j+r Wh,j introduces two within-block variables; they cannot
+both be replaced by the same m merely to invoke (E.5).
+
+ Appendix F. The all-cuts and sampling mechanism behind the
+                          quoted inverse input
+   This appendix expands the mechanism described in Section 4. It explains
+the reductions supported by the supplied manuscript [5]; it does not replace
+its external denominator-compression input.
+32                                               XIYU HU
+
+     Let d ≥ 3, Kd = d(d − 1), and
+                                                      d
+                                                      X
+                                          Pα (n) =          αj nj .
+                                                      j=1
+
+Translation acts by
+                                    d
+                                            !
+                                    X      ℓ
+                    (Tm α)j =                αℓ mℓ−j ,             Tm Tn = Tm+n .        (F.1)
+                                    ℓ=j
+                                           j
+
+The leading coefficient is fixed. We use π to discard that coefficient.
+
+Many large partial sums from one large full sum. Write
+                              N
+                              X                                       m
+                                                                      X
+                    A=              e(Pα (n)) ,             Sm =          e(Pα (n)).
+                              n=1                                  n=1
+
+Since SN = Sm + (SN − Sm ), for every m either the prefix or the tail has
+magnitude at least A/2. The tail is a partial sum with coefficient vector Tm α,
+apart from a constant phase. Reverse a large prefix using n = m + 1 − v;
+this gives coefficient vector RTm+1 α, where
+                      R(β1 , . . . , βd ) = ((−1)1 β1 , . . . , (−1)d βd ).
+At least a constant fraction of the cuts have the same type. Partition the
+available centers into a fixed number of intervals of length at most N/(2d!).
+One interval contains ≫d N centers of that type. Thus linearly many large
+partial sums have the same leading coefficient and lower coefficients on one
+translated polynomial orbit, or its fixed signed image.
+
+A maximal moment on a leading-coefficient fiber. For fixed ϑ, define
+                                                    
+                    L
+                    X                     d−1
+                                          X
+      Fϑ (β; L) =         e ϑnd +              βj nj  ,       Mϑ,N (β) = max |Fϑ (β; L)|.
+                                                                                L≤N
+                    n=1                   j=1
+
+The critical Vinogradov mean value theorem in degree d − 1 [3, 11] implies
+                          Z
+                                    Mϑ,N (β)Kd dβ ≪d,η N Kd /2+η ,                       (F.2)
+                           Td−1
+
+uniformly in ϑ.
+   Here are the steps. For a single interval J of length B, expand the Kd th
+moment and integrate in the lower coefficients. This imposes equal sums of
+powers through degree d − 1. Taking absolute values discards the remaining
+leading-coefficient phase, so the answer is at most the critical mean value
+JKd /2,d−1 (B) ≪ B Kd /2+η . Translation of J preserves the lower-degree power-
+sum system. Every initial interval is a union of at most 1 + log2 N disjoint
+dyadic intervals. The power inequality for this union bounds the maximal
+                     ORDERED CURVATURE AND HIGHER JETS                          33
+
+moment by a logarithmic factor times the sum of interval moments. At scale
+B there are O(N/B) intervals, giving
+                          X
+                 Nη                  (N/B)B Kd /2+η ≪ N Kd /2+3η .
+                       B dyadic≤N
+
+Renaming 3η proves (F.2).
+
+Anisotropic sampling and a collision. A basic sampling inequality is
+the following. Suppose trigonometric polynomials fν have frequency support
+in d−1
+   Q
+     j=1 [−Lj , Lj ], and their sample points xν are separated in the metric
+
+                          dL (x, y) = max Lj ∥xj − yj ∥.
+                                            j
+
+For any fixed separation constant and p ≥ 1,
+                                       
+               X                    Y     Z
+                     |fν (xν )|p ≪  Lj                sup |fν (y)|p dy.     (F.3)
+                 ν                      j        Td−1    ν
+
+To prove it, choose in each coordinate a periodic reproducing kernel with
+Fourier transform equal to one on [−Lj , Lj ] and spatial bound CA Lj (1 +
+Lj ∥xj ∥)−A . Their product has bounded L1 norm. Convolution and Hölder
+give                           Z
+                     |fν (xν )|p ≲      |fν (y)|p |ΨL (xν − y)| dy.
+                                                                  Q
+Separation implies that the sum of the kernels is O( Lj ) uniformly in y:
+divide the rescaled torus into unit boxes, use bounded occupancy in each
+box, and sum the rapidly decreasing tails. Summing the last display proves
+(F.3).
+   Apply this with Lj = N j , p = Kd , and the partial sums selected by the
+all-cuts construction. If all orbit points were separated at the scales N −j ,
+then Equations (F.2) and (F.3) would give
+                       N AKd ≪ N Kd /2 N Kd /2+η = N Kd +η .
+Therefore a sum with A > N 1−1/Kd +ε forces two distinct selected centers
+x, y whose lower coefficient vectors differ by at most cd N −j in coordinate j.
+This is the collision at the canonical coefficient scales. It is stronger than
+applying a pointwise Lipschitz argument at an amplitude-dependent smaller
+neighborhood.
+
+Triangular algebra and the remaining external step. Apply the inverse
+translation T−y to the collision and put h = x − y. The error in coordinate j
+remains Od (cd N −j ), because the coefficient multiplying an error in coordinate
+ℓ is Od (N ℓ−j ). Thus
+                d
+                         !
+                        ℓ
+                          αℓ hℓ−j ≪d cd N −j ,
+                X
+                                                             1 ≤ j ≤ d − 1.
+               ℓ=j+1
+                        j
+34                                    XIYU HU
+
+Set vc = hαc+1 . The      corresponding upper triangular integer matrix has
+entries Aj,c = c+1
+                      c−j
+                  j   h    for c ≥ j, diagonal 2, 3, . . . , d, and determinant d!.
+Its inverse has (c, j) entry Od (|h|j−c ) for j ≥ c. Multiplication by the integer
+adjugate therefore gives
+                    |d!hαℓ − zℓ | ≪d cd N 1−ℓ ,        2 ≤ ℓ ≤ d.
+The short interval of selected centers guarantees d!|h| ≤ N/2. Dividing by
+a common divisor yields a preliminary denominator at most N and the
+required canonical accuracy in the higher coefficients.
+  The passage from this preliminary denominator to q ≪ N η (N/A)d , to-
+gether with the approximation to the linear coefficient, uses the denominator-
+compression lemma quoted in [5, Section 2.3]. That step is an external
+dependency of the supplied inverse theorem. The present appendix proves
+the preceding all-cuts, maximal-moment, sampling, and triangular-algebra
+reductions; it does not silently replace that external input.
+
+     Appendix G. The amplitude proposal: conditional scale
+                               calculation
+  This appendix records the mechanism without announcing the candidate
+exponent as a proved result. We work at η = (KL)−1 and use a common
+cutoff at scale P = KL, as in Section 8.1.
+Why the local density has the proposed size. In normalized coordinates,
+the three-dimensional frequency is r(1, t, t2 ) with r = l/L, t = k/K.
+                                                                 p
+
+Around t0 , the adapted frequency coordinates are
+                            r,   r(t − t0 ),   r(t − t0 )2 .
+An envelope of dimensions P s2 , P s, P has reciprocal frequency resolutions
+(P s2 )−1 , (P s)−1 , P −1 . Proximity of the first two adapted coordinates implies
+                   |l − l′ | ≲ (Ks2 )−1 ,      |k − k ′ | ≲ (Ls)−1 .
+There are O(sP ) points in a coarse angular cap. A row-sum estimate for
+the positive majorant of the localized Fourier kernel therefore suggests the
+first bound in (8.2). Rapidly decaying tails can be summed by dilating both
+resolutions by 2j and taking a decay exponent larger than the polynomial
+growth in the neighbor count.
+   Once that pointwise envelope bound is available for the actual canonical
+pieces, total normalized L2 mass O(P ) gives A(s) ≲ P M (s). This part uses
+only local density and orthogonality, not a new cancellation assumption.
+The arithmetic energy. For completeness, the required count has the
+form
+                                        
+    l1 + l2 = l3 + l4 ,                 
+ # k1 l1 + k2 l2 = k3 l3 + k4 l4 ,         ≪ P ε KL(U 2 L + U 2 + L2 ).
+                                          ε
+     ki ∼ K, li ∼ L, max ki − min ki ≤ U
+   
+                                                                  (G.1)
+                    ORDERED CURVATURE AND HIGHER JETS                             35
+
+Here 1 ≤ U ≲ K. Fix k4 and write di = ki − k4 , a = l1 − l3 , b = l2 − l3 . The
+equations reduce to
+                          ad1 + bd2 = l3 (d3 − d1 − d2 ).
+If the left side is nonzero, choose k4 , d1 , d2 , a, b in O(KU 2 L2 ) ways and then
+use the divisor bound to choose l3 ; d3 is determined. If it is zero, then
+d3 = d1 + d2 . For ad1 = −bd2 ̸= 0, choose a, d1 and use the divisor bound
+for b, d2 , then choose k4 , l3 , obtaining Oε (P ε KU L2 ). For zero products, the
+alternatives
+            a = b = 0,     a = d2 = 0,    d1 = b = 0,       d1 = d2 = 0
+contribute at most KLU 2 , KU L2 , KU L2 , KL3 . Since U L ≤ (U 2 + L2 )/2,
+this proves (G.1).
+   A common bandlimited cutoff whose fourth power has Fourier support of
+radius c/P forces the two integer equations in (G.1) exactly after integrating
+the fourth moment. The square-root equation can then be dropped for an
+upper bound. With U ≍ sK, weighted Cauchy–Schwarz on the envelopes
+and bounded overlap give
+                          A(s) ≲ε P 1+ε (s2 K 2 L + L2 ).
+This explanation still requires the same common-cutoff representation for
+the actual canonical components in the external wave-envelope theorem.
+Establishing that representation with uniform constants is the analytic
+compatibility issue in (8.2), not a matter of numerical optimization.
+Layer cake with a scale-dependent amplitude cutoff. The amplitude-
+dependent theorem [4, Theorem 2] includes only envelopes for which
+                             Cε P ε MU ≥ α2 /(#τ )2 .
+Here #τ counts active caps at scale s,pso #τ ≲ s−1 . If (8.2) holds, a
+contribution at scale s requires α ≲ P ε M (s)/s. Multiply the superlevel
+bound by qαq−5 and integrate. For q > 4, the integral is finite at zero and its
+upper endpoint contributes (M (s)/s2 )(q−4)/2 , proving (8.3). The constants
+are uniform when q is bounded away from 4.
+The three ranges of angular scale. For s ≥ max(L−1 , K −1/2 ), M (s) ≲
+sP , and the local-density bound gives
+                               P q/2 s3−q/2 ≤ P q/2 .
+For K ≤ L2 and L−1 ≤ s ≤ K −1/2 , M (s) ≲ L/s, so the contribution is
+                          P L(q−2)/2 s5−3q/2 ≤ P L2q−6 .
+For K ≥ L2 and K −1/2 ≤ s ≤ L−1 , M (s) ≲ K, so the contribution is at
+most P K q−3 , which is dominated by the third term of (8.4).
+  At smaller scales P −1/2 ≤ s ≤ min(L−1 , K −1/2 ), M (s) ≲ s−2 . The
+summand is bounded by
+                    P min{s6−2q , K 2 Ls10−2q } + P L2 s8−2q .
+36                                     XIYU HU
+
+For 4 < q ≤ 9/2, the two terms inside the minimum move in opposite direc-
+tions. They intersect at s = K −1/2 L−1/4 , giving the bound P K q−3 L(q−3)/2 .
+The remaining term is largest at s = P −1/2 and is at most P q−3 L2 . Summing
+the logarithmically many scales proves (8.4), conditional on (8.2).
+   To derive (8.5), compare the third and fourth monomials with P q/2 ; their
+ratios are respectively
+
+                     (K q−4 /L)1/2 ,       (Lq−2 /K 6−q )1/2 .
+
+The second monomial is then also bounded, using (3q − 10)(6 − q) − (q − 2)2 =
+−4(q − 4)2 .
+    The candidate numerical output requires more than this endpoint cal-
+culation. At Q/R = ν, one uses the volume comparison Gq (K, L, η)q ≲
+ν 2 Gq (K, L)q with K = νK0 , L = νL0 . After the large-sieve prefactor is
+included, the four ν powers are
+
+                   8 − 2q,   4 − q,      (11 − 3q)/2,    4 − q,
+
+all nonpositive. Keeping the four terms also permits a termwise monotonicity
+check in N , rather than assuming the square-root range survives a change of
+block length. These are essential checks in the separate candidate proof.
+
+
+           Appendix H. Revision and dependency ledger
+   This expanded version retains the original note’s architecture: audit the
+transformations, distinguish quantitative refinements from structural losses,
+and formulate ordered, joint-spacing, and higher-jet targets. The following
+qualifications explain changes to shorthand statements in the working version.
+Worst-case lower bounds. The square-root floor refers to the best uniform
+upper bound over unit-modulus or unrestricted bounded coefficient arrays.
+It is not a lower bound for every array. The exact L2 calculation is given in
+Section 3.
+Smooth and arithmetic coordinates. The reciprocal Taylor coefficients lie on
+a smooth analytic curve. The modular inverses and integer-part data in the
+Poisson coordinates may jump. Equations (3.15) and (6.7) retain both parts
+rather than identifying the full arithmetic X-set with a smooth curve.
+Four-dimensional geometry. Appendix C proves the moment-cone identity,
+the positive two-atom uniqueness statement, the Jacobian formula, and the
+continuous bilinear estimate. The discrete sampling gain is deliberately not
+asserted. Radial degeneracies and the scale at which the missing coordinate
+is visible remain important.
+Farey identities. Appendix D proves the neighbor congruence only under
+its determinant-one hypothesis and gives an explicit skipped-neighbor coun-
+terexample. No such adjacency has been established for the selected block
+approximants.
+                     ORDERED CURVATURE AND HIGHER JETS                                  37
+
+Taylor transfer and integrality. Appendix E distinguishes direct phase sub-
+traction from extraction of a large polynomial prefix. It proves that bounded-
+variation transfer at the unit-error scale is sufficient for the quoted inverse
+input, with no extra loss in the coefficient scales. Exact numerator recur-
+rences require an integer center or a separately justified clearing of fixed
+denominators.
+Status of the inverse theorem. The sharpened inverse statement and short-
+interval Weyl bound are quoted from the supplied unpublished manuscript
+[5]. The elementary reductions in Appendix F explain its mechanism. The
+compression input and the theorem as a whole are not represented as inde-
+pendently verified in this note.
+Status of the first-spacing candidate. The amplitude-dependent proposal
+is confined to Section 8.1 and Appendix G. Its numerical consequence is
+conditional on a concrete localization/compatibility assertion. It is not a
+proved record, and it does not exploit the ordered-block or joint-spacing
+ideas that motivate the main research program.
+External framework and withdrawn precursors. The relevant replacement
+interface is the one stated in [7, Lemma 4.4]. A distinct Bourgain–Watt
+preprint [8] was withdrawn after errors were identified in first-spacing asser-
+tions. Its main conclusions are not used as valid inputs here. This is separate
+from the published perturbed-cone paper [2].
+What a future improvement must demonstrate. Retaining more information is
+not by itself an estimate. An ordered-block argument must prove cancellation
+or sparse persistent resonance. A joint-spacing argument must exclude
+simultaneous saturation on the two sides. A higher-jet argument must
+count the resulting arithmetic resonances uniformly in h and restore the
+full block sum. A first-spacing replacement must survive all denominator
+scales, both block-length cases, and the endpoint ranges. These are the
+explicit mathematical tasks, rather than assertions that the existing method
+necessarily loses a recoverable power.
+
+
+                                     References
+ [1] E. Bombieri and H. Iwaniec, On the order of ζ( 12 + it), Ann. Scuola Norm. Sup. Pisa
+     Cl. Sci. (4) 13 (1986), no. 3, 449–472.
+ [2] J. Bourgain and N. Watt, Decoupling for perturbed cones and the mean square of
+     |ζ( 12 + it)|, Int. Math. Res. Not. IMRN 2018, no. 17, 5219–5296.
+ [3] J. Bourgain, C. Demeter, and L. Guth, Proof of the main conjecture in Vinogradov’s
+     mean value theorem for degrees higher than three, Ann. of Math. (2) 184 (2016), no. 2,
+     633–682.
+ [4] L. Guth and D. Maldague, Amplitude dependent wave envelope estimates for the cone
+     in R3 , arXiv:2206.01093v2; originally posted 2022.
+ [5] X. Hu, Improved Weyl bounds on short intervals, preprint, 2026.
+ [6] M. N. Huxley, Exponential sums and lattice points. III, Proc. Lond. Math. Soc. (3) 87
+     (2003), no. 3, 591–609.
+ [7] X. Li and X. Yang, An improvement on Gauss’s circle problem and Dirichlet’s divisor
+     problem, arXiv:2308.14859v2, 2023.
+38                                      XIYU HU
+
+ [8] J. Bourgain and N. Watt, Mean square of zeta function, circle problem and divisor
+     problem revisited, arXiv:1709.04340v1 (2017), withdrawn in 2023. Referenced for
+     provenance only; its withdrawn first-spacing assertions are not used as valid inputs.
+ [9] H. L. Montgomery, Ten Lectures on the Interface between Analytic Number Theory
+     and Harmonic Analysis, CBMS Regional Conference Series in Mathematics, vol. 84,
+     American Mathematical Society, Providence, RI, 1994.
+[10] Z. Wang, Möbius disjointness for analytic skew products, Invent. Math. 209 (2017),
+     no. 1, 175–196.
+[11] T. D. Wooley, Nested efficient congruencing and relatives of Vinogradov’s mean value
+     theorem, Proc. Lond. Math. Soc. (3) 118 (2019), no. 4, 942–1016.
+

@@ -1,0 +1,248 @@
+⚠ [8660/8721] Replayed CircleDivisor.EnergyV3.KernelBounds
+warning: CircleDivisor/EnergyV3/KernelBounds.lean:18:25: Variable name `hC` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/KernelBounds.lean:168:5: Variable name `hA` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/KernelBounds.lean:223:14: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+⚠ [8661/8721] Replayed CircleDivisor.EnergyV3.KernelActual
+warning: CircleDivisor/EnergyV3/KernelActual.lean:64:8: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  simp [n̵o̵r̵m̵_̵m̵u̵l̵,̵ ̵jacobian, abs_of_nonneg (abs_nonneg _)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8675/8721] Replayed CircleDivisor.EnergyV3.PairedCount
+warning: CircleDivisor/EnergyV3/PairedCount.lean:36:29: Variable name `hL` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/PairedCount.lean:42:29: Variable name `hL` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8678/8721] Replayed CircleDivisor.EnergyV3.LocalizationNormalization
+warning: CircleDivisor/EnergyV3/LocalizationNormalization.lean:122:2: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CircleDivisor/EnergyV3/LocalizationNormalization.lean:149:8: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  simp [n̵o̵r̵m̵_̵m̵u̵l̵,̵ ̵FourierLocalization.character]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8679/8721] Replayed CircleDivisor.EnergyV3.AdaptedMetric
+warning: CircleDivisor/EnergyV3/AdaptedMetric.lean:58:73: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_c̵o̵n̵s̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵h̵e̵a̵d̵_̵fin_const]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/AdaptedMetric.lean:58:91: This simp argument is unused:
+  Matrix.head_fin_const
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val, Matrix.head_cons,̵ ̵M̵a̵t̵r̵i̵x̵.̵h̵e̵a̵d̵_̵f̵i̵n̵_̵c̵o̵n̵s̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8681/8721] Replayed CircleDivisor.EnergyV3.AngularAtoms
+warning: CircleDivisor/EnergyV3/AngularAtoms.lean:120:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: CircleDivisor/EnergyV3/AngularAtoms.lean:220:49: This simp argument is unused:
+  Int.cast_natCast
+
+Hint: Omit it from the simp argument list.
+  simp only [angularWidth, GuthMaldague.scale, I̵n̵t̵.̵c̵a̵s̵t̵_̵n̵a̵t̵C̵a̵s̵t̵,̵ ̵Nat.cast_pow, Nat.cast_ofNat, Int.cast_pow,
+  ̲  ̲ ̲ ̲ ̲ ̲Int.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/AngularAtoms.lean:317:60: Variable name `hL` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/AngularAtoms.lean:432:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: CircleDivisor/EnergyV3/AngularAtoms.lean:447:4: Try `simp at hp` instead of `simpa using hp`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8682/8721] Replayed CircleDivisor.EnergyV3.MetricTransport
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:44:33: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:44:33: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:88:19: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:88:19: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:145:60: Variable name `hN` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:162:29: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵[̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲,̲ Matrix.cons_val_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:162:51: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.cons_val_zero, M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵ ̵Matrix.cons_val_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:162:72: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one,̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵t̵w̵o̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:199:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: CircleDivisor/EnergyV3/MetricTransport.lean:199:71: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8686/8721] Replayed CircleDivisor.EnergyV3.TorusProjection
+warning: CircleDivisor/EnergyV3/TorusProjection.lean:51:19: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  simp [character, n̵o̵r̵m̵_̵m̵u̵l̵,̵ ̵fourier_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/TorusProjection.lean:51:29: This simp argument is unused:
+  fourier_norm
+
+Hint: Omit it from the simp argument list.
+  simp [character, norm_mul,̵ ̵f̵o̵u̵r̵i̵e̵r̵_̵n̵o̵r̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/TorusProjection.lean:58:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: CircleDivisor/EnergyV3/TorusProjection.lean:127:55: This simp argument is unused:
+  ← Complex.ofReal_pow
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_conj, Complex.normSq_eq_norm_sq,̵ ̵←̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵o̵f̵R̵e̵a̵l̵_̵p̵o̵w̵]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8689/8721] Replayed CircleDivisor.EnergyV3.EnvelopeEnergies
+warning: CircleDivisor/EnergyV3/EnvelopeEnergies.lean:75:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: CircleDivisor/EnergyV3/EnvelopeEnergies.lean:107:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8693/8721] Replayed CircleDivisor.EnergyV3.CanonicalLocalization
+warning: CircleDivisor/EnergyV3/CanonicalLocalization.lean:109:32: `SchwartzMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+warning: CircleDivisor/EnergyV3/CanonicalLocalization.lean:109:55: `SchwartzMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+⚠ [8694/8721] Replayed CircleDivisor.EnergyV3.LocalDensityActual
+warning: CircleDivisor/EnergyV3/LocalDensityActual.lean:155:6: Try `simp at hh` instead of `simpa using hh`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8696/8721] Replayed CircleDivisor.EnergyV3.FirstMass
+warning: CircleDivisor/EnergyV3/FirstMass.lean:145:16: This simp argument is unused:
+  ← Complex.ofReal_mul
+
+Hint: Omit it from the simp argument list.
+  simp [hp, ← C̵o̵m̵p̵l̵e̵x̵.̵o̵f̵R̵e̵a̵l̵_̵m̵u̵l̵,̵ ̵←̵ ̵Complex.ofReal_pow]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: CircleDivisor/EnergyV3/FirstMass.lean:145:38: This simp argument is unused:
+  ← Complex.ofReal_pow
+
+Hint: Omit it from the simp argument list.
+  simp [hp, ← Complex.ofReal_mul,̵ ̵←̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵o̵f̵R̵e̵a̵l̵_̵p̵o̵w̵]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8697/8721] Replayed CircleDivisor.EnergyV3.CoarseDecomposition
+warning: CircleDivisor/EnergyV3/CoarseDecomposition.lean:55:77: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/CoarseDecomposition.lean:60:77: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8702/8721] Replayed CircleDivisor.EnergyV3.Optimization
+warning: CircleDivisor/EnergyV3/Optimization.lean:107:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8710/8721] Replayed CircleDivisor.EnergyV3.AmplitudeCountable
+warning: CircleDivisor/EnergyV3/AmplitudeCountable.lean:19:40: Variable name `hα` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: CircleDivisor/EnergyV3/AmplitudeCountable.lean:157:6: `mul_le_mul_left'` has been deprecated: Use `mul_le_mul_right` instead
+⚠ [8712/8721] Replayed CircleDivisor.EnergyV3.CrudeEnergy
+info: CircleDivisor/EnergyV3/CrudeEnergy.lean:144:37: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CircleDivisor/EnergyV3/CrudeEnergy.lean:144:37: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: CircleDivisor/EnergyV3/CrudeEnergy.lean:144:25: 'congr 2' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8713/8721] Replayed CircleDivisor.EnergyV3.RefinedEnergy
+warning: CircleDivisor/EnergyV3/RefinedEnergy.lean:55:5: Variable name `hs` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8718/8721] Replayed CircleDivisor.EnergyV3.FirstSpacingAssembly
+warning: CircleDivisor/EnergyV3/FirstSpacingAssembly.lean:48:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8721/8721] Built CircleDivisor.EnergyV3.AnalyticAssembly (14s)
+info: CircleDivisor/EnergyV3/AnalyticAssembly.lean:72:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: CircleDivisor/EnergyV3/AnalyticAssembly.lean:71:2: 'congr 1' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (8721 jobs).

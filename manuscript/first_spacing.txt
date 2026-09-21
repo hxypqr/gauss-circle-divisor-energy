@@ -1,0 +1,1182 @@
+                       AMPLITUDE-DEPENDENT FIRST SPACING
+                      AND THE CIRCLE AND DIVISOR PROBLEMS
+
+                                                     XIYU HU
+
+
+        Abstract. We prove that the error terms in Gauss’s circle problem and Dirichlet’s divisor problem
+        are Oε (X ϑ+ε ), where
+                                                √
+                                      33333 − 8 64515
+                                 ϑ=                     = 0.3134615421015514 . . . .
+                                            99856
+                                                                                                          √
+        The principal estimate is a fourth-to-qth moment bound for the discrete cone frequencies (l, kl, l k),
+        uniform in bounded coefficients. It gives a square-root bound for 4 < q ≤ 9/2 whenever K q−4 ≤ L
+        and L3q−8 ≤ K 8−q . In particular, the q = 9/2 estimate holds for L11/7 ≤ K ≤ L2 . The proof
+        separates the same-ray and cross-ray terms inside the local square function before applying the
+        amplitude-dependent wave-envelope estimate. The arithmetic second-spacing input and block lengths
+        remain those used by Li and Yang.
+
+
+
+
+                                                    Contents
+   1. Introduction                                                                                                  1
+   2. Discrete localization for the wave-envelope theorem                                                           5
+   3. Same-ray and cross-ray energies                                                                               8
+   4. Amplitude splitting and the first-spacing bound                                                              10
+   5. The arithmetic interface and both block lengths                                                              12
+   6. The exponent optimization and the hard range                                                                 14
+   7. From reciprocal sums to the discrepancies                                                                    17
+   8. The remaining loss in this argument                                                                          19
+   Appendix A. Parameter identities and proof dependencies                                                         20
+   Appendix B. A direct check of the localization conventions                                                      21
+   References                                                                                                      21
+
+
+
+                                               1. Introduction
+1.1. The circle and divisor errors. For X ≥ 2, let
+                               R(X) = #{(m, n) ∈ Z2 : m2 + n2 ≤ X} − πX,                                         (1.1)
+                                         X
+                              ∆(X) =           d(n) − X log X − (2γ − 1)X,                                       (1.2)
+                                         n≤X
+
+where d(n) is the divisor function and γ is Euler’s constant. We use the squared-radius variable X
+in the circle problem throughout. Thus an exponent θ here corresponds to the exponent 2θ in the
+radius variable. The conjectural pointwise bound in both problems is Oε (X 1/4+ε ); see, for example,
+the introduction of Li–Yang [11].
+
+   Date: September 6, 2026.
+   2020 Mathematics Subject Classification. 11P21, 11L07, 11N37, 42B10, 42B25.
+   Key words and phrases. Gauss circle problem, Dirichlet divisor problem, first spacing, wave envelopes, cone, large
+values.
+                                                          1
+2                                                XIYU HU
+
+
+   The relation between these two problems is more substantial than the similarity of their conjectured
+exponents. Hyperbola decompositions express both errors in terms of fractional parts of reciprocal
+functions. After Fourier expansion, one obtains double sums in an integer frequency and an integer
+position variable. The Bombieri–Iwaniec method [1], adapted to the circle and divisor problems by
+Iwaniec and Mozzochi [10], divides the position interval into short pieces, classifies their slopes by
+rational approximations, and applies Poisson summation. A double large sieve then separates the
+resulting estimate into two spacing problems.
+   The first spacing problem concerns additive relations among the transformed frequencies. The
+second concerns coincidences among the rational and curvature data attached to the original short
+intervals. Huxley’s sequence of works [7, 8, 9] developed resonance-curve methods for the latter
+problem. In the squared-radius normalization, [9] gives the exponent 131/416 = 0.314903 . . . for
+both errors.
+   Decoupling introduced another source of information on the first spacing side. Bourgain and
+Watt [2] studied perturbed cones in connection with mean squares of the zeta function. The sharp
+cone square-function theorem of Guth, Wang, and Zhang [6] was formulated through wave envelopes:
+local averages of a square function at every intermediate angular scale. Guth and Maldague [5]
+refined that theorem by retaining an amplitude threshold. Their refinement implies small-cap
+decoupling for the cone. Li and Yang [11] combined this small-cap decoupling theorem with local
+arithmetic fourth moments and Huxley’s second spacing estimates, obtaining
+                      R(X), ∆(X) ≪ε X θ∗ +ε ,           θ∗ = 0.3144831759741 . . . .              (1.3)
+The improvement below is within this first-spacing architecture. It does not change the resonance-
+curve theorem or recover phases already removed from the short-block sum.
+Theorem 1.1. Put
+                                   √
+                          33333 − 8 64515
+                       ϑ=                 = 0.3134615421015514368 . . . .                         (1.4)
+                               99856
+For every ε > 0,
+                                  R(X) ≪ε X ϑ+ε ,        ∆(X) ≪ε X ϑ+ε .                          (1.5)
+   The exact value in (1.4) comes from an interior maximum in the parameter logT (H/M ), not from
+the largest allowed value of H. We prove the inequality at that maximum by an algebraic square
+identity; the decimal approximations and the figures play no role in the proof.
+
+1.2. The first-spacing estimate. Write e(t) = exp(2πit) and k ∼ K for integers K ≤ k < 2K.
+For 1 ≤ L ≤ K and an array a = (akl ) with |akl | ≤ 1, define
+                                           X X                       √
+                      Fa (x1 , x2 , x3 ) =       akl e(lx1 + klx2 + l k x3 ).         (1.6)
+                                           k∼K l∼L
+Let
+                                                 Z √K Z 1 Z 1
+                              q           1
+                     Gq (K, L) = sup √             √             |Fa (x)|q dx1 dx2 dx3 .          (1.7)
+                                |akl |≤1 2 K      − K    0   0
+
+The supremum is convenient when this quantity is inserted into a large-sieve inequality. Every
+estimate for it is, in particular, uniform in each individual coefficient array.
+Theorem 1.2. Let 1 ≤ L ≤ K and 4 < q ≤ 9/2. For every ε > 0, with P = KL,
+                         Gq (K, L)q ≪q,ε P ε P q/2 + KL2q−5 + K q−2 L(q−1)/2
+                                            
+                                                                                                  (1.8)
+                                                + K 3q/4−2 L5q/4−2 .
+                                                                    
+
+The constants are uniform when q belongs to a compact subinterval of (4, 9/2].
+                            FIRST SPACING AND LATTICE-POINT DISCREPANCY                                3
+
+
+Corollary 1.3. Under the hypotheses of Theorem 1.2, if
+                                     K q−4 ≤ L,       L3q−8 ≤ K 8−q ,                              (1.9)
+then
+                                       Gq (K, L) ≪q,ε (KL)1/2+ε .                                 (1.10)
+In particular,
+                         L11/7 ≤ K ≤ L2      =⇒       G9/2 (K, L) ≪ε (KL)1/2+ε .                  (1.11)
+
+Proof. Divide the third term of (1.8) by P q/2 ; the quotient is (K q−4 /L)1/2 . For the fourth term the
+quotient is (L3q−8 /K 8−q )1/4 . For the second term it is
+                                          K −(q−2)/2 L(3q−10)/2 .
+The second condition in (1.9) makes this at most one, since
+                           (3q − 8)(q − 2) − (3q − 10)(8 − q) = 6(q − 4)2 ≥ 0.
+The remaining assertion follows by setting q = 9/2.                                                   □
+  For unit-modulus arrays, orthogonality in x1 , x2 gives ∥Fa ∥2L2 ≍ KL. Thus a bound uniform in
+                                                                      #
+such arrays cannot improve the square-root order in (1.10). The point is to enlarge the range in
+which that order is available.
+
+1.3. Why the amplitude decomposition matters. Under the change of physical variables
+                                       √
+                     z1 = Lx1 ,  z2 = L K x3 ,   z3 = KLx2 ,
+the frequencies become
+                                √     !
+                             l l k lk                                 l          q
+                   ξkl =      , √ ,     = r(1, t, t2 ),          r=     ,   t=       k/K.         (1.12)
+                             L L K LK                                 L
+The integer k therefore labels a generator of a cone, while l varies along that generator. We call
+terms with the same k same-ray terms; terms pairing distinct k’s are cross-ray terms.
+   Li and Yang use small-cap decoupling and, on each small cap, an inequality of the form
+                                        ∥Fσ ∥qq ≤ ∥Fσ ∥q−4    4
+                                                       ∞ ∥Fσ ∥4 .                                 (1.13)
+The fourth moment and the largest pointwise amplitude in this inequality need not arise from
+the same configurations. We instead use [5, Theorem 2] before passing to a small-cap decoupling
+inequality. At angular scale s, this theorem restricts a contributing wave envelope U at amplitude
+α by a lower bound of the form
+                                          MU ≳ε P −ε α2 s2 ,
+where MU is a normalized local square-function mass.
+  Inside this mass we make the exact decomposition
+                                            M U = D U + CU .
+Here DU ≥ 0 contains the same-ray squares and CU ∈ R is the cross-ray contribution. Both terms
+have fourth-moment bounds, but their pointwise upper bounds differ:
+                                                     1
+                                                            
+                                       DU ≲ sP 1 +       ,                                        (1.14)
+                                                    Ks2
+                                                     1         1
+                                                               
+                                MU , |CU | ≲ sP 1 +        1 +      .                             (1.15)
+                                                    Ks2        Ls
+4                                                               XIYU HU
+
+
+
+
+    Largest admissible q   4.5
+
+
+
+
+                           4.4
+
+
+
+
+                           4.3
+
+                                                       Separate same-ray and cross-ray amplitudes
+                                                       One amplitude bound for both energies
+                                                       Additional square-root range
+                           4.2
+                              1.4    11/7 5/3              2                         2.5                  3
+                                                        Anisotropy ratio r = log K/log L
+
+
+                           Figure 1. The square-root region, expressed using r = log K/ log L for L > 1.
+                           The upper boundary from Corollary 1.3 is min{9/2, 4 + 1/r, 8(r + 1)/(r + 3)}. The
+                           dashed boundary is what the same envelope calculation gives if the radial energy
+                           is assigned the total amplitude bound. Both comparisons use the same arithmetic
+                           fourth-moment information; the difference is the amplitude assigned to the same-ray
+                           contribution.
+
+
+The large radial degeneracy KL3 occurs only in the energy of DU . Pairing it with the larger
+upper bound for MU unnecessarily charges it for coherence between distinct rays. Keeping the two
+amplitude thresholds separate replaces the contribution
+
+                                                   K q−3 Lq−1   by   K 3q/4−2 L5q/4−2 .
+
+The ratio is (L/K)(q−4)/4 . The full proof keeps the sign of CU until a pointwise splitting inequality
+is applied; no positivity of CU is assumed.
+
+
+1.4. Organization and external inputs. Section 2 implements the discrete frequency localization
+with the exact angular projections used by Guth and Maldague. Two rotated angular grids suffice,
+and an entire k-ray is assigned to one grid. This avoids cutting a Fourier atom with an angular
+multiplier. Section 3 proves the local density and arithmetic energy estimates, including the cross-ray
+count with the all-equal-k configurations removed. Section 4 integrates the two amplitude bounds
+and proves Theorem 1.2.
+   Sections 5 and 6 insert the four-term estimate into the Li–Yang large-sieve interface, retain all
+denominator scales, and check both admissible block lengths. Section 7 proves the Fourier and
+hyperbola reductions, with the circle reduction derived through the character modulo four. The
+analytic input is [5, Theorem 2]; the arithmetic input is [11, Lemma 4.4], with its stated block
+construction. The classical one-dimensional estimates and the finite sawtooth approximation are
+recorded explicitly where used. No higher-degree Weyl inverse theorem is an input to the proof.
+                          FIRST SPACING AND LATTICE-POINT DISCREPANCY                                5
+
+
+                2. Discrete localization for the wave-envelope theorem
+2.1. Notation and a common cutoff. All Fourier transforms use the convention
+                                                 Z
+                                       fb(ξ) =        f (z)e(−z · ξ) dz.
+                                                 R3
+A factor P ε may absorb a fixed number of logarithmic factors. In arguments using the wave-envelope
+theorem we first choose its small exponent δ > 0 and then take δ sufficiently small in terms of
+the final ε. All constants in geometric comparisons below are independent of K, L, P, s and of the
+centers of the envelopes.
+  We can assume that P exceeds a fixed absolute constant. Define the unlocalized normalized sum
+                                                     X
+                                      F0 (z) =                akl e(ξkl · z),
+                                                 k∼K,l∼L
+
+with ξkl as in (1.12). The box defining (1.7) becomes
+                                         [0, L] × [−P, P ] × [0, P ].
+The function F0 is periodic in z1 with period L. Repeating this period ⌈K⌉ times produces a box
+of volume comparable to P 3 with exactly the same normalized integral. After division by P the
+enlarged box lies in a fixed compact set.
+   Choose once and for all a Schwartz function χ such that χb is supported in a sufficiently small ball
+B(0, c) and |χ| is bounded below on this fixed compact set. Such a function is obtained by taking
+the inverse Fourier transform of a nonnegative even smooth bump supported in a sufficiently small
+ball. The small support makes that inverse transform positive on the prescribed compact set. In
+particular, no compactly supported Fourier transform is asserted to have an inverse transform equal
+to one on an open set.
+   Set
+                                       f (z) = χ(z/P )F0 (z).                                     (2.1)
+It follows that, for the array under consideration,
+                                                          Z
+                                      ∥Fa ∥qLq ≲ P −3           |f (z)|q dz.                      (2.2)
+                                             #            R3
+
+Every Fourier atom of f is supported in a ball of radius c/P about one of the points ξkl .
+
+2.2. The exact cone and angular projections. Let
+                                               3    w−u w+u
+                                                                               
+                                  A(u, v, w) =   v,    ,    .
+                                               5     2   2
+This fixed invertible map sends the frequencies to the circular cone. Indeed,
+                                                                     3             9
+                         (Aξkl )21 + (Aξkl )22 = (Aξkl )23 ,           ≤ (Aξkl )3 < .
+                                                                     5             5
+The image is strictly inside the fixed radial truncation 1/2 < ξ3 < 2 used in [5, Section 5]. Choose
+R ∈ 4N so that P ≤ R < 4P . By choosing c sufficiently small, all transformed Fourier atoms lie in
+the R −1 neighborhood of that cone.
+  In the notation of [5, Section 5], canonical angular caps are defined in cylindrical coordinates by
+a partition of the angle into intervals of length
+                                               δ0 = 2πR −1/2 .
+The projections in the theorem are sharp Fourier restrictions to these sectors. This exact definition
+permits the following localization.
+6                                                          XIYU HU
+
+
+Lemma 2.1. The function f in (2.1) is the sum of two functions such that, for each one, after a
+rotation of the circular cone, every canonical projection has the form
+                                                              X X
+                                        fθ (z) = χ(z/P )                   akl e(ξkl · z).                   (2.3)
+                                                             k∈Kθ l∼L
+
+The sets Kθ are disjoint. An entire ray, namely all the frequencies with a given k, is assigned to the
+same angular grid and the same canonical cap. No parameter-dependent multiplier norm is required.
+Proof. Consider the angular grid with endpoints jδ0 and the grid with endpoints (j + 1/2)δ0 . Every
+angle is at distance at least δ0 /4 from the endpoints of one of these two grids. The circular angle of
+Aξkl depends only on k, not on l. Assign the whole k-ray to a grid having this separation property.
+   The angular diameter of a transformed Fourier atom is O(c/P ), uniformly in k, l, because its
+radial coordinate is bounded away from zero. This is smaller than δ0 /8 for all sufficiently large P .
+Thus each atom lies wholly in the interior of a single canonical angular sector of its assigned grid. A
+sharp projection to that sector either keeps the entire atom or removes it. This proves (2.3).
+   The second grid is the first grid rotated by δ0 /2. The circular cone, its radial truncation, and
+the constants in the wave-envelope theorem are invariant under this rotation. Its dependence on P
+is harmless because the rotation is orthogonal. The fixed map A changes integrals and envelope
+volumes by fixed determinant factors, which cancel in normalized local averages. Finally,
+                           Z                                     Z                 Z                
+                                    (0)        (1) q       q−1             (0) q             (1) q
+                               |f         +f      | ≤2                |f      | +       |f      |        .
+
+It suffices to estimate either class with the same uniform bound. The finitely many bounded values
+of P are included by increasing the constant.                                                   □
+   We henceforth work with one of these two classes and suppress the superscript. Coarse angular
+sectors are unions of canonical sectors in the same grid, exactly as in [5, Section 5]. Since all atom
+supports avoid the fine boundaries, they also avoid every coarse boundary. The corresponding
+projections therefore keep whole atoms as well.
+2.3. Envelopes, weights, and the external theorem. At a dyadic angular scale R −1/2 ≤ s ≤ 1,
+let τ be a coarse sector. Its wave envelopes have dimensions comparable to
+                                                       P s2 × P s × P.                                       (2.4)
+In circular coordinates these dimensions are measured in the generator, angular tangent, and normal
+directions. We pull the envelopes and their weights back to the z coordinates. They may then
+be parallelepipeds rather than orthogonal boxes; all volume and Fourier comparisons below are
+unchanged by this fixed linear map.
+   For each τ , the envelopes tile R3 by translation. We use the weights WU from [5, Sections 2 and
+5]. In normalized envelope coordinates they are fixed constant multiples of
+                                                           3
+                                                                 (1 + u2j )−100 .
+                                                           Y
+                                               W (u) =                                                       (2.5)
+                                                           j=1
+                                    R
+They are nonnegative, satisfy           WU ≍ |U |, and have bounded overlap:
+                                                       X
+                                                             WU (z) ≲ 1.                                     (2.6)
+                                                   U ∥Uτ,P
+
+All derivatives of W are integrable. The same assertions hold after the fixed coordinate changes
+already made.
+   Define
+                                       1
+                                          Z X
+                               MU =               |fθ (z)|2 WU (z) dz.                      (2.7)
+                                      |U | R3 θ⊂τ
+                          FIRST SPACING AND LATTICE-POINT DISCREPANCY                                 7
+
+
+The amplitude-dependent wave-envelope theorem [5, Theorem 2] gives, for every δ > 0 and α > 0,
+                                                            XX       X
+                         α4 |{z : |f (z)| > α}| ≤ Cδ P δ                      |U |MU2 ,           (2.8)
+                                                            s   τ U ∈Uτ (α)
+
+
+where a contributing envelope satisfies
+
+                                         α2
+                          C δ P δ MU ≥       ,     ns = #{τ : fτ ̸≡ 0} ≲ s−1 .                    (2.9)
+                                         n2s
+
+Here ns counts the active coarse caps at that scale; it is not the number of fine caps inside a given
+coarse cap. Adding the two endpoint scales to the sum only enlarges the right-hand side. We will
+use (2.8) in precisely this form.
+
+2.4. The adapted Fourier metric. Fix a sector τ and choose a parameter t0 at its angular
+endpoint. On its support, t0 ≍ 1 and |t − t0 | ≲ s. The following linear coordinates on frequency
+space are useful:
+                           η0 = r,       η1 = r(t − t0 ),       η2 = r(t − t0 )2 .               (2.10)
+They are linear functions of (r, rt, rt2 ). If BU maps a fixed unit cube to the centered envelope, then
+its Fourier-dual metric is comparable to
+
+                             |BUT ν| ≍ P s2 |η0 (ν)| + P s|η1 (ν)| + P |η2 (ν)|.                 (2.11)
+
+Here ηj is applied as a linear functional to a difference vector ν.
+   For completeness, omit the harmless scalar 3/5 in A, put D0 = 1 + t20 , and write the image of
+r(1, t, t2 ) in the orthogonal circular frame consisting of the generator, angular tangent, and normal
+at t0 . The coefficients in that frame are
+
+                                      D0               t2
+                                 ac =     η0 + t0 η1 + 0 η2 ,
+                                       2              2D0                                        (2.12)
+                                            t0                 1
+                                 at = η 1 +    η2 ,    an = −     η2 .
+                                            D0                2D0
+This is a triangular invertible change of coordinates with uniformly bounded coefficients and inverse
+coefficients. Weighting its rows by P s2 , P s, P , respectively, preserves boundedness of both maps
+because s ≤ 1. This proves (2.11).
+
+Lemma 2.2. For every fixed A0 > 0, uniformly in U ,
+                                                                     −A0
+                                 \
+                             |χ(·/P )|2 WU (ν) ≤ CA0 |U | 1 + |BUT ν|     .                      (2.13)
+
+Proof. Write z = zU + BU u in the Fourier integral. The operator norm of BU /P is bounded, since
+the largest envelope dimension is O(P ). Every derivative in u of |χ((zU + BU u)/P )|2 is consequently
+bounded uniformly in zU , U, P . After multiplication by the fixed weight (2.5), the derivatives are
+integrable, with uniform norms. Repeated integration by parts in u, followed by the Jacobian factor
+| det BU | ≍ |U |, gives (2.13).                                                                    □
+
+   This estimate is for the actual weights in (2.8). Exact integer orthogonality will be used only
+after those weights have been summed out. We do not claim that a single envelope integral retains
+that orthogonality.
+8                                                        XIYU HU
+
+
+                                  3. Same-ray and cross-ray energies
+3.1. Local frequency density. For each retained k, put
+                                                               X
+                                         fk (z) = χ(z/P )            akl e(ξkl · z).                    (3.1)
+                                                               l∼L
+                       P
+By Lemma 2.1, fθ =        k∈Kθ fk . Define
+                                                       1
+                                                              Z X
+                                                 DU =                |fk |2 WU ,                        (3.2)
+                                                      |U |     k∈τ
+                                                 CU = M U − D U .                                       (3.3)
+Both quantities are real, and DU ≥ 0; CU is not assumed nonnegative. Set
+                                                 1         1
+                                                           
+                               M(s) = sP 1 +           1+       ,                                       (3.4)
+                                                Ls        Ks2
+                                                  1
+                                                    
+                                D(s) = sP 1 +          .                                                (3.5)
+                                                Ks2
+Lemma 3.1. At every admissible scale s and every envelope U ,
+                             MU ≲ M(s),                 DU ≲ D(s),                |CU | ≲ M(s).         (3.6)
+Also, at each fixed scale,
+                              P −3                                 P −3
+                                       X                                    X
+                                             |U |MU ≲ P,                          |U |DU ≲ P.           (3.7)
+                                       τ,U                                  τ,U
+
+Proof. For two frequencies in τ whose difference lies in the 2j dilation of the dual envelope, (2.11)
+implies
+                                           2j                                       2j
+                          |r − r′ | ≲          ,    |r(t − t0 ) − r ′ ′
+                                                                     (t  − t 0 )| ≲    .
+                                          P s2                                      Ps
+Since r, r′ ≍ 1 and |t − t0 |, |t′ − t0 | ≲ s, the second inequality and the first give |t − t′ | ≲ 2j /(P s).
+Thus
+                                                  2j                      2j
+                                     |l − l′ | ≲     2
+                                                       ,     |k − k ′ | ≲      .                        (3.8)
+                                                 Ks                       Ls
+For a fixed frequency there are therefore at most
+                                                               !                  !
+                                                       2j               2j
+                                                 C 1+                1+
+                                                      Ks2               Ls
+neighbors atpthat dilation. The number of frequencies in τ is O(sP ): its k interval has length O(sK),
+and sK ≳ K/L ≳ 1 up to absolute constants.
+   Expand (2.7), use Lemma 2.2, and sum these neighbor counts against 2−A0 j with A0 > 4. Taking
+the absolute value of each pair only increases the upper bound. This proves MU ≲ M(s). For DU ,
+all pairs have k = k ′ , so the second factor in the neighbor count is absent. This proves DU ≲ D(s).
+Finally, |CU | ≤ MU + DU ≲ M(s).
+   To prove (3.7), first note the exact orthogonality
+                                       Z X                                  Z X
+                                  −3                2                  −3
+                              P                  |fθ | ≲ P,        P                  |fk |2 ≲ P.       (3.9)
+                                             θ                                    k
+Indeed, distinct integer pairs have distinct first or third normalized coordinates, separated by at least
+1/P . The Fourier transform of |χ(·/P )|2 is supported in B(0, 2c/P ), so all off-diagonal     integrals
+vanish when 2c < 1. The diagonal integrals equal a fixed constant times P 3 |akl |2 ≲ P 4 . Each
+                                                                                    P
+
+fine cap or ray belongs to one coarse sector at a fixed scale. Sum the envelope weights using (2.6)
+and apply (3.9).                                                                                       □
+                           FIRST SPACING AND LATTICE-POINT DISCREPANCY                                   9
+
+
+  Define the two energy sums
+                        ED (s) = P −3                       EC (s) = P −3
+                                        X                                       X
+                                              |U |DU2 ,                               |U ||CU |2 .   (3.10)
+                                        τ,U                                     τ,U
+
+The density estimates immediately imply
+                                 ED (s) ≲ P D(s),           EC (s) ≲ P M(s).                         (3.11)
+For the second assertion use |CU |2 ≤ 2MU2 + 2DU2 , followed by Lemma 3.1. The nonnegativity of
+CU is not needed.
+
+3.2. A fourth-moment count without the radial degeneracy.
+Lemma 3.2. Let 1 ≤ V ≤ CK. The number of integer quadruples (ki , li )4i=1 with ki ∼ K, li ∼ L,
+                                                 l1 + l2 = l3 + l4 ,                                 (3.12)
+                                          k1 l1 + k2 l2 = k3 l3 + k4 l4 ,                            (3.13)
+with diam{k1 , k2 , k3 , k4 } ≤ V and with the ki not all equal, is
+                                                  ≪ε P ε KV 2 L2 .                                   (3.14)
+If the restriction that the ki are not all equal is removed, an additional O(KL3 ) suffices.
+Proof. Fix k4 and write
+                       di = ki − k4     (1 ≤ i ≤ 3),          a = l1 − l3 ,       b = l2 − l3 .
+Then |di | ≲ V , |a|, |b| ≲ L, and l4 = l3 + a + b. The second equation becomes
+                                        ad1 + bd2 = l3 (d3 − d1 − d2 ).                              (3.15)
+If ad1 + bd2 ≠ 0, choose k4 , d1 , d2 , a, b in O(KV 2 L2 ) ways. The left side is a nonzero integer of
+magnitude O(LV ). Its positive divisor l3 has Oε (P ε ) choices, and then d3 is determined. Dropping
+range restrictions only enlarges the count.
+                                                                          ̸ 0, choose a, d1 and then use
+   If ad1 + bd2 = 0, positivity of l3 forces d3 = d1 + d2 . If ad1 = −bd2 =
+the divisor bound to choose b, d2 ; choose l3 , k4 freely. This contributes Oε (P ε KV L2 ).
+   The remaining zero-product alternatives are covered by
+                         a = b = 0,     a = d2 = 0,       d1 = b = 0,       d1 = d2 = 0.
+Their first three contributions are at most O(KLV 2 ), O(KV L2 ), and O(KV L2 ), respectively. In
+the last alternative, (3.15) forces d3 = 0, so every ki = k4 . This alternative is excluded. As V, L ≥ 1,
+all retained contributions are bounded by (3.14). When the exclusion is dropped, the all-equal-k
+family has O(KL3 ) elements by the first equation in (3.12).                                          □
+
+3.3. The two arithmetic energies.
+Lemma 3.3. At every scale,
+                                              ED (s) ≲ sP 2 + KL3 ,                                  (3.16)
+                                              EC (s) ≪ε P ε P s2 K 2 L.                              (3.17)
+Consequently,
+                                ED (s) ≪ε P ε min{P D(s), sP 2 + KL3 },                              (3.18)
+                                                 ε                     2    2
+                                EC (s) ≪ε P min{P M(s), P s K L}.                                    (3.19)
+10                                                        XIYU HU
+
+
+Proof. Put                          X                                    X
+                         dτ (z) =         |fk (z)|2 ,         cτ (z) =         |fθ (z)|2 − dτ (z).
+                                    k∈τ                                  θ⊂τ
+Weighted Cauchy–Schwarz and (2.6) give
+                                                              XZ
+                                                         −3
+                                          ED (s) ≲ P                |dτ (z)|2 dz,                              (3.20)
+                                                              τ
+                                                              XZ
+                                          EC (s) ≲ P −3             |cτ (z)|2 dz.                              (3.21)
+                                                              τ
+This is where the weights are removed. The common factor in each fourth-moment integrand is
+|χ(z/P )|4 , whose Fourier transform is supported in B(0, 4c/P ). A nonzero integral of a frequency
+quadruple thus requires
+                        l1 + l2 − l3 − l4   4c        k1 l1 + k2 l2 − k3 l3 − k4 l4  4c
+                                          < ,                                       < .
+                                L           P                       P                P
+For 4c < 1 the numerators, which are integers, must vanish. The remaining approximate square-root
+equation may be discarded in an upper bound, and every normalized integral has absolute value
+O(1).
+   For d2τ the quadruples consist of one difference on a ray k and another on a ray k ′ . If k =  ̸ k ′ , the
+two integer equations force the two l-differences to vanish separately. There are O(sK ) choices2
+
+for k, k ′ in a common coarse sector and O(L2 ) choices for the radial diagonal. If k = k ′ , the radial
+additive relation has O(L3 ) solutions. Summing over sectors gives O(sK 2 L2 + KL3 ), proving (3.16).
+   Every term of cτ pairs distinct rays lying in the same canonical cap. Hence, in the expansion of
+|cτ |2 , the four k’s cannot all be equal. All four belong to the same coarse sector, so their diameter is
+O(sK). Each quadruple is counted in at most a fixed number of coarse sectors. Apply Lemma 3.2
+with V ≍ sK (using 1 + sK ≍ sK if necessary). The result is
+                                          P ε K(sK)2 L2 = P ε P s2 K 2 L,
+which proves (3.17). Taking absolute values after the expansion is legitimate; no sign of the individual
+coefficient products is asserted. Combine these estimates with (3.11) to obtain (3.18) and (3.19). □
+
+                     4. Amplitude splitting and the first-spacing bound
+4.1. A restricted splitting inequality.
+Lemma 4.1. If M ≥ 0, D ≥ 0, C ∈ R, and M = D + C, then for every u > 0,
+                             M 2 1{M ≥u} ≤ 4D2 1{D≥u/2} + 4|C|2 1{|C|≥u/2} .                                    (4.1)
+Proof. If M < u there is nothing to prove. Otherwise max(D, |C|) ≥ M/2 ≥ u/2, because
+M ≤ D + |C|. The corresponding summand on the right is at least M 2 .              □
+Proposition 4.2. Let 4 < q ≤ 9/2 and put ρ = (q − 4)/2. Then
+                                                   "                                               ρ
+                                                                                            D(s)
+                                               X                                        
+                             q             ε
+                    Gq (K, L) ≪q,ε P                   min{P D(s), sP 2 + KL3 }
+                                               s                                             s2
+                                                                                                    ρ #        (4.2)
+                                                                              M(s)
+                                                                                        
+                                                                                2   2
+                                                       + min{P M(s), P s K L}                              .
+                                                                               s2
+
+Proof. From (2.9), a contributing envelope obeys MU ≥ cδ P −δ α2 s2 . Apply Lemma 4.1 to MU =
+DU + CU at this threshold. The same-ray contribution can occur only if
+                                                                                        D(s)1/2
+                         DU ≥ 12 cδ P −δ α2 s2 ,           hence          α ≲δ P δ/2            .
+                                                                                          s
+                          FIRST SPACING AND LATTICE-POINT DISCREPANCY                               11
+
+
+The cross-ray contribution similarly requires
+                                                           M(s)1/2
+                                             α ≲δ P δ/2            .
+                                                             s
+Use the layer-cake identity        Z               Z ∞
+                                       |f |q = q         αq−1 |{|f | > α}| dα
+                                                   0
+and insert (2.8) with the split right-hand side. Tonelli’s theorem applies to the resulting nonnegative
+majorants. At a fixed scale, the remaining amplitude integral is 0As αq−5 dα = Aq−4
+                                                                    R
+                                                                                      s /(q − 4), with
+the appropriate bound for As in each branch. Divide by P 3 , use Lemma 3.3, and then use (2.2).
+Choose δ small enough to absorb the factors P δ and P δ(q−4)/2 into the displayed P ε . Finally sum
+the two angular classes from Lemma 2.1. This proves (4.2).                                           □
+4.2. The same-ray contribution. We estimate its summand first. If s ≥ K −1/2 , then D(s) ≲ sP .
+The density energy gives
+                                         D(s) ρ
+                                            
+                                P D(s)          ≲ P 2+ρ s1−ρ ≤ P q/2 .                        (4.3)
+                                          s2
+If P −1/2 ≲ s ≤ K −1/2 , then D(s) ≲ L/s. Use the arithmetic energy instead. Its sP 2 term is
+                                                   P 2 Lρ s1−3ρ .
+Since 0 < ρ ≤ 1/4, this is largest at s = K −1/2 . Dividing that endpoint value by P 2+ρ gives
+K (ρ−1)/2 ≤ 1. The KL3 term is
+                           KL3 Lρ s−3ρ ≲ KL3+ρ P 3ρ/2 = K 3q/4−2 L5q/4−2 .                       (4.4)
+Thus the same-ray part is controlled, at every scale, by the first and fourth terms of (1.8).
+4.3. The cross-ray contribution. There are three angular regimes. If
+                                          s ≥ max(L−1 , K −1/2 ),
+then M(s) ≲ sP , and the density energy gives
+                                                    ρ
+                                       M(s)
+                                         
+                                P M(s)                   ≲ P q/2 s3−q/2 ≤ P q/2 .                (4.5)
+                                        s2
+  When K ≤ L2 , the intermediate range is L−1 ≤ s ≤ K −1/2 . In that range M(s) ≲ L/s, so the
+same density argument gives
+                                 P L(q−2)/2 s5−3q/2 ≤ P L2q−6 = KL2q−5 .
+The power of s is negative and the largest value is at s = L−1 . When K ≥ L2 , the intermediate
+range is K −1/2 ≤ s ≤ L−1 . Then M(s) ≲ K, and the contribution is at most
+                              P K (q−2)/2 s−(q−4) ≤ P K q−3 ≤ K q−2 L(q−1)/2 .
+  Finally suppose
+                              P −1/2 ≲ s ≤ min(L−1 , K −1/2 ).
+Here M(s) ≲ s−2 , and the summand is at most
+                                        P min{s6−2q , K 2 L s10−2q }.                            (4.6)
+The first function in the minimum is decreasing in s and the second is increasing. They agree at
+                                             sc = K −1/2 L−1/4 .                                 (4.7)
+Whether or not this scale lies in the interval under consideration, the maximum over all positive s
+is an upper bound. Its value is
+                                       P s6−2q
+                                          c    = K q−2 L(q−1)/2 .
+12                                                        XIYU HU
+
+
+This gives the third term of (1.8).
+Proof of Theorem 1.2. Combine (4.3)–(4.6) in Proposition 4.2. There are O(log(2P )) scales, and
+their number is absorbed into P ε . Adjust the auxiliary small exponents to obtain the stated value
+of ε. The construction and all estimates were uniform in |akl | ≤ 1, so the supremum in (1.7) is
+permitted.                                                                                       □
+Remark 4.3. If the same-ray energy KL3 were multiplied by the total cutoff (M(s)/s2 )ρ , its
+smallest-scale contribution would be K q−3 Lq−1 . Equation (4.4) is smaller by (L/K)(q−4)/4 . No
+radial additive relation has been removed: the gain comes solely from assigning that relation its
+own amplitude bound. Figure 1 displays the resulting change in the square-root region.
+
+                   5. The arithmetic interface and both block lengths
+5.1. The double sums and the quoted large sieve. For a real phase F on [1, 2], write
+                                                             hT
+                                           X                    X                                     
+                   S(H, M, T ; F ) =     g(h/H)     G(m/M )e    F (m/M ) .                                     (5.1)
+                                     h∼H        m∼M
+                                                             M
+The bounded-variation norms of g, G are measured by ∥w∥BV = ∥w∥∞ + Var(w). Constants below
+may depend on these norms and on fixed phase bounds. In particular, interval indicator weights
+give estimates uniform in both upper summation endpoints.
+   The arithmetic input is the following specialization of [11, Lemma 4.4, equations (4.8) and (4.12)].
+We state sufficient hypotheses in the range M ≤ T 1/2 , which is all that will be used. Assume
+                  c ≤ |F (j) (t)| ≤ C         (j = 1, 2, 3),        |F ′ (t)F ′′′ (t) − 3F ′′ (t)2 | ≥ c       (5.2)
+throughout [1, 2]. There are fixed constants in the block construction, depending only on these
+bounds, with the following properties.
+  In Case A it suffices that
+                             H ≥ M −9 T 4 (log T )171/140 ,              H ≤ M T −49/164 ;                     (5.3)
+use a block length comparable to
+                              NA = M 41/25 H −16/25 T −49/100 (log T )969/14000 .                              (5.4)
+In Case B it suffices that
+                     H ≤ min{M 35/69 T −2/23 , B0 M 3/2 T −1/2 },                       M ≤ T 1/2 ,            (5.5)
+where B0 > 0 is a fixed phase-dependent constant; use a block length comparable to
+                              n                                                                            o
+                NB = min M 7/8 H −29/40 T −3/20 (log T )969/5600 ,                   M 2 H −1/3 T −2/3 .       (5.6)
+The fixed small factors and integer rounding in these lengths are those allowed by the cited
+construction. Comparisons of such lengths below are understood up to those fixed factors.
+  For the chosen N , put
+                                  M3                   NQ                  HQ                  R02
+                      R02 ≍          ,        K≍           ,        L≍         ,        η≍         .           (5.7)
+                                  NT                   R02                 R02                 NH
+Let Gq (K, L, η) denote the supremum of the normalized Lq norm of (1.6) over complete periods in
+x1 , x2 and                                       √
+                                       |x3 | ≤ (ηL K)−1 .
+Then the large-sieve input is
+                                                       3−6/q                   22/(17q)
+                                                  R0            M R0       H
+                                                                      
+                               ε                                                                               (5.8)
+                  |S| ≪ε T           max                                                    Gq (K, L, η),
+                                   R0 ≤Q≲Q2       Q              N         R0
+                          FIRST SPACING AND LATTICE-POINT DISCREPANCY                                13
+
+
+where
+                                                                            −3/4
+                              Q2 = R0 (H/R0 )39/119 log(2H/R0 )                     .             (5.9)
+We use 4 < q ≤ 9/2. The parameters in the construction satisfy R0 ≲ H ≪ N and 1 ≤ L ≤ K ≤
+η −1 ≤ KL, with fixed harmless adjustments at endpoints.
+   The two substantive assertions being quoted here are the admissible block construction and (5.8);
+we do not reprove Huxley’s resonance-curve theory. They precede the insertion of the first-spacing
+estimate in [11]. In particular, condition (4.6) of that paper is a hypothesis needed for its particular
+first-spacing bound, not an additional hypothesis on (5.8). Section 4.3 there obtains it when
+substituting that bound into Lemma 4.4.
+   The precursor [3] was withdrawn because of its first-spacing assertions. We do not use those
+assertions or its numerical conclusion. The arithmetic interface quoted above is the one explicitly
+restated and used in [11]; the replacement first-spacing estimate is proved in Sections 2–4 of the
+present paper.
+
+5.2. Every denominator scale. Put
+
+                            ν = Q/R0 ,         K0 = N/R0 ,              L0 = H/R0 .
+
+Then K ≍ νK0 , L ≍ νL0 , and ηKL ≍ ν 2 . Comparing the actual integrals, before normalizing their
+volumes, gives
+                                       Gq (K, L, η)q ≲ ν 2 Gq (K, L)q .                          (5.10)
+If fixed comparison constants make an interval slightly larger than the defining one in (1.7), cover it
+by a bounded number of translates. Translation in x3 only multiplies akl by a unit-modulus factor,
+so the supremum gives the same bound. This also accounts for the fixed constants implicit in (5.7).
+Formula (5.10) is a volume comparison, not a monotonicity statement about normalized norms.
+   Insert Theorem 1.2 and (5.10) into (5.8). After raising to the qth power, the four monomials
+have the following total powers of ν:
+                                                           11 − 3q
+                             8 − 2q,        4 − q,                 ,            4 − q.           (5.11)
+                                                              2
+They are nonpositive throughout the stated range. Hence each term is largest at Q ≍ R0 . If the
+square-root conditions hold at (K0 , L0 ), the result is
+                                                   s                22/(17q)
+                                                       H       H
+                                                           
+                                               ε
+                                   |S| ≪ε T M                                   .                (5.12)
+                                                       N       R0
+No square-root condition has been imposed at the larger values of Q: the complete four-term
+estimate was kept until after (5.11) was verified.
+
+5.3. Dependence on the block length. For fixed H, M, T one has R0 ≍ N −1/2 , K0 ≍ N 3/2 , and
+L0 ≍ N 1/2 . The prefactor in (5.8), at Q ≍ R0 , has power −3/2 + 11/(17q) in N . The complete four
+endpoint terms consequently have powers
+                        1  11             1  6                 1 177                1   57
+                       − +    ,          − −    ,               −    ,                −    .     (5.13)
+                        2 17q             2 17q                4 68q                4 17q
+All are negative for 4 < q ≤ 9/2. It follows that an estimate at an admissible NB ≳ NA may be
+weakened to its value at NA , term by term. Only after this comparison will we use the square-root
+conditions at NA .
+14                                               XIYU HU
+
+
+                     6. The exponent optimization and the hard range
+6.1. Elementary estimates and reciprocal phases. For the final reductions it suffices to consider
+the uniformly regular reciprocal class
+                                            c0
+                                  F (t) =        + b0 ,     1 ≤ t ≤ 2,                      (6.1)
+                                          t + a0
+where |c0 | is bounded above and bounded away from zero, |t + a0 | is bounded above and bounded
+away from zero, and b0 ∈ R is arbitrary. The constants may depend on these fixed bounds, but not
+on b0 . All derivative conditions (5.2) hold; in particular,
+                                                           6c20
+                                    F ′ F ′′′ − 3(F ′′ )2 = −      .
+                                                        (t + a0 )6
+This class permits parameters a0 , c0 to vary in the indicated compact sets. It contains the shifted
+reciprocals arising in the circle reduction.
+Lemma 6.1. For this class, M ≤ T 1/2 , and H ≥ 1, uniformly over subintervals and bounded-
+variation weights,
+                                    |S|/H ≪ (HT )2/7 + 1,                                       (6.2)
+                                    |S|/H ≪ (HT /M )1/2 + T 1/4 .                               (6.3)
+Proof. The classical exponent pair (2/7, 4/7) applied to the inner reciprocal sum gives
+                        hT                                          M2
+                  X                  
+                      e    F (m/M )       ≪ (hT /M 2 )2/7 M 4/7 +      ≪ (hT )2/7 + 1.
+                  m∈I
+                        M                                           hT
+The pair follows from (0, 1) by the successive operations B, A, A, B; the derivative hypotheses for
+reciprocal functions and these operations are given in [4, Chapters 2–3]. This application is uniform
+in a0 , c0 in the stated compact sets. The additive constant contributes only a phase depending on h
+and does not affect the one-dimensional estimate. Sum over h ∼ H to obtain (6.2).
+   The second-derivative bound [4, Theorem 2.2], with |Φ′′h | ≍ hT /M 3 , gives
+                             X                                   M 3/2
+                                  e(Φh (m)) ≪ (hT /M )1/2 +              + 1.
+                            m∈I
+                                                                (hT )1/2
+The second term is at most T 1/4 when M ≤ T 1/2 and h ≥ 1. Summation in h proves (6.3). Partial
+summation supplies the stated weights. In particular, the reciprocal term in the second-derivative
+estimate has not been discarded without a bound.                                                □
+     We seek |S|/H ≪ε T ϑ+ε for 1 ≤ H ≤ M T −ϑ and M ≤ T 1/2 . By Lemma 6.1 only the range
+                     T (7ϑ−2)/2 < H ≤ M T −ϑ ,        H > M T 2ϑ−1 ,      M ≤ T 1/2             (6.4)
+remains.
+6.2. Checking the arithmetic cases. Let
+                                     B∗ = M −9 T 4 (log T )171/140 .
+If H ≥ B∗ , use Case A. Its upper condition holds because ϑ > 49/164. Suppose instead that
+H < B∗ . Interpolating H ≤ M T −ϑ and H < B∗ with weights 328/345 and 17/345 yields
+                             H ≤ M 35/69 T (68−328ϑ)/345 (log T )969/16100 .                    (6.5)
+Since ϑ > 49/164, the power of T is strictly smaller than −2/23, absorbing the logarithm. Also, by
+(6.4),
+                                M 3/2 T −1/2
+                                              ≥ T (13ϑ−4)/4 −→ ∞,                            (6.6)
+                                     H
+                         FIRST SPACING AND LATTICE-POINT DISCREPANCY                               15
+
+
+because ϑ > 4/13. Thus the phase-dependent constant B0 in (5.5) is allowed for sufficiently large T ,
+and Case B applies.
+  To compare its length with NA , use again (6.4):
+                             H 23 M 27 ≥ H 50 T 27ϑ ≥ T 202ϑ−50 > T 53/4 .                      (6.7)
+The last inequality has a fixed power margin, since ϑ > 253/808. If NB,1 and NB,2 denote the two
+alternatives in (5.6), direct division gives
+                                              17/200
+                           NB,1          B∗
+                                     
+                                =                       ≥ 1,                                    (6.8)
+                           NA            H
+                                                     !1/75
+                           NB,2          H 23 M 27
+                                =                            (log T )−969/14000 ≥ 1             (6.9)
+                           NA             T 53/4
+for all sufficiently large T . Fixed admissibility factors change these comparisons only by constants.
+By (5.13), the complete estimate at NB is therefore bounded by its value at NA .
+
+6.3. The endpoint spacing parameters. Put H/M = T x . In (6.4),
+                                              2ϑ − 1 < x ≤ −ϑ.                                 (6.10)
+At NA , the powers of K0 = NA /R0 and L0 = H/R0 are
+                                     47    24x                51    17x
+                           κ(x) = −     −      ,     λ(x) =      +       .                     (6.11)
+                                    200     25               200     25
+Logarithmic factors have been suppressed only in these power identities. They can either be retained
+in the four monomials, or absorbed by a smaller auxiliary ε.
+   Here x > −3/8, so λ(x) > 0 with a fixed margin; its smallest value is (34/25)ϑ − 17/40 > 0.
+Moreover,
+                        41x     49                                     16x    49
+       logT (NA /H) = −     −      + o(1) > 0,      logT (NA /M ) = −      −     + o(1) < 0.
+                         25    100                                      25   100
+Thus R0 ≪ H ≪ NA ≪ M , and 1 ≪ L0 ≤ K0 . Also R0 ≫ 1: from M ≥ HT ϑ and (6.4),
+                                    9ϑ − 2    8            51
+                         logT R0 ≥         + (2ϑ − 1) −        + o(1) > 0.
+                                       2     25           200
+These inequalities have fixed positive margins and supply the constant separations required in the
+block construction. At the actual Case B length, NB ≳ NA implies NB /H ≫ 1 and H/R0 ≫ 1.
+The upper bound NB ≤ NB,2 gives, separately,
+                             NB
+                                ≲ M H −1/3 T −2/3 ≤ T −1/6 H −1/3 ≪ 1,
+                             M
+and
+                               R02 ≳ M H 1/3 T −1/3 ≥ T (17ϑ−5)/3 ≫ 1.
+For the last inequality use M ≥ HT ϑ and H > T (7ϑ−2)/2 . Thus neither the large block nor its asso-
+ciated spacing scale leaves the permitted range. Finally, Q2 /H = (H/R0 )−80/119 (log(2H/R0 ))−3/4
+tends to zero, so the displayed denominator range remains below the available
+                                                                        √      H scale.
+   The major-arc term in the quoted construction has size M R0 log H/ HN . Compared to the
+right side of (5.12), its ratio, apart from a logarithm, is
+                                   R0
+                                      (H/R0 )−22/(17q) ≤ 1.
+                                   H
+The other complementary terms are already included in the interface (5.8); no new gain is assigned
+to them.
+16                                                 XIYU HU
+
+
+6.4. A square identity for the largest exponent. The square-root conditions (1.9), at the level
+of powers of T , are
+                           (q − 4)κ ≤ λ,   (3q − 8)λ ≤ (8 − q)κ.                         (6.12)
+Choose                                  (
+                                        4 + λ(x)/κ(x),        x ≤ −149/464,
+                               q(x) =                                                        (6.13)
+                                        9/2,                  x ≥ −149/464.
+Lemma 6.2. For x in (6.10), the choice (6.13) lies in a fixed compact subinterval of (4, 9/2] and
+satisfies (6.12).
+Proof. Let r = κ/λ. Both quantities are positive. The identity r = 2 occurs at x = −149/464. On
+the first interval r ≥ 2 and q = 4 + 1/r. The first inequality is an equality; the second reduces
+to 4r2 − 5r − 3 ≥ 0, valid for r ≥ 2. On the second interval q = 9/2. Its two inequalities become
+11/7 ≤ r ≤ 2. The lower condition is equivalent to
+                                                x ≤ −89/284,
+and follows from x ≤ −ϑ and ϑ > 89/284. The lower endpoint 2ϑ − 1 is strictly larger than −3/8,
+at which λ vanishes. Compactness gives a fixed distance of q(x) from 4.                      □
+     Divide (5.12), evaluated at NA , by H. Its exponent in T is
+                                         9  22     49   33
+                                                         
+                              E(x, q) = − +     x+    +     .                                (6.14)
+                                         50 25q    200 100q
+For the first choice of q this equals
+                                                2208x2 + 9396x + 1963
+                                   E1 (x) =                           .                      (6.15)
+                                                   40(632x + 137)
+For the second it equals
+                                                       28x + 573
+                                            E2 (x) =             .                           (6.16)
+                                                         1800
+     Define
+                               25280ϑ − 9396
+                           x0 =              = −0.3332636357954664 . . . .                   (6.17)
+                                   4416
+The following identity is exact:
+                                                       276 (x − x0 )2
+                                     E1 (x) − ϑ =                     .                      (6.18)
+                                                        5 632x + 137
+Indeed, after bringing E1 (x) − ϑ over its denominator, its numerator is
+                             2208x2 + (9396 − 25280ϑ)x + 1963 − 5480ϑ.
+The value (1.4) makes its discriminant zero, and its double root is (6.17). This proves (6.18). The
+denominator is negative on (6.10); hence E1 (x) ≤ ϑ, with equality at x = x0 .
+  The function E2 is increasing. Its largest value in the remaining interval is E2 (−ϑ), and
+                                                              573
+                                   E2 (−ϑ) ≤ ϑ         ⇐⇒     ϑ≥   .                         (6.19)
+                                                              1828
+This inequality is strict. For example, direct rational squaring in (1.4) gives
+                    313461          313462       313457      573    313458
+                         6
+                             <ϑ<        6
+                                            ,         6
+                                                          <       <        .
+                      10              10           10        1828     106
+The same bounds verify all strict numerical inequalities on ϑ used above. They also give 2ϑ − 1 <
+x0 < −149/464 < −ϑ.
+                                             FIRST SPACING AND LATTICE-POINT DISCREPANCY                                 17
+
+
+
+
+                           0.3134
+                                                                   Interior maximum
+                                                                   x0 = −0.3332636358…
+    Exponent of T in S/H
+
+
+
+                           0.3132
+                                                                                                 Right endpoint
+                                                                                                0.3134572649...
+                           0.3130
+
+
+
+                           0.3128
+
+
+                                                                                                  q = 4 + λ(x)/κ(x)
+                           0.3126                                                                 q = 9/2
+                                                                                                  ϑ = 0.3134615421…
+
+                                     −0.37        −0.36         −0.35        −0.34        −0.33          −0.32
+                                                          Block-ratio exponent x = logT (H/M)
+
+
+                           Figure 2. The exponent obtained from (6.13). The first piece reaches its maximum
+                           at the interior point x0 ; the increasing q = 9/2 piece has a slightly smaller right
+                           endpoint. Identity (6.18), rather than numerical optimization, proves the bound on
+                           the entire first piece.
+
+
+Proposition 6.3. For the reciprocal class (6.1), uniformly for M ≤ T 1/2 and 1 ≤ H ≤ M T −ϑ ,
+                                                       |S(H, M, T ; F )| ≪ε HT ϑ+ε .                                  (6.20)
+The estimate is uniform for subintervals of the two dyadic summation ranges and for weights with
+bounded variation norm.
+Proof. The ranges excluded from (6.4) satisfy the claim by Lemma 6.1. In the hard range, one of
+(5.3) or (5.5) applies. Insert Theorem 1.2 into (5.8), use (5.11), and in Case B compare the four
+endpoint monomials using (5.13) and (6.8). At NA , Lemma 6.2 permits the square-root bound.
+Equations (6.18) and (6.19) prove that its exponent is at most ϑ throughout (6.10). The fixed
+compact q interval makes all constants uniform. The logarithmic factors in the block length and
+the finite number of dyadic decompositions are absorbed into T ε after choosing smaller auxiliary
+exponents. The statement about subintervals and weights follows from the corresponding uniformity
+of the interface and partial summation.                                                        □
+
+                                         7. From reciprocal sums to the discrepancies
+7.1. A finite Fourier approximation with controlled coefficients. We use ψ(t) = t − ⌊t⌋ − 1/2,
+including the value −1/2 at integers. Vaaler’s finite approximation [12] gives, for an integer Y ≥ 1,
+                                                             Y
+                                                             X W (h/(Y + 1))
+                                                ψY (t) = −                       sin(2πht),                            (7.1)
+                                                             h=1
+                                                                        πh
+
+where
+                                              W (u) = πu(1 − u) cot(πu) + u (0 < u < 1),
+18                                                 XIYU HU
+
+
+with the continuous endpoint values. It satisfies
+                                             1     X       |h|
+                                                                
+                       |ψ(t) − ψY (t)| ≤                1−        e(ht).                        (7.2)
+                                         2(Y + 1) |h|≤Y    Y +1
+
+The right side is a nonnegative Fejér kernel divided by 2(Y + 1). At an integer it equals 1/2, so the
+convention for ψ at its discontinuities is included. The function W extends smoothly to [0, 1] and
+has bounded variation there; this also follows by expanding the cotangent at the two endpoints.
+Lemma 7.1. Let F belong to (6.1) and M ≤ T 1/2 . For any integer subinterval I ⊂ [M, 2M ),
+                                                T
+                                  X                         
+                                        ψ         F (m/M )       ≪ε T ϑ+ε .                     (7.3)
+                                  m∈I
+                                                M
+
+Proof. For M ≤ 2T ϑ the result follows from |ψ| ≤ 1/2. Otherwise take Y = ⌊M T −ϑ ⌋, so Y ≍ M T −ϑ
+and Y ≥ 1. Put um = (T /M )F (m/M ).
+   On each dyadic interval H ≤ h < 2H, the coefficient W (h/(Y + 1))/h has supremum plus total
+variation O(H −1 ). Apply summation by parts in h to the rectangle estimates Proposition 6.3. The
+corresponding part of the main sum (7.1) is Oε (T ϑ+ε ).
+   Summing (7.2) over m gives a constant term O(M/Y ) and the real part of a weighted double
+sum with coefficient
+                                          1           h
+                                                         
+                                               1−           .
+                                       Y +1         Y +1
+On a dyadic interval its variation norm is O(Y −1 ). Thus its contribution is Oε ((H/Y )T ϑ+ε ). Sum
+the dyadic values of H; their sum is O(Y ). The error is therefore O(M/Y + T ϑ+ε ). Finally
+M/Y ≪ T ϑ , and the logarithm from the main Fourier sum is absorbed into T ε .
+   This argument bounds the Fourier remainder by weighted double sums. It does not replace their
+h-sum by the sum of individual absolute values.                                                    □
+                                        √
+7.2. The divisor problem. Let U = ⌊ X⌋. The elementary hyperbola identity gives
+                                   X                 X
+                                        d(n) = 2           ⌊X/m⌋ − U 2 .
+                                  n≤X                m≤U
+
+Using ⌊t⌋ = t − ψ(t) − 1/2 and
+                                 X 1                          1
+                                        = log U + γ +           + O(U −2 ),
+                               m≤U
+                                   m                         2U
+one obtains                                        X
+                                 ∆(X) = −2              ψ(X/m) + O(1).                          (7.4)
+                                                  m≤U
+                                              √               √
+                          √ rather than O( X), put U = X + O(1)
+To see that the error is O(1)                                          √ in2 the displayed expansion.
+The terms linear in U − X cancel; the remaining error is O((U − X) + X/U ).         2
+
+   Decompose m ≤ U into dyadic intervals and apply Lemma 7.1 with T = X and F (t) = 1/t. The
+finitely truncated last interval is allowed. This proves the divisor assertion of Theorem 1.1.
+7.3. The circle problem and the character modulo four. Let χ4 be the nonprincipal character
+modulo four, extended by zero on even integers, and put
+                                                       X
+                                            A(u) =           χ4 (d).
+                                                     1≤d≤u
+The classical two-squares identity gives, for real X ≥ 1,
+                                                                         X
+                        #{(m, n) ∈ Z2 : m2 + n2 ≤ X} = 1 + 4                   χ4 (d).          (7.5)
+                                                                        dm≤X
+                             FIRST SPACING AND LATTICE-POINT DISCREPANCY                                   19
+
+
+For reference, the coefficient identity is r2 (n) = 4 d|n χ4 (d) for n ≥ 1. It follows either from the
+                                                                   P
+
+theta-series identity or from unique factorization in Z[i]; the sum on the right is multiplicative, with
+local factors e + 1 at a prime 1 (mod 4), 1 or 0 according as the exponent is even or odd at a prime
+3 (mod 4), and 1 at the prime 2. These are precisely the two-square representation factors after the
+four units are accounted for.
+   We √derive the needed sawtooth identity so that all shifts and endpoint terms are explicit. With
+U = ⌊ X⌋, the hyperbola decomposition is
+                         X               X                               X
+                              χ4 (d) =          χ4 (d)⌊X/d⌋ +                  A(X/m) − U A(U ).         (7.6)
+                      dm≤X               d≤U                             m≤U
+
+The character partial sum has the exact expression
+                                            u+3     u+1
+                                                                       
+                                 A(u) =          −
+                                             4       4
+                                                                                                         (7.7)
+                                          1      u 1        u 3
+                                                             
+                                         = +ψ     +    −ψ    +    .
+                                          2      4 4        4 4
+As a function of the real variable u, A(u) is periodic of period four and has average 1/2. The
+primitive of A(u) − 1/2 is bounded. Partial summation therefore yields
+                                                    Z ∞
+                   X χ4 (d)           A(U )                  A(t)      1/2 − A(U )
+                                =−          +                  2
+                                                                  dt =             + O(U −2 ).           (7.8)
+                   d>U
+                          d            U             U        t             U
+        P
+Since   d≥1 χ4 (d)/d = π/4, inserting (7.7) and (7.8) into (7.6) gives
+                                      X
+                     R(X) = − 4             χ4 (d)ψ(X/d)
+                                      d≤U
+                                      X  X                     1
+                                                                             
+                                                                                  X   3
+                                                                                                       (7.9)
+                                 +4             ψ            +           −ψ         +          + O(1).
+                                      m≤U
+                                                     4m          4                4m 4
+
+Indeed, the only prospective terms of size U in this substitution are
+                                   X
+                                  −  (1/2 − A(U )) + U (1/2 − A(U )),
+                                   U
+which are O(1) because X − U 2 = O(U ). All other tail terms are O(X/U 2 + 1) = O(1).
+  In the first sum of (7.9), split the odd integers into d = 4j + 1 and d = 4j + 3. The terms with
+j = 0 contribute O(1). On a dyadic interval j ∼ M , the phase is
+                                X      X       1
+                                     =                 ,                           a ∈ {1, 3}.
+                              4j + a   M 4(j/M ) + a/M
+Thus F (t) = 14 (t + a/(4M ))−1 belongs uniformly to the reciprocal class. In the other two sums take
+                                      1    Mβ
+                                 F (t) = +      ,    β ∈ {1/4, 3/4}.
+                                      4t    X
+The constant is placed inside the phase, not treated as a rapidly varying bounded-variation weight
+in h. Apply Lemma 7.1 with T = X to each dyadic interval. This proves the circle assertion and
+completes the proof of Theorem 1.1.
+
+                              8. The remaining loss in this argument
+   The amplitude decomposition removes the need to charge the radial energy for cross-ray coherence.
+It does not eliminate the cross-ray term
+                                                    K q−2 L(q−1)/2 .
+20                                               XIYU HU
+
+
+At the interior maximum x0 , it is this term that imposes
+                       (q − 4)κ(x0 ) = λ(x0 ),      q = 4.334153950333945 . . . .
+Its source is the crossing scale (4.7), where a local density bound and the nonradial arithmetic
+energy have equal size. Thus the obstruction in the present proof is no longer the all-equal-k family
+at the finest scale.
+   There are other potential sources of cancellation that this proof does not use. The original
+short-block sums are still treated with the absolute values in the quoted arithmetic construction, and
+the first and second spacing quantities are still separated by a large sieve. Retaining their phases or
+proving an incompatibility between their extremizing configurations would change a different part
+of the method. The four-dimensional Poisson geometry and higher reciprocal jets are not required
+for any theorem of this paper.
+   Even a square-root first-spacing bound throughout 4 ≤ q ≤ 9/2, with no parameter restriction,
+would give only
+                                               49q + 66      573     5
+                                 θideal (q) =             ≥       >
+                                              4(41q + 44)   1828    16
+with the present block lengths and second-spacing factor. This is a limitation of this specified
+parameter architecture, not an impossibility statement for first spacing or for the circle problem.
+
+               Appendix A. Parameter identities and proof dependencies
+   The following identities explain every monomial comparison used in the arithmetic part. Ignoring
+logarithms only after allowing T ε , write H = M T x . Then
+                                 logT (NA /M ) = −16x/25 − 49/100,
+                                 logT (R0 /M ) = 8x/25 − 51/200,
+                                      logT K0 = −24x/25 − 47/200,
+                                      logT L0 = 17x/25 + 51/200,
+                                  logT (K0 L0 ) = 1/50 − 7x/25.
+For a monomial K a Lb in the qth-power first-spacing bound, its Q/R0 power after (5.10) and the
+large sieve is a + b + 8 − 3q. Its N power after taking the qth root is
+                                         3  11   3a + b
+                                        − +    +        .
+                                         2 17q     2q
+For the four monomials these are:
+                           Monomial           Q/R0 power    N power
+                           (KL)q/2            8 − 2q        −1/2 + 11/(17q)
+                           KL2q−5             4−q           −1/2 − 6/(17q)
+                           K q−2 L(q−1)/2     (11 − 3q)/2   1/4 − 177/(68q)
+                           K 3q/4−2 L5q/4−2   4−q           1/4 − 57/(17q)
+   The proof has two independent input branches. The analytic branch is the Guth–Maldague
+theorem (2.8), followed by Lemmas 2.1, 2.2, 3.1 to 3.3 and 4.1 and Proposition 4.2 and Theorem 1.2.
+The arithmetic branch is the Li–Yang interface (5.8), the admissible lengths (5.4)–(5.6), and the
+classical estimates in Lemma 6.1. They meet in Proposition 6.3. Vaaler’s finite approximation, the
+hyperbola identities, and Lemma 7.1 then prove Theorem 1.1.
+   The interval and sign checks in Section 6 can also be made without derivatives. If ϑ is as in (1.4),
+then
+                            (9396 − 25280ϑ)2 − 8832(1963 − 5480ϑ) = 0.
+                              FIRST SPACING AND LATTICE-POINT DISCREPANCY                                            21
+
+
+This is precisely the zero-discriminant identity behind (6.18). The lower root gives the maximum
+on the interval with 632x + 137 < 0. The upper root would correspond to a different stationary
+configuration and is not used.
+
+                Appendix B. A direct check of the localization conventions
+   There are three distinct uses of localization, and keeping them separate is important.
+   First, the common cutoff χ(z/P ) replaces a periodic exponential sum by a Schwartz function. Its
+Fourier support is fixed before any angular projection is taken. This support is chosen small enough
+both for the cone neighborhood and for the exact integer equations in Lemma 3.3.
+   Second, the two angular grids in Lemma 2.1 do not smooth the angular boundary of a Fourier
+atom. Each atom is kept intact by one sharp angular projection. The assignment is made by k, so
+the decomposition into same-ray squares continues to be exact after the angular split. The constants
+in the external theorem are unchanged by the one rotation used for the second class.
+   Third, each wave-envelope average is a genuinely weighted integral, not a periodic average. Its
+pair kernel is bounded by Lemma 2.2. Only after weighted Cauchy–Schwarz and summation over
+the envelope translates do we use the global fourth-moment integral. At that point the remaining
+weight is exactly |χ(z/P )|4 , and its small Fourier support forces the two integer equations. The
+approximate square-root equation is discarded only after those two exact equations have been
+recovered.
+   These distinctions also apply to complex coefficients. Local cross-ray terms may have either
+sign; Lemma 4.1 handles that sign. The arithmetic counts are upper bounds for absolute values of
+coefficient products after the relevant nonnegative global energy has been expanded. They are not
+assertions that the original oscillatory coefficients are positive.
+
+                                                   References
+ [1] E. Bombieri and H. Iwaniec, On the order of ζ( 12 + it), Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4) 13 (1986), no. 3,
+     449–472.
+ [2] J. Bourgain and N. Watt, Decoupling for perturbed cones and the mean square of |ζ( 12 + it)|, Int. Math. Res. Not.
+     IMRN 2018, no. 17, 5219–5296.
+ [3] J. Bourgain and N. Watt, Mean square of zeta function, circle problem and divisor problem revisited,
+     arXiv:1709.04340v1 (2017), withdrawn in 2023. Cited for provenance only; its first-spacing assertions and
+     numerical conclusions are not used.
+ [4] S. W. Graham and G. Kolesnik, Van der Corput’s Method of Exponential Sums, London Mathematical Society
+     Lecture Note Series, vol. 126, Cambridge University Press, Cambridge, 1991.
+ [5] L. Guth and D. Maldague, Amplitude dependent wave envelope estimates for the cone in R3 , arXiv:2206.01093v2
+     (2022).
+ [6] L. Guth, H. Wang, and R. Zhang, A sharp square function estimate for the cone in R3 , Ann. of Math. (2) 192
+     (2020), no. 2, 551–581.
+ [7] M. N. Huxley, Exponential sums and lattice points, Proc. Lond. Math. Soc. (3) 60 (1990), no. 3, 471–502.
+ [8] M. N. Huxley, Exponential sums and lattice points. II, Proc. Lond. Math. Soc. (3) 66 (1993), no. 2, 279–301.
+ [9] M. N. Huxley, Exponential sums and lattice points. III, Proc. Lond. Math. Soc. (3) 87 (2003), no. 3, 591–609.
+[10] H. Iwaniec and C. J. Mozzochi, On the divisor and circle problems, J. Number Theory 29 (1988), no. 1, 60–93.
+[11] X. Li and X. Yang, An improvement on Gauss’s circle problem and Dirichlet’s divisor problem, arXiv:2308.14859v2
+     (2023).
+[12] J. D. Vaaler, Some extremal functions in Fourier analysis, Bull. Amer. Math. Soc. (N.S.) 12 (1985), no. 2,
+     183–216.
+

@@ -1,0 +1,517 @@
+{
+  "target": "2026-09-08; theta=573/1828",
+  "lean": "v4.32.1",
+  "sourceFileCount": 102,
+  "sources": [
+    {
+      "path": "CircleDivisor/AmplitudeIntegration.lean",
+      "bytes": 10950,
+      "sha256": "C566203D42FB32882E5E6BB6DAED08320750ED351BA06BBB8F52B668F6C7CB22"
+    },
+    {
+      "path": "CircleDivisor/AngularGrid.lean",
+      "bytes": 3622,
+      "sha256": "D05681466B0FA637CA576558F432F753731F5BD2F8C6E93A527A4D1921B71278"
+    },
+    {
+      "path": "CircleDivisor/Arithmetic.lean",
+      "bytes": 16337,
+      "sha256": "0AB132089240A52838902453E1D915A0764E137E336FF1C64E6CF369EDBD9B05"
+    },
+    {
+      "path": "CircleDivisor/BlockSeparation.lean",
+      "bytes": 6099,
+      "sha256": "44B96861FBA709943731768C263867B111D72A25C901948CE1C7503A87F44CA1"
+    },
+    {
+      "path": "CircleDivisor/ClassicalInputs.lean",
+      "bytes": 3006,
+      "sha256": "55F3F5249D6C45F2EA121754D07FF51B9BA642BA54106513FD9E72F4CB4F8DC5"
+    },
+    {
+      "path": "CircleDivisor/ConeGeometry.lean",
+      "bytes": 4105,
+      "sha256": "6A4B832AC9484EF32954F9FF7C6599BC1619DA696A84776C3E76F55011D9F48F"
+    },
+    {
+      "path": "CircleDivisor/Connections.lean",
+      "bytes": 1483,
+      "sha256": "74546028458B700FECE4DA521D200165043AC49C97DE7650CD27F070F62917EF"
+    },
+    {
+      "path": "CircleDivisor/DiscrepancyReduction.lean",
+      "bytes": 33792,
+      "sha256": "5D75662F2492671F8B9599D78E66813E5D374394A3B97D9F90B133F3485059EC"
+    },
+    {
+      "path": "CircleDivisor/Energy.lean",
+      "bytes": 4650,
+      "sha256": "077047644F5E1A8BE4E2E7CB43F17506DDFC19ABD3F15B28886DC8691C9636CB"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3.lean",
+      "bytes": 3417,
+      "sha256": "A9E3FD2541702DEA808D27AD019FD84FE00DEBEE08ADC161022C0EF2D7AB7E50"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AdaptedMetric.lean",
+      "bytes": 5727,
+      "sha256": "96BD9FBA809BE094F1B7239FF6D55B30714021996AEDADBAEE45E7CC7526BF81"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AmplitudeConstants.lean",
+      "bytes": 4808,
+      "sha256": "33F948CD608C35D751DEBBDB1C4A374CB3AF4925932187D1D5F4DBF3141313A4"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AmplitudeCountable.lean",
+      "bytes": 10587,
+      "sha256": "A6FDADF6D0CEFF2B8474B5137E31EDD94473939A0018F937A5A471D522693B82"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AmplitudeScale.lean",
+      "bytes": 6344,
+      "sha256": "77AB82C9E80328340358415A5B82E1E15ED81FFFF59FE8D524E386FA7A5792E5"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AnalyticAssembly.lean",
+      "bytes": 4338,
+      "sha256": "E4EC5BACA7D46E1B867B78E1ED703147C10EADB183F40B5B7805999ABC97AF68"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/AngularAtoms.lean",
+      "bytes": 23920,
+      "sha256": "39E1B43B6A145CC118C53278F7B5290B36B924C3B30A92F28E289E3369BF6369"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Arithmetic.lean",
+      "bytes": 10640,
+      "sha256": "215B2FCF81B034DC7A29CD2F95B5BB8B14B0E7C86CAB499B51183BC09F753170"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ArithmeticInterface.lean",
+      "bytes": 4540,
+      "sha256": "6B12E8239DE785D5E3C44D10A563986E5F9F9FCBF4CFEF75750AEA70D4ED9E8F"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ArithmeticMain.lean",
+      "bytes": 831,
+      "sha256": "1150178CF80BC311137136152C1AC061321AB85F32090243D14A6719A08099A8"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CanonicalLocalization.lean",
+      "bytes": 10574,
+      "sha256": "C647ADDD23A8ED195FF9453928D1D9C7680EF31388F6393EA1540C92C58C48C9"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CapNesting.lean",
+      "bytes": 4821,
+      "sha256": "2174F7C458C842590DDAE3841EB4003DDC4422D07F8E74BBEE862D8F04CC7639"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CaseAssembly.lean",
+      "bytes": 4488,
+      "sha256": "373C71B5D51AB6B7464F59F8ACE73099FC7FDCC5A2F533A2CA400A764868F658"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ClassDecomposition.lean",
+      "bytes": 5118,
+      "sha256": "23E4F8A1E1A51D82C4F3D37DC37E628313567AF574469330D0E50FBA14216C65"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CoarseDecomposition.lean",
+      "bytes": 10564,
+      "sha256": "0442241B28E64F711FFE92BFC01015904EEA88585209FA68F236FCDD38D54050"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CoarseEnergy.lean",
+      "bytes": 17394,
+      "sha256": "9C61B055545736438C3F2EEAE48CAFCEA583CEF57E3CECF4C663B7A6F709F5A4"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CoarseWindows.lean",
+      "bytes": 5874,
+      "sha256": "97CFAE86684A19222CFB61EF216EC0401FD06B449FA7E68D25752E5F8B22795C"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Construction.lean",
+      "bytes": 6611,
+      "sha256": "0B124B84A02FB0F94AF8CE9B963F6FB15EA0B74AD5A29CB72390E64AF3F4F7AC"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Corollaries.lean",
+      "bytes": 4039,
+      "sha256": "9514D6CD6A5374755D49EA3D1BD990A4A275A0F0A4690D6414F0D021101CCD02"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CountableAveraging.lean",
+      "bytes": 7699,
+      "sha256": "9828B5FD20B53CB86E1FC9FA589FECB9A2DE056F3AA4684EFBCA549AA80AB1D7"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/CrudeEnergy.lean",
+      "bytes": 7765,
+      "sha256": "9A197AC36DB1F52C2E5142515AFB0E078B37D6ED09C7B1EAE424F04DE5C4C0B2"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/DensitySums.lean",
+      "bytes": 14529,
+      "sha256": "19F6D9282B4C7C5D55E218650E56237B214B98A0E02BCAB80757C046ED7D1092"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/DensityTransfer.lean",
+      "bytes": 3790,
+      "sha256": "01EFE25C91059838134763FA9A4738D5433FA13EF61E6E7DACA46AB459C5E586"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ElementaryReciprocal.lean",
+      "bytes": 6945,
+      "sha256": "BB5A74D23169F5DBA8BFEFAF0A0DCDE9CFC909540F441FB6F6582CC026DDCB8E"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/EndpointTransfer.lean",
+      "bytes": 10881,
+      "sha256": "4597DB163248C217AAE8741F5771459263743E9240C100857D6E079B5355CEE1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/EnvelopeEnergies.lean",
+      "bytes": 8317,
+      "sha256": "C1A86A98958C1235FC96BA125BC5C14FD01A649BBE8C2FA504978C7C268364C7"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ExternalArithmetic.lean",
+      "bytes": 1983,
+      "sha256": "68FAAEAEC95C57E024C89277E3C1140244A5DA1769C00AA9C6C1CE305B3CCE46"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/FirstMass.lean",
+      "bytes": 20447,
+      "sha256": "C2E7AE3AC28F94EE1B49697C7A8575BA530377E86A7B0214987DB4677F546CD6"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/FirstSpacingAssembly.lean",
+      "bytes": 7645,
+      "sha256": "574F606E38A3253B6666AF2BE5E8EE73680EF7547239FA6B63A57372112DDABF"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/FirstSpacingProof.lean",
+      "bytes": 5371,
+      "sha256": "FCA5160B01FBCEF5FE380A58137F9995945DD0CFE86398EB211BF581D35CCE97"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/FirstSpacingTransfer.lean",
+      "bytes": 4686,
+      "sha256": "7382C59BE9D4DC96CA380E31C56A648786401890CE41FD9DBC76531FCC101D48"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/FourierTransport.lean",
+      "bytes": 5818,
+      "sha256": "EA0E7B49B5FD5A552A8D0FEC10914A6757EBD5724967DC7BB43EBC4114C226E0"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/HardReciprocal.lean",
+      "bytes": 7085,
+      "sha256": "5DD686A859D53765F7F37950A904A1AC5836A6B05201A09F608AD403230FD4BA"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/KernelActual.lean",
+      "bytes": 6353,
+      "sha256": "415012B7FCFF62D051065C685F017CAE4AF6D6EC4F128191F5C1B8A614CE61E1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/KernelBounds.lean",
+      "bytes": 11971,
+      "sha256": "4DC94B5A19235A20056B65929EF250ACF344FA789CEBE400EB254C86105BB15F"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/KernelDensity.lean",
+      "bytes": 8688,
+      "sha256": "3C2C99ADEB936788FC443CF7E3BE47F44B1D2D5C6726F0E44ABE0A03351EBEB8"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/KernelDerivatives.lean",
+      "bytes": 12396,
+      "sha256": "AD752FCD5E31C9B551CE2BAF04BC5FB399625DCED595E0F8928A1FED3C791747"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/KernelEnvelope.lean",
+      "bytes": 6396,
+      "sha256": "D9EA14291520881FDF1714CD9F1B94407206AF176F60A05D4082101BA17DDDE6"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/LinearTransport.lean",
+      "bytes": 4427,
+      "sha256": "B71EC757E7E9A80B6FFF4C2A7C3BBEDC221F0B140680ADABF601B6B33A4D3120"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/LocalDensityActual.lean",
+      "bytes": 10814,
+      "sha256": "8BE56CB1AFF71509B69B03165B9FA999B294D6E9A70409DE746BF14B10391879"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/LocalizationNormalization.lean",
+      "bytes": 15610,
+      "sha256": "DA8E852D51C3AA58B4547412611A290051D849DAAC12440B736DC8254399CC9F"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Main.lean",
+      "bytes": 1527,
+      "sha256": "1FC32F76A708698A2C44B1F6901D4ABCF7BD3D538B95E16C76C6DC4AC141ECB1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/MetricTransport.lean",
+      "bytes": 14745,
+      "sha256": "C104E4875B9019B951946C2A661677AB21E172D6656D4F983862ECB555931906"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/NeighborCount.lean",
+      "bytes": 10199,
+      "sha256": "42CF4F6F767C453F6A1681EFCCE5F396D246D752F97C3AC9CD201FD47B3A31AD"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Optimization.lean",
+      "bytes": 4268,
+      "sha256": "9A88272AC7B1B48814F36C774861C6B6498B927757909055847CAEAA64B45699"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/PairedCount.lean",
+      "bytes": 14655,
+      "sha256": "7BC1D1461FF930142DAABA208AED00D7D6C42783AC136DF9E5D0EEC4912D13F5"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/PairedCountReal.lean",
+      "bytes": 6358,
+      "sha256": "2F07BB447C3A5F5C43724B4ABF3F73EEC043FF7032810CBE57800935F4519BFD"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/PairEnergies.lean",
+      "bytes": 9593,
+      "sha256": "8EFC9596E40D65D261F5EE24D1DFED3FF7B4E5A3D87F34DE0310987C6508244A"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/QuadraticDecomposition.lean",
+      "bytes": 2370,
+      "sha256": "43D161C3226264AB6CBBC8D81D5E0631057155D5E665A0EACD5F6A1C13FFD4BD"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReciprocalConclusion.lean",
+      "bytes": 5682,
+      "sha256": "64604C471042E0F473CF459E330464985DF2542C018696590229ED911E8E80A4"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/RectangleWeights.lean",
+      "bytes": 4711,
+      "sha256": "6DF10BA03005B5DC186722E256032BA7961DE7CA2D18DBC137B706CF00365431"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionAbel.lean",
+      "bytes": 8080,
+      "sha256": "7A45B7671B029E2FE7A4E5F5784C18FCB33A748DB3A36F8CFACC18D3E39B42BA"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionDyadic.lean",
+      "bytes": 2818,
+      "sha256": "0C31BB50B33A4F2FB917BA2798B2169BD6850E4BF29DCA26A33C541ED69983AB"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionFourier.lean",
+      "bytes": 4323,
+      "sha256": "B8FEC9ED655363A4A653094B9A65BA45FD4B192340E7F657D8950D5946E31026"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionMain.lean",
+      "bytes": 8197,
+      "sha256": "9DF26161E943C174C099A5E2300EA7666EF5C7493D020CD0503549D936399B5E"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionPower.lean",
+      "bytes": 5313,
+      "sha256": "14BA8544C900C6E61896367F28911727FDE75A499E5CB52E19B892F7B340E2A2"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionReciprocal.lean",
+      "bytes": 5393,
+      "sha256": "01829DCEC3ED37068341C1C60ECF3F584988B7B97C2E2D38A56939FD500C82F4"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ReductionWeight.lean",
+      "bytes": 9421,
+      "sha256": "8A27F636A7A1EBDA13956372261CF3F9EBF970E068E2BB3A8AEAB5F6C9620DB4"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/RefinedEnergy.lean",
+      "bytes": 8877,
+      "sha256": "8B45AD12E3E2C943BBA630FC2DFADC9D623E71B8A7D8A8C3C149FF5DAF239038"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/RotationJacobian.lean",
+      "bytes": 1383,
+      "sha256": "53D56FE6147AF47B586A299886F978B1D13FD4DBA84E593CF275B6F21E19762C"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/SameRayCount.lean",
+      "bytes": 6447,
+      "sha256": "7006435503BCE6BEA81216F1F438BCEF0100F656D28A45FD17C3BDD0D28EFFD0"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/SameRayEnergies.lean",
+      "bytes": 6760,
+      "sha256": "932C46D39276E15EDF6781D7E46E7C9204191C9D04E6BE03A5588A7EE1098374"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ScaleBounds.lean",
+      "bytes": 5386,
+      "sha256": "6A5772EC44F533F7B86F0307E451261C2F7D1A9BE1A641A345F800CCE13E1E1F"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ScaleExponents.lean",
+      "bytes": 4094,
+      "sha256": "5BE7D0200DB27DC0248DE88798948D8C88DCE58E893B84AA30CF43195528661F"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/ShellSummation.lean",
+      "bytes": 3923,
+      "sha256": "B1E9AF8F1F2B586816A369CE2DF9F20546039B4E9109963D15DD0AADA328B2D0"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/SpacingTransfer.lean",
+      "bytes": 8640,
+      "sha256": "4FB3058E961819E07ACAA41435D849582E36FB319E3C8FEE460D0FFB1E91A3D0"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/Statements.lean",
+      "bytes": 1658,
+      "sha256": "39C4698EC5D90843056A5D54BDDB12CBB02D27844A55887957A186E8FBD725EA"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/TorusAtoms.lean",
+      "bytes": 3337,
+      "sha256": "D1A70EE2A112AA6C48B29E85E644EB5FA90053453ADD30DF4357676423F56CCB"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/TorusProjection.lean",
+      "bytes": 8110,
+      "sha256": "1E40770032B48586D60956CBC881CC457EC6438579788EC346A8C60E3C27EBD1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/TwoClassLocalization.lean",
+      "bytes": 3033,
+      "sha256": "6413A309A83A0D4AAAA1E72B5F80BBFB8B446252A7EE1E71D887339D775D6D89"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/UniformFirstSpacingTransfer.lean",
+      "bytes": 3346,
+      "sha256": "08AFA313EA228742698CCBF26F19C5343ECD0916A22B8120C7F5DC0E9FB2BAC1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/WeightGeometry.lean",
+      "bytes": 3051,
+      "sha256": "D2B4717A65C54F5C687B16A39E631BA943811350ED1938BE0EC45B613C327FB5"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/WeightMass.lean",
+      "bytes": 6516,
+      "sha256": "D4D595B2B1945A17A0BF274D5111DD6FDA6C65B7EF66291322CEFFF1F29DBCD1"
+    },
+    {
+      "path": "CircleDivisor/EnergyV3/WeightOverlap.lean",
+      "bytes": 7038,
+      "sha256": "346CE5CF7B08DFC0CF0F21421CEC1E19E23306CD2D9B117D6C85E6450C70F6C9"
+    },
+    {
+      "path": "CircleDivisor/ExternalInterfaces.lean",
+      "bytes": 15264,
+      "sha256": "19DEE6925C114AA6995EF17A8C58B2969C4142789F2AB1503DCD3011D06DE284"
+    },
+    {
+      "path": "CircleDivisor/ExternalPeriodBridge.lean",
+      "bytes": 7697,
+      "sha256": "E52BDE18F9EF23E3CE22594D94FF766FF469F48869AB4197FB9C61F741700270"
+    },
+    {
+      "path": "CircleDivisor/FinalAssembly.lean",
+      "bytes": 2159,
+      "sha256": "3E1BEC4DCA9202A32F2F58ABADFA74E011002AF6E83A28232E9CE9F5464D2372"
+    },
+    {
+      "path": "CircleDivisor/FirstSpacingConsequences.lean",
+      "bytes": 5510,
+      "sha256": "1768FBE3CAE10668F28290E0822A2B7BDB4859A1755787A521D1D80CD32CDC1D"
+    },
+    {
+      "path": "CircleDivisor/FourierEnergy.lean",
+      "bytes": 15706,
+      "sha256": "7BB76A0D07D7F87802D15E0710C753B2166B851F7699C766574E3E0EEA9201CD"
+    },
+    {
+      "path": "CircleDivisor/FourierLocalization.lean",
+      "bytes": 28660,
+      "sha256": "B71ECA1153B7C9844DB619018CCCCF6E43C2DD7C2A76B649C0DED0C22740FBF0"
+    },
+    {
+      "path": "CircleDivisor/GuthMaldagueInput.lean",
+      "bytes": 13391,
+      "sha256": "1308EB2D60D8C0CACDA7B2FC642BD85D55DF7B908186DF10966DFE7676CA2265"
+    },
+    {
+      "path": "CircleDivisor/Hyperbola.lean",
+      "bytes": 2912,
+      "sha256": "54B21A4C34F1563DEE881A0FCD75D5390A2BCCAE6C4FE2B5AB197572CA184A2D"
+    },
+    {
+      "path": "CircleDivisor/LatticeDomain.lean",
+      "bytes": 1522,
+      "sha256": "26E28DD4D8BAEEC8C94E06396C35521433E27FE1723E0DFEE0237C1CDA58804F"
+    },
+    {
+      "path": "CircleDivisor/LogScale.lean",
+      "bytes": 3980,
+      "sha256": "0C1A92E3CE296188C27E243CDD9882E86F3AE59F1115E02064A3867D927C6F88"
+    },
+    {
+      "path": "CircleDivisor/Optimization.lean",
+      "bytes": 8794,
+      "sha256": "028D94166D6FCED8CB0FE6305043A5E1BAD0BCBC814B80C6998495BD0BA936BE"
+    },
+    {
+      "path": "CircleDivisor/ReciprocalPhase.lean",
+      "bytes": 7609,
+      "sha256": "FF2D7A1366B49121A568BD1DF126FBEB1E2B4CB98FEAE72471364F55E89144F0"
+    },
+    {
+      "path": "CircleDivisor/Sawtooth.lean",
+      "bytes": 4276,
+      "sha256": "200126F1EA7AAB05D8D7BD15B2AF9357EFFAF4217E57EC1BC3830907444E09A2"
+    },
+    {
+      "path": "CircleDivisor/ScaleBounds.lean",
+      "bytes": 14545,
+      "sha256": "CEC8D9D45FCBF8FE88A167461D77E4D906EE0C669259EF5C95E8AFD1E79959FC"
+    },
+    {
+      "path": "CircleDivisor/ScaleExponents.lean",
+      "bytes": 7453,
+      "sha256": "F4200D617ED879890542A94EE5110A51F1F5945253389643393A6033E6763A60"
+    },
+    {
+      "path": "CircleDivisor/SchwartzCutoff.lean",
+      "bytes": 5322,
+      "sha256": "DCDD706A8E8FE17AA9864630DF161906C8723E9359BCC32D8E6C9A9E40B343B1"
+    },
+    {
+      "path": "CircleDivisor/SpacingCount.lean",
+      "bytes": 39887,
+      "sha256": "B357098718340BE18D268DD499BD6A27AC1193AF88FE919744DB53C80A682982"
+    },
+    {
+      "path": "CircleDivisor/Statements.lean",
+      "bytes": 3501,
+      "sha256": "084A621D269F4EB2D39112EDAEC93509225A50D12202A7B1831043DD4B34A064"
+    },
+    {
+      "path": "CircleDivisor/UniformMoment.lean",
+      "bytes": 9327,
+      "sha256": "F8E74535D3E5447CFE532A4F757606034F8F924F745DE07843287DA281C62355"
+    }
+  ]
+}
