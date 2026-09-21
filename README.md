@@ -1,6 +1,6 @@
-# A remark on first spacing in the circle and divisor problems
+# A remark on first spacing in Gauss's circle problem and Dirichlet's divisor problem
 
-Lean 4 formalization of *A remark on first spacing in the circle and divisor problems*. The `EnergyV3` development formalizes the internal proof of the first-spacing estimate and the resulting circle and divisor error bounds, with the external mathematical inputs stated explicitly as theorem parameters.
+Lean 4 formalization of *A remark on first spacing in Gauss's circle problem and Dirichlet's divisor problem*. The `EnergyV3` development formalizes the internal proof of the first-spacing estimate and the resulting circle and divisor error bounds, with the external mathematical inputs stated explicitly as theorem parameters.
 
 The project uses **Lean 4.32.1** and **mathlib v4.32.1**. The supplied verification records report a successful build and an axiom audit of 2,133 exported project theorems. The Lean sources contain no `sorry`, `admit`, `native_decide`, or project-declared `axiom`.
 
