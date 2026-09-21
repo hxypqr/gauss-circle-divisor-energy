@@ -15,7 +15,7 @@ This repository was prepared from `CircleDivisor_EnergyV3_Lean.zip` for public d
 
 `manuscript/Gauss_circle_divisor_energy.tex` and its accompanying PDF are the original September 8 reference snapshot.
 
-`manuscript/Gauss_circle_divisor_energy_submission.tex` is the submission source prepared alongside publication. It revises the abstract, acknowledgements, AI-use statement, affiliation, contact information, and formatting. The mathematical body, appendices, and bibliography are unchanged from the reference snapshot. It includes the affiliation **University of Chinese Academy of Sciences** and the contact email `hxypqr@gmail.com`.
+`manuscript/Gauss_circle_divisor_energy_submission.tex` is the submission source prepared alongside publication. It revises the abstract, acknowledgements, AI-use statement, affiliation, contact information, and formatting. The mathematical body, appendices, and bibliography are unchanged from the reference snapshot. It includes the affiliation **School of Mathematical Sciences, University of Chinese Academy of Sciences** and the contact email `hxypqr@gmail.com`.
 
 Older manuscript material is preserved for historical cross-reference; it is not the source of the `573/1828` result.
 
